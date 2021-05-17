@@ -5,15 +5,17 @@
   
   <entry>
     <title>KMP算法</title>
-    <link href="/posts/645157d/"/>
-    <url>/posts/645157d/</url>
+    <link href="/posts/2da0528d/"/>
+    <url>/posts/2da0528d/</url>
     
     <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>如图,当匹配到模式串T的字符<code>c</code>时失配, 那么还需要像朴素匹配算法那样,从主串S的第二个字符<code>b</code>开始从头匹配吗?<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517204928.png" srcset="/img/loading.gif" alt=""><br>显然是不需要的,因为模式串T和主串S在失配字符前的字符是匹配的,换言之我们已经知道了失配字符前的那些字符,先不管怎么实现,我们是能够发现一些子串不可能匹配的.<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517204951.png" srcset="/img/loading.gif" alt=""><br>也就是说我们可以跳过某些步骤,直达下次可能匹配的地方,而且我们发现”跳步”与主串无关,只与模式串有关.</p><p>再来看看其它元素失配的情况:</p><ul><li>第5个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210310.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210429.png" srcset="/img/loading.gif" alt=""></li><li>第4个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210553.png" srcset="/img/loading.gif" alt=""></li><li>第3个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210816.png" srcset="/img/loading.gif" alt=""></li><li>第2个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210848.png" srcset="/img/loading.gif" alt=""></li><li><strong>第1个元素失配</strong><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210941.png" srcset="/img/loading.gif" alt=""></li></ul><p><font color="green" size="5">显然除了第一个元素失配是移动i外,其它元素失配都是移动j.</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517212446.png" srcset="/img/loading.gif" alt=""></p><h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517212739.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517212547.png" srcset="/img/loading.gif" alt=""></p>]]></content>
     
     
     <categories>
       
-      <category>uncategorized</category>
+      <category>学习笔记</category>
+      
+      <category>数据结构</category>
       
     </categories>
     
@@ -40,7 +42,9 @@
     
     <categories>
       
-      <category>uncategorized</category>
+      <category>学习笔记</category>
+      
+      <category>高数</category>
       
     </categories>
     
@@ -455,9 +459,9 @@
     
     <tags>
       
-      <tag>树</tag>
-      
       <tag>dfs</tag>
+      
+      <tag>树</tag>
       
     </tags>
     
@@ -515,9 +519,9 @@
       
       <tag>ACM</tag>
       
-      <tag>dfs</tag>
-      
       <tag>bfs</tag>
+      
+      <tag>dfs</tag>
       
     </tags>
     
