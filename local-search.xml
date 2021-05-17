@@ -4,11 +4,69 @@
   
   
   <entry>
+    <title>微分方程求解</title>
+    <link href="/posts/645157d/"/>
+    <url>/posts/645157d/</url>
+    
+    <content type="html"><![CDATA[<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>如图,当匹配到模式串T的字符<code>c</code>时失配, 那么还需要像朴素匹配算法那样,从主串S的第二个字符<code>b</code>开始从头匹配吗?<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517204928.png" srcset="/img/loading.gif" alt=""><br>显然是不需要的,因为模式串T和主串S在失配字符前的字符是匹配的,换言之我们已经知道了失配字符前的那些字符,先不管怎么实现,我们是能够发现一些子串不可能匹配的.<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517204951.png" srcset="/img/loading.gif" alt=""><br>也就是说我们可以跳过某些步骤,直达下次可能匹配的地方,而且我们发现”跳步”与主串无关,只与模式串有关.</p><p>再来看看其它元素失配的情况:</p><ul><li>第5个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210310.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210429.png" srcset="/img/loading.gif" alt=""></li><li>第4个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210553.png" srcset="/img/loading.gif" alt=""></li><li>第3个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210816.png" srcset="/img/loading.gif" alt=""></li><li>第2个元素失配<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210848.png" srcset="/img/loading.gif" alt=""></li><li><strong>第1个元素失配</strong><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517210941.png" srcset="/img/loading.gif" alt=""></li></ul><p><font color="green" size="5">显然除了第一个元素失配是移动i外,其它元素失配都是移动j.</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517212446.png" srcset="/img/loading.gif" alt=""></p><h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517212739.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517212547.png" srcset="/img/loading.gif" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习笔记</category>
+      
+      <category>数据结构</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+      <tag>串</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>微分方程求解</title>
+    <link href="/posts/645157d/"/>
+    <url>/posts/645157d/</url>
+    
+    <content type="html"><![CDATA[<h2 id="可分离变量方程"><a href="#可分离变量方程" class="headerlink" title="可分离变量方程"></a>可分离变量方程</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517152939.png" srcset="/img/loading.gif" alt=""><br>例1:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517154052.jpg" srcset="/img/loading.gif" alt=""><br>例2:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517154058.jpg" srcset="/img/loading.gif" alt=""></p><h2 id="齐次方程"><a href="#齐次方程" class="headerlink" title="齐次方程"></a>齐次方程</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517154320.png" srcset="/img/loading.gif" alt=""><br>例1:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517155357.jpg" srcset="/img/loading.gif" alt=""><br>例2:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517160155.jpg" srcset="/img/loading.gif" alt=""></p><h2 id="一阶齐次线性方程-amp-一阶非齐次线性方程"><a href="#一阶齐次线性方程-amp-一阶非齐次线性方程" class="headerlink" title="一阶齐次线性方程&amp;一阶非齐次线性方程"></a>一阶齐次线性方程&amp;一阶非齐次线性方程</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517160510.png" srcset="/img/loading.gif" alt=""><br>例1,例2:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517161902.jpg" srcset="/img/loading.gif" alt=""><br>例3:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517161907.jpg" srcset="/img/loading.gif" alt=""><br>例4:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517161913.jpg" srcset="/img/loading.gif" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习笔记</category>
+      
+      <category>高数</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>高数</tag>
+      
+      <tag>考研</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>高数知识点\(持续更新ing...\)</title>
     <link href="/posts/992a10c1/"/>
     <url>/posts/992a10c1/</url>
     
-    <content type="html"><![CDATA[<h2 id="《660》错题本记录"><a href="#《660》错题本记录" class="headerlink" title="《660》错题本记录"></a>《660》错题本记录</h2><p>29,31,38,39,41,43,45,53,59,60,68,69,70,76</p><h2 id="三角函数性质"><a href="#三角函数性质" class="headerlink" title="三角函数性质"></a>三角函数性质</h2><ul><li>三角函数的反函数嵌套: arcsin(sin_x)=x, arctan(tan_x)=x, arccos(cos_x)=x.</li><li>三角函数的倒数: 1/sin_x = csc_x, 1/cos_x = sec_x, 1/tanx = cot_x.</li><li>特殊三角函数导数记忆: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510193541.png" srcset="/img/loading.gif" alt=""></li></ul><h2 id="极值点"><a href="#极值点" class="headerlink" title="极值点"></a>极值点</h2><ul><li><strong>极值点不能是端点</strong>,因为极值点要求两边均有定义.</li></ul><h2 id="一元函数关系"><a href="#一元函数关系" class="headerlink" title="一元函数关系"></a>一元函数关系</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210514131507.png" srcset="/img/loading.gif" alt=""></p><h2 id="参数方程微分"><a href="#参数方程微分" class="headerlink" title="参数方程微分"></a>参数方程微分</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515103043.png" srcset="/img/loading.gif" alt=""></p><h2 id="微分方程求解"><a href="#微分方程求解" class="headerlink" title="微分方程求解"></a>微分方程求解</h2><h3 id="齐次微分方程"><a href="#齐次微分方程" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h3><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516164803.png" srcset="/img/loading.gif" alt=""><br><font color="green" size="5">解法:</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516165001.png" srcset="/img/loading.gif" alt=""></p><h2 id="g-x-f-x-的n阶导"><a href="#g-x-f-x-的n阶导" class="headerlink" title="g(x)*f(x)的n阶导"></a>g(x)*f(x)的n阶导</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515114515.png" srcset="/img/loading.gif" alt=""><br>也就是杨辉三角:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515115602.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515115732.png" srcset="/img/loading.gif" alt=""><br>第n行第k个数字是组合数C{n-1,k-1},n阶导从0阶导开始,所以是组合数C{n,k},例:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515143450.png" srcset="/img/loading.gif" alt=""></p><h2 id="无界与无穷大"><a href="#无界与无穷大" class="headerlink" title="无界与无穷大"></a>无界与无穷大</h2><h3 id="无界与无穷大的关系"><a href="#无界与无穷大的关系" class="headerlink" title="无界与无穷大的关系"></a>无界与无穷大的关系</h3><p>无穷大量是要义无反顾的大下去,而无界量可能一下趋于0,一下趋于无穷.如下图:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210511201124.png" srcset="/img/loading.gif" alt=""><br>无穷大量一定是无界量, 但无界量不一定是无穷大量.</p><h2 id="0的0次方"><a href="#0的0次方" class="headerlink" title="0的0次方"></a>0的0次方</h2><p>0^0 = 1</p><h2 id="洛比达推广"><a href="#洛比达推广" class="headerlink" title="洛比达推广"></a>洛比达推广</h2><p>标准洛必达:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515164827.png" srcset="/img/loading.gif" alt=""><br>推广形式:<br>条件1只需要满足 – 分母趋于无穷(分子无要求)<br>其它条件不变</p><h2 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h2><ul><li>数列收敛即有界</li></ul><h2 id="旋转体求体积"><a href="#旋转体求体积" class="headerlink" title="旋转体求体积"></a>旋转体求体积</h2><ul><li>二重积分法一般做斜线题, 定积分法做平行线题(旋转轴与x轴或者y轴平行)</li></ul><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516150204.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516150720.png" srcset="/img/loading.gif" alt=""><br>摆线:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516150600.gif" srcset="/img/loading.gif" alt=""></p><h2 id="反常积分"><a href="#反常积分" class="headerlink" title="反常积分"></a>反常积分</h2><h3 id="积分发散的反常积分"><a href="#积分发散的反常积分" class="headerlink" title="积分发散的反常积分"></a>积分发散的反常积分</h3><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516143452.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516145333.png" srcset="/img/loading.gif" alt=""></p><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><h3 id="周期函数"><a href="#周期函数" class="headerlink" title="周期函数"></a>周期函数</h3><p><strong>sinx或者cosx的奇数次方</strong>在(0,2Π)的积分是0.</p><h3 id="xf-sin-x-型"><a href="#xf-sin-x-型" class="headerlink" title="xf(sin_x)型"></a>xf(sin_x)型</h3><p>区间再现法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210511130544.png" srcset="/img/loading.gif" alt=""></p><h3 id="分母1-cosx型"><a href="#分母1-cosx型" class="headerlink" title="分母1+cosx型"></a>分母1+cosx型</h3><p>半角公式法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210511124000.jpg" srcset="/img/loading.gif" alt=""></p><h3 id="分子分母只有-sin-x-cosx-型"><a href="#分子分母只有-sin-x-cosx-型" class="headerlink" title="分子分母只有(sin_x,cosx)型"></a>分子分母只有(sin_x,cosx)型</h3><p>华罗庚分项法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510203458.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510205629.png" srcset="/img/loading.gif" alt=""></p><h3 id="分母次数过高-gt-2-型"><a href="#分母次数过高-gt-2-型" class="headerlink" title="分母次数过高(&gt;2)型"></a>分母次数过高(&gt;2)型</h3><p>倒代换法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510211735.jpg" srcset="/img/loading.gif" alt=""></p><h2 id="积分表"><a href="#积分表" class="headerlink" title="积分表"></a>积分表</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510191112.png" srcset="/img/loading.gif" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="《660》错题本记录"><a href="#《660》错题本记录" class="headerlink" title="《660》错题本记录"></a>《660》错题本记录</h2><p>29,31,38,39,41,43,45,53,59,60,68,69,70,76</p><h2 id="三角函数性质"><a href="#三角函数性质" class="headerlink" title="三角函数性质"></a>三角函数性质</h2><ul><li>三角函数的反函数嵌套: arcsin(sin_x)=x, arctan(tan_x)=x, arccos(cos_x)=x.</li><li>三角函数的倒数: 1/sin_x = csc_x, 1/cos_x = sec_x, 1/tanx = cot_x.</li><li>特殊三角函数导数记忆: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510193541.png" srcset="/img/loading.gif" alt=""></li><li>反三角函数关系: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517104153.png" srcset="/img/loading.gif" alt=""></li></ul><h2 id="反函数求导公式"><a href="#反函数求导公式" class="headerlink" title="反函数求导公式"></a>反函数求导公式</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517105244.png" srcset="/img/loading.gif" alt=""></p><h2 id="高阶导数求导公式"><a href="#高阶导数求导公式" class="headerlink" title="高阶导数求导公式"></a>高阶导数求导公式</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210517105257.png" srcset="/img/loading.gif" alt=""></p><h2 id="极值点"><a href="#极值点" class="headerlink" title="极值点"></a>极值点</h2><ul><li><strong>极值点不能是端点</strong>,因为极值点要求两边均有定义.</li></ul><h2 id="一元函数关系"><a href="#一元函数关系" class="headerlink" title="一元函数关系"></a>一元函数关系</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210514131507.png" srcset="/img/loading.gif" alt=""></p><h2 id="参数方程微分"><a href="#参数方程微分" class="headerlink" title="参数方程微分"></a>参数方程微分</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515103043.png" srcset="/img/loading.gif" alt=""></p><h2 id="微分方程求解"><a href="#微分方程求解" class="headerlink" title="微分方程求解"></a>微分方程求解</h2><h3 id="齐次微分方程"><a href="#齐次微分方程" class="headerlink" title="齐次微分方程"></a>齐次微分方程</h3><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516164803.png" srcset="/img/loading.gif" alt=""><br><font color="green" size="5">解法:</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516165001.png" srcset="/img/loading.gif" alt=""></p><h2 id="g-x-f-x-的n阶导"><a href="#g-x-f-x-的n阶导" class="headerlink" title="g(x)*f(x)的n阶导"></a>g(x)*f(x)的n阶导</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515114515.png" srcset="/img/loading.gif" alt=""><br>也就是杨辉三角:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515115602.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515115732.png" srcset="/img/loading.gif" alt=""><br>第n行第k个数字是组合数C{n-1,k-1},n阶导从0阶导开始,所以是组合数C{n,k},例:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515143450.png" srcset="/img/loading.gif" alt=""></p><h2 id="无界与无穷大"><a href="#无界与无穷大" class="headerlink" title="无界与无穷大"></a>无界与无穷大</h2><h3 id="无界与无穷大的关系"><a href="#无界与无穷大的关系" class="headerlink" title="无界与无穷大的关系"></a>无界与无穷大的关系</h3><p>无穷大量是要义无反顾的大下去,而无界量可能一下趋于0,一下趋于无穷.如下图:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210511201124.png" srcset="/img/loading.gif" alt=""><br>无穷大量一定是无界量, 但无界量不一定是无穷大量.</p><h2 id="0的0次方"><a href="#0的0次方" class="headerlink" title="0的0次方"></a>0的0次方</h2><p>0^0 = 1</p><h2 id="洛比达推广"><a href="#洛比达推广" class="headerlink" title="洛比达推广"></a>洛比达推广</h2><p>标准洛必达:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210515164827.png" srcset="/img/loading.gif" alt=""><br>推广形式:<br>条件1只需要满足 – 分母趋于无穷(分子无要求)<br>其它条件不变</p><h2 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h2><ul><li>数列收敛即有界</li></ul><h2 id="旋转体求体积"><a href="#旋转体求体积" class="headerlink" title="旋转体求体积"></a>旋转体求体积</h2><ul><li>二重积分法一般做斜线题, 定积分法做平行线题(旋转轴与x轴或者y轴平行)</li></ul><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516150204.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516150720.png" srcset="/img/loading.gif" alt=""><br>摆线:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516150600.gif" srcset="/img/loading.gif" alt=""></p><h2 id="反常积分"><a href="#反常积分" class="headerlink" title="反常积分"></a>反常积分</h2><h3 id="积分发散的反常积分"><a href="#积分发散的反常积分" class="headerlink" title="积分发散的反常积分"></a>积分发散的反常积分</h3><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516143452.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210516145333.png" srcset="/img/loading.gif" alt=""></p><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><h3 id="周期函数"><a href="#周期函数" class="headerlink" title="周期函数"></a>周期函数</h3><p><strong>sinx或者cosx的奇数次方</strong>在(0,2Π)的积分是0.</p><h3 id="xf-sin-x-型"><a href="#xf-sin-x-型" class="headerlink" title="xf(sin_x)型"></a>xf(sin_x)型</h3><p>区间再现法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210511130544.png" srcset="/img/loading.gif" alt=""></p><h3 id="分母1-cosx型"><a href="#分母1-cosx型" class="headerlink" title="分母1+cosx型"></a>分母1+cosx型</h3><p>半角公式法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210511124000.jpg" srcset="/img/loading.gif" alt=""></p><h3 id="分子分母只有-sin-x-cosx-型"><a href="#分子分母只有-sin-x-cosx-型" class="headerlink" title="分子分母只有(sin_x,cosx)型"></a>分子分母只有(sin_x,cosx)型</h3><p>华罗庚分项法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510203458.png" srcset="/img/loading.gif" alt=""><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510205629.png" srcset="/img/loading.gif" alt=""></p><h3 id="分母次数过高-gt-2-型"><a href="#分母次数过高-gt-2-型" class="headerlink" title="分母次数过高(&gt;2)型"></a>分母次数过高(&gt;2)型</h3><p>倒代换法:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510211735.jpg" srcset="/img/loading.gif" alt=""></p><h2 id="积分表"><a href="#积分表" class="headerlink" title="积分表"></a>积分表</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210510191112.png" srcset="/img/loading.gif" alt=""></p>]]></content>
     
     
     <categories>
@@ -401,9 +459,9 @@
     
     <tags>
       
-      <tag>dfs</tag>
-      
       <tag>树</tag>
+      
+      <tag>dfs</tag>
       
     </tags>
     
@@ -461,9 +519,9 @@
       
       <tag>ACM</tag>
       
-      <tag>bfs</tag>
-      
       <tag>dfs</tag>
+      
+      <tag>bfs</tag>
       
     </tags>
     
