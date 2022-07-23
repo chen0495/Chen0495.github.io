@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="算法思想暴力优化给定主串S和模式串P:S:BBC ABCDAB ABCDABCDABDEP:ABCDABD   暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配.如图:    暴力算法做了太多无用功,如下图所示: D与空格失配后,失配字符前的ABCDAB字串显然是配对的,换言之我们已经知道失配字符前的所有字符,那我们可以根据这些已知字符来跳过">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174538.png">
+<meta property="og:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174538.png">
 <meta property="article:published_time" content="2021-05-17T12:45:49.000Z">
-<meta property="article:modified_time" content="2021-05-23T12:49:57.389Z">
+<meta property="article:modified_time" content="2022-07-23T22:08:54.274Z">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="串">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174538.png">
+<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174538.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -237,7 +237,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174538.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://img.chen0495.top/Chen0495/newpicgo/img/20210508174538.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -328,7 +328,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2021年5月23日 晚上
+                    本文最后更新于：2022年7月24日 早上
                   
                 
               </p>
@@ -337,24 +337,24 @@
               <div class="markdown-body">
                 
                 <h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><h3 id="暴力优化"><a href="#暴力优化" class="headerlink" title="暴力优化"></a>暴力优化</h3><p>给定主串S和模式串P:<br>S:<code>BBC ABCDAB ABCDABCDABDE</code><br>P:<code>ABCDABD</code>  </p>
-<p>暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配.<br>如图: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519201204.png" srcset="/img/loading.gif" lazyload>  </p>
-<p>暴力算法做了太多无用功,如下图所示: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519201250.png" srcset="/img/loading.gif" lazyload><br><code>D</code>与空格失配后,失配字符前的<code>ABCDAB</code>字串显然是配对的,换言之我们已经知道失配字符前的所有字符,那我们可以根据这些已知字符来跳过一些不可能的情况.<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519201732.png" srcset="/img/loading.gif" lazyload><br>如上图,<font color="#c678dd" size="4">失配字符<code>D</code></font>之前的字串<code>ABCDAB</code>具有相同且最大的前后缀<code>AB</code>,故我们可以直接跳转使得<strong>失配字符前的字串</strong>的前缀(即模式串的前缀)与后缀(即主串的后缀)相对应.  </p>
+<p>暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配.<br>如图: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519201204.png" srcset="/img/loading.gif" lazyload>  </p>
+<p>暴力算法做了太多无用功,如下图所示: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519201250.png" srcset="/img/loading.gif" lazyload><br><code>D</code>与空格失配后,失配字符前的<code>ABCDAB</code>字串显然是配对的,换言之我们已经知道失配字符前的所有字符,那我们可以根据这些已知字符来跳过一些不可能的情况.<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519201732.png" srcset="/img/loading.gif" lazyload><br>如上图,<font color="#c678dd" size="4">失配字符<code>D</code></font>之前的字串<code>ABCDAB</code>具有相同且最大的前后缀<code>AB</code>,故我们可以直接跳转使得<strong>失配字符前的字串</strong>的前缀(即模式串的前缀)与后缀(即主串的后缀)相对应.  </p>
 <p>也就是说,我们从头到尾假设每个字符失配,得到失配字符前的字串中相同的前缀和后缀,并记录下来,即可省略一大批步骤.那么怎么得到这个相同前后缀呢?  </p>
 <h3 id="KMP步骤"><a href="#KMP步骤" class="headerlink" title="KMP步骤"></a>KMP步骤</h3><ol>
 <li>寻找前后缀最长公共元素长度  <ul>
 <li>对于字串<code>P = P[0] P[1] P[2] ... P[j-1] P[j]</code>,找其最长公共前后缀.</li>
 <li>如果有<code>P[0] P[1] ... P[k] = P[j-k] P[j-k+1] ... P[j]</code>即某条公共前后缀,那么对于一条包含这个公共前后缀的字串T来说,其<strong>最大</strong>公共前后缀长度是<strong>k+1</strong>,当然也可能是0…</li>
-<li>举例说明: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519203848.png" srcset="/img/loading.gif" lazyload></li>
+<li>举例说明: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519203848.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>求next数组<ul>
 <li>为了更好进行计算机计算,引入next数组,即失配发生后模式串P需要移动到哪个位置.  </li>
 <li>其值是将第一步中的最大公共元素长度整体右移一位,并令初值为-1.  </li>
-<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519204311.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519204311.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>根据next数组进行匹配  <ul>
-<li>匹配失败,<strong>令j &#x3D; next[j]</strong>.<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519204733.png" srcset="/img/loading.gif" lazyload>  </li>
+<li>匹配失败,<strong>令j &#x3D; next[j]</strong>.<img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519204733.png" srcset="/img/loading.gif" lazyload>  </li>
 <li>即当模式串字串<code>P[0] P[1] ... P[j-1]</code>与主串字串<code>... S[i-1]</code>匹配失败,i与j匹配失败时, next[j] &#x3D; k, 故将k移动到j位置, 让P[\k]与S[i]继续匹配.</li>
 </ul>
 </li>
@@ -371,16 +371,16 @@
 </ul>
 </li>
 <li>递归解释<ul>
-<li>如下图所示,已知next[k] &#x3D; 2(直接看出),那么因为P[k] &#x3D;&#x3D; P[j], 故next[k+1] &#x3D; 2 + 1 &#x3D; 3.<br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519211730.png" srcset="/img/loading.gif" lazyload>  </li>
-<li>再如下图,P[k] ≠ P[j], 显然因为C不同于D, 所以ABC 跟 ABD不相同, 即字符E前的模式串没有长度为k+1的相同前缀后缀, 也就不能再简单的令：next[j + 1] &#x3D; next[j] + 1 .所以,咱们只能去寻找长度更短一点的相同前缀后缀.<br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519212111.png" srcset="/img/loading.gif" lazyload>  </li>
-<li>那么为何要递归呢? 其实就是C与D不同, 但其前面相同(AB &#x3D;&#x3D; AB, 这里假设是 ABAB &#x3D; ABAB, 即 <strong>ABABC</strong> 与 <strong>ABABD</strong> 进行匹配), 那么只能是前缀AB(A)与后缀AB(D)匹配, 故要递归向前找长度更小的前缀.<br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519212402.png" srcset="/img/loading.gif" lazyload></li>
+<li>如下图所示,已知next[k] &#x3D; 2(直接看出),那么因为P[k] &#x3D;&#x3D; P[j], 故next[k+1] &#x3D; 2 + 1 &#x3D; 3.<br> <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519211730.png" srcset="/img/loading.gif" lazyload>  </li>
+<li>再如下图,P[k] ≠ P[j], 显然因为C不同于D, 所以ABC 跟 ABD不相同, 即字符E前的模式串没有长度为k+1的相同前缀后缀, 也就不能再简单的令：next[j + 1] &#x3D; next[j] + 1 .所以,咱们只能去寻找长度更短一点的相同前缀后缀.<br> <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519212111.png" srcset="/img/loading.gif" lazyload>  </li>
+<li>那么为何要递归呢? 其实就是C与D不同, 但其前面相同(AB &#x3D;&#x3D; AB, 这里假设是 ABAB &#x3D; ABAB, 即 <strong>ABABC</strong> 与 <strong>ABABD</strong> 进行匹配), 那么只能是前缀AB(A)与后缀AB(D)匹配, 故要递归向前找长度更小的前缀.<br> <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519212402.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>代码:  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">getNext</span><span class="hljs-params">(<span class="hljs-type">char</span> *P,<span class="hljs-type">int</span> next[])</span></span><br><span class="hljs-function"></span>&#123;<br><br>    <span class="hljs-type">int</span> length = <span class="hljs-built_in">strlen</span>(P);<br><br>    next[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>;<br>    <span class="hljs-type">int</span> k = <span class="hljs-number">-1</span>;     <span class="hljs-comment">//模式串类指针</span><br>    <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;      <span class="hljs-comment">//主串类指针</span><br>    <br>    <span class="hljs-comment">// 模式串与主串相同 </span><br>    <span class="hljs-keyword">while</span>(j &lt; length<span class="hljs-number">-1</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(k == <span class="hljs-number">-1</span> || P[k] == P[j]) <span class="hljs-comment">//匹配成功,双双后移并记录当前模式串(即前缀)位置</span><br>        &#123;<br>            ++k;     <span class="hljs-comment">// 模式串后移</span><br>            ++j;     <span class="hljs-comment">// 主串后移</span><br>            next[j] = k;   <span class="hljs-comment">// 记录当前模式串(即前缀)位置,即失配时需要移动到的位置.</span><br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            k = next[k];  <span class="hljs-comment">// 回溯长度更小的前缀.</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">up</span>(length)cout&lt;&lt;next[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="next数组优化-nextval"><a href="#next数组优化-nextval" class="headerlink" title="next数组优化(nextval)"></a>next数组优化(nextval)</h3><p>如下图,b和c失配后,模式串右移2,b和c又失配,这显然是算法缺陷.<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519213641.png" srcset="/img/loading.gif" lazyload><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519213725.png" srcset="/img/loading.gif" lazyload><br>问题出在不该出现P[j] &#x3D; P[next[j]]<br>代码:  </p>
+<h3 id="next数组优化-nextval"><a href="#next数组优化-nextval" class="headerlink" title="next数组优化(nextval)"></a>next数组优化(nextval)</h3><p>如下图,b和c失配后,模式串右移2,b和c又失配,这显然是算法缺陷.<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519213641.png" srcset="/img/loading.gif" lazyload><br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519213725.png" srcset="/img/loading.gif" lazyload><br>问题出在不该出现P[j] &#x3D; P[next[j]]<br>代码:  </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">getNextVal</span><span class="hljs-params">(<span class="hljs-type">char</span> *P,<span class="hljs-type">int</span> next[])</span></span><br><span class="hljs-function"></span>&#123;<br><br>    <span class="hljs-type">int</span> length = <span class="hljs-built_in">strlen</span>(P);<br><br>    next[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>;<br>    <span class="hljs-type">int</span> k = <span class="hljs-number">-1</span>;     <span class="hljs-comment">//模式串类指针</span><br>    <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;      <span class="hljs-comment">//主串类指针</span><br>    <br>    <span class="hljs-comment">// 模式串与主串相同 </span><br>    <span class="hljs-keyword">while</span>(j &lt; length<span class="hljs-number">-1</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(k == <span class="hljs-number">-1</span> || P[k] == P[j]) <span class="hljs-comment">//匹配成功,双双后移并记录当前模式串(即前缀)位置</span><br>        &#123;<br>            ++k;     <span class="hljs-comment">// 模式串后移</span><br>            ++j;     <span class="hljs-comment">// 主串后移</span><br>            <span class="hljs-keyword">if</span>(P[j] != P[k]) next[j] = k;<br>            <span class="hljs-keyword">else</span> next[j] = next[k];<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            k = next[k];  <span class="hljs-comment">// 回溯长度更小的前缀.</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">up</span>(length)cout&lt;&lt;next[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="手算next数组"><a href="#手算next数组" class="headerlink" title="手算next数组"></a>手算next数组</h3><p>考研不需要机算,故使用如下方法,在失配字符前画一条线,然后一步一步后退直到匹配或者过线.<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519205540.png" srcset="/img/loading.gif" lazyload><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519213310.png" srcset="/img/loading.gif" lazyload><br>串的下标从1开始.<br>下标0的位置是留给-1的,只要在下标0的位置加上0就是以-1开头,串下标从0开始计算的next数组.<br>计算nextval数组:  <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210523201045.png" srcset="/img/loading.gif" lazyload>  </p>
+<h3 id="手算next数组"><a href="#手算next数组" class="headerlink" title="手算next数组"></a>手算next数组</h3><p>考研不需要机算,故使用如下方法,在失配字符前画一条线,然后一步一步后退直到匹配或者过线.<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519205540.png" srcset="/img/loading.gif" lazyload><br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210519213310.png" srcset="/img/loading.gif" lazyload><br>串的下标从1开始.<br>下标0的位置是留给-1的,只要在下标0的位置加上0就是以-1开头,串下标从0开始计算的next数组.<br>计算nextval数组:  <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210523201045.png" srcset="/img/loading.gif" lazyload>  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> j <span class="hljs-keyword">from</span> <span class="hljs-number">2</span> to end:<br>    <span class="hljs-keyword">while</span> p[j] == P[<span class="hljs-built_in">next</span>[j]]:<br>        <span class="hljs-built_in">next</span>[j] = <span class="hljs-built_in">next</span>[<span class="hljs-built_in">next</span>[j]] <br></code></pre></td></tr></table></figure>
 <p>因为我们只利用了失配元素之前的元素, 但其实失配元素也能利用起来, 也就是说失配元素失配后, 再下次跳转匹配时若还是相同元素就不可能匹配成功.<br>即当前元素若失配, 跳转到next对应元素, 若还是相同元素, 就应该继续跳到更短的公共前后缀对应位置.  </p>
 <p>通俗说就是在当前元素(从2到最后), 如果其next值对应的元素与当前元素相等, 就令当前next值等于对应元素的next值, 重复直到不相等(如当前坐标11,对应next&#x3D;5,坐标5还是a,继续跳到坐标3依然是a,直到跳到坐标0不相等,所以next[11]&#x3D;0).  </p>

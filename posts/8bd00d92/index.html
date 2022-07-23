@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="前言记录计算机网络学习过程中的重点：计算机网络体系结构中的数据链路层。参考：《计算机网络(第7版)》 by 谢希仁  数据链路层介绍数据链路层使用的信道主要有两种:    点对点信道。使用一对一的点对点通信   广播信道。使用一对多的广播通信方式">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20200713001204.jpg">
+<meta property="og:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20200713001204.jpg">
 <meta property="article:published_time" content="2022-07-23T16:07:47.783Z">
-<meta property="article:modified_time" content="2021-04-23T11:55:27.000Z">
+<meta property="article:modified_time" content="2022-07-23T22:08:54.866Z">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="计网">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20200713001204.jpg">
+<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20200713001204.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -237,7 +237,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20200713001204.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://img.chen0495.top/Chen0495/newpicgo/img/20200713001204.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -328,7 +328,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2021年4月23日 晚上
+                    本文最后更新于：2022年7月24日 早上
                   
                 
               </p>
@@ -356,14 +356,14 @@
 <li>以太网 MAC 层的硬件地址  </li>
 <li>适配器、转发器、集线器、网桥、以太网交换机的作用</li>
 </ul>
-<h3 id="点对点信道"><a href="#点对点信道" class="headerlink" title="点对点信道"></a>点对点信道</h3><p>协议数据单元: <font color=red size=4>帧</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/Chen0495_PicGo//2020/20200426150658.jpg" srcset="/img/loading.gif" lazyload alt="使用点对点信道的数据链路层"><br>点对点信道数据链路层通信的主要步骤:  </p>
+<h3 id="点对点信道"><a href="#点对点信道" class="headerlink" title="点对点信道"></a>点对点信道</h3><p>协议数据单元: <font color=red size=4>帧</font><br><img src="https://img.chen0495.top/Chen0495/newpicgo/old_pic/2020/20200426150658.jpg" srcset="/img/loading.gif" lazyload alt="使用点对点信道的数据链路层"><br>点对点信道数据链路层通信的主要步骤:  </p>
 <ol>
 <li>结点 A 的数据链路层把网络层交下来的IP数据报添加首尾部封装成帧</li>
 <li>结点 A 把帧发送给 B 的数据链路层</li>
 <li>若结点 B 的数据链路层收到的帧无差错，则从收到的帧中提取出IP数据报发送到B的网络层，否则丢弃这个帧</li>
 </ol>
 <h3 id="3个基本问题"><a href="#3个基本问题" class="headerlink" title="3个基本问题"></a>3个基本问题</h3><h4 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h4><p>即数据前后添加头部尾部，构成一个帧。<br>首尾部的重要作用是确定帧的界限(<strong>帧定界</strong>)、添加必要的控制信息。<br>每一种数据链路层都规定了所能传输的帧的数据部分长度上限(<strong>最大传送单元 MTU</strong>)  </p>
-<p>帧定界的概念:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/Chen0495_PicGo//2020/20200426152453.jpg" srcset="/img/loading.gif" lazyload alt="使用控制字符进行帧定界"><br>如上图，若某个帧传送出错，于是找到那个只传送了头部而没有尾部的帧将其舍弃，重新发送&#x2F;接收该帧。  </p>
+<p>帧定界的概念:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/old_pic/2020/20200426152453.jpg" srcset="/img/loading.gif" lazyload alt="使用控制字符进行帧定界"><br>如上图，若某个帧传送出错，于是找到那个只传送了头部而没有尾部的帧将其舍弃，重新发送&#x2F;接收该帧。  </p>
 <h4 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h4><p>不管什么数据都能完整无差错地通过数据链路层。<br>问题: 如果数据中某个字节的二进制代码恰好和帧界定符一样，就会出错。<br>解决：字节填充，在控制字符和特殊字符前面插入一个转义字符“ESC”，而真正的首尾部不加。  </p>
 <h4 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h4><p>传输过程中数据可能会出错，某位0变1或者1变0。<br>误码率：出错比特位数目&#x2F;总比特位数目。  </p>
 <blockquote>

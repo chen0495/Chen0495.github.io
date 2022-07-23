@@ -25,13 +25,13 @@
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="问题电脑重装，恢复博客备份时出现问题，连接不到Coding，原因应该是多密钥冲突，错误信息：git@git.coding.net: Permission denied (publickey)记录下解决办法，同时对以前文章双线部署你的个人博客 打下补丁。 解决参考: windows下同一主机多个git ssh秘钥配置（码云 github coding）解决主机用户为中文配置不成功的问题但要注意！！！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img2022/20220405170409.png">
+<meta property="og:image" content="https://img.chen0495.top/Chen0495/newpicgo/img2022/20220405170409.png">
 <meta property="article:published_time" content="2022-04-05T09:02:45.000Z">
-<meta property="article:modified_time" content="2022-04-05T09:25:18.625Z">
+<meta property="article:modified_time" content="2022-07-23T22:08:53.079Z">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="工具教程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img2022/20220405170409.png">
+<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img2022/20220405170409.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -236,7 +236,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img2022/20220405170409.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://img.chen0495.top/Chen0495/newpicgo/img2022/20220405170409.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -327,7 +327,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年4月5日 下午
+                    本文最后更新于：2022年7月24日 早上
                   
                 
               </p>
@@ -336,7 +336,7 @@
               <div class="markdown-body">
                 
                 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>电脑重装，恢复博客备份时出现问题，连接不到Coding，原因应该是多密钥冲突，<strong>错误信息</strong>：<code>git@git.coding.net: Permission denied (publickey)</code><br>记录下解决办法，同时对以前文章<a target="_blank" rel="noopener" href="https://chen0495.top/posts/87a809ba/">双线部署你的个人博客</a> 打下补丁。</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>参考: <a target="_blank" rel="noopener" href="https://blog.csdn.net/yigehui12/article/details/89333264">windows下同一主机多个git ssh秘钥配置（码云 github coding）解决主机用户为中文配置不成功的问题</a><br><strong>但要注意！！！</strong>，生成密钥时不能参照网上的博客，要查阅<a target="_blank" rel="noopener" href="https://help.coding.net/docs/repo/ssh/config.html">官方文档</a>，如下：<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img2022/20220405171337.png" srcset="/img/loading.gif" lazyload alt="coding官方文档"><br>即要使用Ed25519算法生成的密钥对以避免冲突：<code>ssh-keygen -m PEM -t ed25519 -C &quot;your.email@example.com&quot;</code><br>出现以下信息即成功：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img2022/20220405171813.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>参考: <a target="_blank" rel="noopener" href="https://blog.csdn.net/yigehui12/article/details/89333264">windows下同一主机多个git ssh秘钥配置（码云 github coding）解决主机用户为中文配置不成功的问题</a><br><strong>但要注意！！！</strong>，生成密钥时不能参照网上的博客，要查阅<a target="_blank" rel="noopener" href="https://help.coding.net/docs/repo/ssh/config.html">官方文档</a>，如下：<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img2022/20220405171337.png" srcset="/img/loading.gif" lazyload alt="coding官方文档"><br>即要使用Ed25519算法生成的密钥对以避免冲突：<code>ssh-keygen -m PEM -t ed25519 -C &quot;your.email@example.com&quot;</code><br>出现以下信息即成功：<img src="https://img.chen0495.top/Chen0495/newpicgo/img2022/20220405171813.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>

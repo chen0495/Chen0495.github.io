@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="第一章 - 计算机系统概述 计算机硬件发展：电子管 ➡ 晶体管 ➡ 中小规模集成电路 ➡ 超大规模集成电路  数据库管理系统（DBMS）是操作系统软件，数据库系统（DBS）是用户软件。  计算机系统结构  软硬件逻辑上等效 计算机硬件结构： 冯·诺伊曼机： 运算器为中心 包括：运算器、存储器、控制器、输入设备、输出设备 特点：后面学的都是冯·诺依曼机，有什么特点看对不对的上就行   现代机： 存储">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210701205946.png">
+<meta property="og:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210701205946.png">
 <meta property="article:published_time" content="2021-08-19T06:25:49.000Z">
-<meta property="article:modified_time" content="2021-10-11T06:06:58.478Z">
+<meta property="article:modified_time" content="2022-07-23T22:08:54.620Z">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="考研">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210701205946.png">
+<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210701205946.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -237,7 +237,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210701205946.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://img.chen0495.top/Chen0495/newpicgo/img/20210701205946.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -328,7 +328,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2021年10月11日 下午
+                    本文最后更新于：2022年7月24日 早上
                   
                 
               </p>
@@ -361,7 +361,7 @@
 <li>语言层次：<code>高级语言 ➡ 汇编语言 ➡ 机器语言</code></li>
 </ul>
 </li>
-<li><p>计算机的工作过程 - 1：<font color=blue>(看看就行，后面会详细)</font><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108191632384.png" srcset="/img/loading.gif" lazyload alt="计算机的工作过程"><br> 0: 刚开始时,<code>PC = 0</code>,即当前要执行的指令的地址在0号主存地址.<br> 1: <code>PC -&gt; MAR</code>,控制器通过地址总线告诉内存(主存储器)要取的数据,导致<code>MAR = 0</code>.<br> 2&amp;3: <code>MAR -&gt; 存储体 -&gt; MDR</code>,取出数据到MDR,导致<code>MDR = 000001 0000000101</code>.<br> 4: 控制器通过总线取走MDR的数据,存放到IR,导致<code>IR = 000001 0000000101</code>.<br> 5: CU控制单元取走IR的<strong>操作码</strong>部分,CU因此得知这时<strong>取数</strong>指令.<br> 6: <code>IR -&gt; MAR</code>,控制器将IR的<strong>地址码</strong>发给MAR,导致<code>MAR = 5</code>.<br> 7&amp;8: <code>MAR -&gt; 存储体 -&gt; MDR</code>, 导致<code>MDR = 0000000000000010 = 2</code>.<br> 9: <code>MDR -&gt; ACC</code>,控制器取出MDR数据到累加寄存器ACC中,导致<code>ACC = 0000000000000010 = 2</code>.<br> 10：<font color=blue size=4>上一条指令执行后</font><code>PC = PC+1</code>.  </p>
+<li><p>计算机的工作过程 - 1：<font color=blue>(看看就行，后面会详细)</font><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108191632384.png" srcset="/img/loading.gif" lazyload alt="计算机的工作过程"><br> 0: 刚开始时,<code>PC = 0</code>,即当前要执行的指令的地址在0号主存地址.<br> 1: <code>PC -&gt; MAR</code>,控制器通过地址总线告诉内存(主存储器)要取的数据,导致<code>MAR = 0</code>.<br> 2&amp;3: <code>MAR -&gt; 存储体 -&gt; MDR</code>,取出数据到MDR,导致<code>MDR = 000001 0000000101</code>.<br> 4: 控制器通过总线取走MDR的数据,存放到IR,导致<code>IR = 000001 0000000101</code>.<br> 5: CU控制单元取走IR的<strong>操作码</strong>部分,CU因此得知这时<strong>取数</strong>指令.<br> 6: <code>IR -&gt; MAR</code>,控制器将IR的<strong>地址码</strong>发给MAR,导致<code>MAR = 5</code>.<br> 7&amp;8: <code>MAR -&gt; 存储体 -&gt; MDR</code>, 导致<code>MDR = 0000000000000010 = 2</code>.<br> 9: <code>MDR -&gt; ACC</code>,控制器取出MDR数据到累加寄存器ACC中,导致<code>ACC = 0000000000000010 = 2</code>.<br> 10：<font color=blue size=4>上一条指令执行后</font><code>PC = PC+1</code>.  </p>
 </li>
 <li><p>计算机的工作过程 - 2：<font color=blue>(重点！！！)</font></p>
 <ul>
@@ -380,7 +380,7 @@
 </li>
 </ul>
 </li>
-<li><p>计算机的多级层次结构<font color=blue>(简单了解)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109241919057.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>计算机的多级层次结构<font color=blue>(简单了解)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109241919057.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>上层分别是<code>高级语言 ➡ 汇编语言 ➡ 机器语言</code>，下层是<code>微程序 ➡ 微指令</code></li>
 </ul>
@@ -419,16 +419,16 @@
 </li>
 </ol>
 <h1 id="第二章-数据的表示和运算"><a href="#第二章-数据的表示和运算" class="headerlink" title="第二章 - 数据的表示和运算"></a>第二章 - 数据的表示和运算</h1><ol>
-<li><p>海明码补充知识点<font color=blue>(详细请查看<a target="_blank" rel="noopener" href="https://chen0495.top/posts/a01c1709/#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82">计网-海明码</a>) </font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108211542372.png" srcset="/img/loading.gif" lazyload alt="海明码补充知识点"></p>
+<li><p>海明码补充知识点<font color=blue>(详细请查看<a target="_blank" rel="noopener" href="https://chen0495.top/posts/a01c1709/#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82">计网-海明码</a>) </font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108211542372.png" srcset="/img/loading.gif" lazyload alt="海明码补充知识点"></p>
 </li>
 <li><p>进制转换：</p>
 <ul>
-<li><code>2 ➡ 8/16</code>：小数点为分界线，每3或者4位为一组分别计算，不足3或4位就补0<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242016666.png" srcset="/img/loading.gif" lazyload></li>
-<li><code>8/16 ➡ 2</code>：小数点为分界线：每1位都写成3或4位二进制数（不足就补0）<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242018465.png" srcset="/img/loading.gif" lazyload></li>
-<li><code>任意 ➡ 10</code>：每项乘权值求和<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242024766.png" srcset="/img/loading.gif" lazyload></li>
+<li><code>2 ➡ 8/16</code>：小数点为分界线，每3或者4位为一组分别计算，不足3或4位就补0<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242016666.png" srcset="/img/loading.gif" lazyload></li>
+<li><code>8/16 ➡ 2</code>：小数点为分界线：每1位都写成3或4位二进制数（不足就补0）<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242018465.png" srcset="/img/loading.gif" lazyload></li>
+<li><code>任意 ➡ 10</code>：每项乘权值求和<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242024766.png" srcset="/img/loading.gif" lazyload></li>
 <li><code>10 ➡ 任意</code><font color=blue>(重点！！！)</font>：<ul>
-<li>整数部分（除基取余法）<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242024947.png" srcset="/img/loading.gif" lazyload></li>
-<li>小数部分（乘基取余法）<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242026403.png" srcset="/img/loading.gif" lazyload></li>
+<li>整数部分（除基取余法）<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242024947.png" srcset="/img/loading.gif" lazyload></li>
+<li>小数部分（乘基取余法）<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242026403.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ul>
@@ -448,7 +448,7 @@
 </ul>
 </li>
 <li>大端和小端：<ul>
-<li>整数127（十进制）在计算机(64位)中大&#x2F;小端字节序<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242037243.png" srcset="/img/loading.gif" lazyload></li>
+<li>整数127（十进制）在计算机(64位)中大&#x2F;小端字节序<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242037243.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ul>
@@ -457,11 +457,11 @@
 </li>
 <li><p>定点数的表示<font color=blue>(重点！！！尤其补码！！！)</font>：</p>
 <ul>
-<li>定点整数<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242047762.png" srcset="/img/loading.gif" lazyload></li>
-<li>定点小数<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242046222.png" srcset="/img/loading.gif" lazyload></li>
-<li>原码的表示范围：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242106675.png" srcset="/img/loading.gif" lazyload><br>  - <strong>最小负全1，最大正全1，用幂次累加和公式计算</strong> </li>
-<li>反码的表示范围：正不变、负全变<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242110982.png" srcset="/img/loading.gif" lazyload></li>
-<li>补码：正不变、负全变并+1（补码到原码也是这个！）<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242110334.png" srcset="/img/loading.gif" lazyload><ul>
+<li>定点整数<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242047762.png" srcset="/img/loading.gif" lazyload></li>
+<li>定点小数<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242046222.png" srcset="/img/loading.gif" lazyload></li>
+<li>原码的表示范围：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242106675.png" srcset="/img/loading.gif" lazyload><br>  - <strong>最小负全1，最大正全1，用幂次累加和公式计算</strong> </li>
+<li>反码的表示范围：正不变、负全变<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242110982.png" srcset="/img/loading.gif" lazyload></li>
+<li>补码：正不变、负全变并+1（补码到原码也是这个！）<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242110334.png" srcset="/img/loading.gif" lazyload><ul>
 <li>整数：<ul>
 <li>在原码当中，“+0”<code>0 000 0000</code>和“-0”<code>1 000 0000</code>表示同一个数</li>
 <li>即0的<strong>反码</strong>可以表示成“-0”<code>1 111 1111</code>和“+0”<code>0 000 0000</code>，反码中<code>“-0” + 1 = “+0”</code>，这样负数对于的反码整体“+1右移”，使0不再重复，解放出一个最小值-2^n</li>
@@ -479,7 +479,7 @@
 <li>模4补码：2位符号数；模2补码：1位符号数</li>
 </ul>
 </li>
-<li>移码：补码符号位取反<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242128049.png" srcset="/img/loading.gif" lazyload><ul>
+<li>移码：补码符号位取反<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242128049.png" srcset="/img/loading.gif" lazyload><ul>
 <li>本质上是加上一个2^n使得符号取反，所以不可用于纯小数</li>
 </ul>
 </li>
@@ -487,7 +487,7 @@
 </li>
 <li><p>定点数的移位运算</p>
 <ul>
-<li>算数移位（符号位不参与运算）<font color=blue>(重点！！！但只记图，下面的理解为主)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242156655.png" srcset="/img/loading.gif" lazyload><ul>
+<li>算数移位（符号位不参与运算）<font color=blue>(重点！！！但只记图，下面的理解为主)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242156655.png" srcset="/img/loading.gif" lazyload><ul>
 <li>正数：正数的原码、反码、补码相同，均移位添0即可</li>
 <li>负数：<ul>
 <li>原码：<strong>移位添0</strong></li>
@@ -498,7 +498,7 @@
 </ul>
 </li>
 <li>逻辑移位：不管操作数，看出无符号数，左右移都添0</li>
-<li>循环移位<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242204251.png" srcset="/img/loading.gif" lazyload><ul>
+<li>循环移位<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242204251.png" srcset="/img/loading.gif" lazyload><ul>
 <li>不带进位位的循环左移将最高位进入最低位和标志寄存器位</li>
 <li>不带进位位的循环右移将最低位进入最高位和标志寄存器位</li>
 </ul>
@@ -507,19 +507,19 @@
 </li>
 <li><p>定点数的加减运算</p>
 <ul>
-<li>原码：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242206998.png" srcset="/img/loading.gif" lazyload><ul>
+<li>原码：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242206998.png" srcset="/img/loading.gif" lazyload><ul>
 <li>“正+正”或者“负+负”可能溢出</li>
 </ul>
 </li>
-<li>补码（可以直接运算）<font color=blue>(重点！！！)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242207800.png" srcset="/img/loading.gif" lazyload><ul>
-<li>溢出判断<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242214279.png" srcset="/img/loading.gif" lazyload></li>
+<li>补码（可以直接运算）<font color=blue>(重点！！！)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242207800.png" srcset="/img/loading.gif" lazyload><ul>
+<li>溢出判断<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242214279.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>符号扩展<font color=blue>(理解为主)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242209770.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>符号扩展<font color=blue>(理解为主)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242209770.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
-<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108231554191.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108231554191.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li><p>定点数的乘法运算<font color=blue>(要会算!!!)</font>：</p>
@@ -527,36 +527,36 @@
 <li>乘法可以用加法和移位运算实现</li>
 <li>原码乘法：<ul>
 <li>符号位异或确定</li>
-<li>手算：<strong>直接乘</strong><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242225048.png" srcset="/img/loading.gif" lazyload></li>
-<li>手算<strong>模拟ALU</strong><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109242225592.png" srcset="/img/loading.gif" lazyload></li>
+<li>手算：<strong>直接乘</strong><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242225048.png" srcset="/img/loading.gif" lazyload></li>
+<li>手算<strong>模拟ALU</strong><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109242225592.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>补码乘法模拟ALU：<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250844906.png" srcset="/img/loading.gif" lazyload><br>  <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250829455.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250844906.png" srcset="/img/loading.gif" lazyload><br>  <img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250829455.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>原码除法运算<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250837182.png" srcset="/img/loading.gif" lazyload><br>  <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250837394.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250837182.png" srcset="/img/loading.gif" lazyload><br>  <img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250837394.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>补码除法运算<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250839775.png" srcset="/img/loading.gif" lazyload><br>  <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250839641.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250839775.png" srcset="/img/loading.gif" lazyload><br>  <img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250839641.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>浮点数的表示<font color=blue>(超重点!!!每个概念都要搞懂)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250848887.png" srcset="/img/loading.gif" lazyload>:</p>
+<li><p>浮点数的表示<font color=blue>(超重点!!!每个概念都要搞懂)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250848887.png" srcset="/img/loading.gif" lazyload>:</p>
 <ul>
 <li>如<code>+11 +3.026</code>或者<code>+15 +0.0003026</code></li>
 <li>浮点数<strong>尾数部分</strong>规范化:<ul>
-<li>原码<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250904921.png" srcset="/img/loading.gif" lazyload></li>
-<li>补码<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250904044.png" srcset="/img/loading.gif" lazyload></li>
+<li>原码<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250904921.png" srcset="/img/loading.gif" lazyload></li>
+<li>补码<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250904044.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
-<li>IEEE 754：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250923520.png" srcset="/img/loading.gif" lazyload><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250909145.png" srcset="/img/loading.gif" lazyload><ul>
+<li>IEEE 754：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250923520.png" srcset="/img/loading.gif" lazyload><br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250909145.png" srcset="/img/loading.gif" lazyload><ul>
 <li>移码的定义是<code>移码 = 真值 + 偏置值</code>，一般偏置值 &#x3D; 2^(n-1)，这时刚好<code>移码 = 补码符号位取反</code></li>
-<li>IEEE 754的偏置值是<code>2^(n-1) - 1</code><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250929274.png" srcset="/img/loading.gif" lazyload><ul>
-<li>例子：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109250931530.png" srcset="/img/loading.gif" lazyload></li>
+<li>IEEE 754的偏置值是<code>2^(n-1) - 1</code><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250929274.png" srcset="/img/loading.gif" lazyload><ul>
+<li>例子：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109250931530.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ul>
@@ -565,18 +565,18 @@
 </li>
 <li><p>数据存储：</p>
 <ul>
-<li>边界对齐方式和边界不对齐方式<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109251100466.png" srcset="/img/loading.gif" lazyload><ul>
+<li>边界对齐方式和边界不对齐方式<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109251100466.png" srcset="/img/loading.gif" lazyload><ul>
 <li>注意！边界对齐方式是不足字或半字就立即填充，而不是在最后填充</li>
 <li>如<code>A（4B）、B（1B）、C（2B）</code>应该填充为<code>A（4B）、B（1B）+T（1B）、C（2B）</code>而不是<code>A（4B）、B（1B）、C（2B）+T（1B）</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>ALU算术逻辑单元：也就是数字电路课上的小芯片.<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108251727065.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>ALU算术逻辑单元：也就是数字电路课上的小芯片.<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108251727065.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>电路从左到右分别是：<ul>
-<li><code>与、或、非</code><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252055502.png" srcset="/img/loading.gif" lazyload></li>
-<li><code>与非、或非、异或</code><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252057084.png" srcset="/img/loading.gif" lazyload></li>
+<li><code>与、或、非</code><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252055502.png" srcset="/img/loading.gif" lazyload></li>
+<li><code>与非、或非、异或</code><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252057084.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>标志位（CF、OF、ZF、SF）：<ul>
@@ -590,11 +590,11 @@
 </li>
 </ol>
 <div class="note note-success">
-            <p>习题1:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281522151.png" srcset="/img/loading.gif" lazyload><br>习题2:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281600221.png" srcset="/img/loading.gif" lazyload></p><ul><li>补码<code>1000 0000</code>的原码是<code>1000 0000</code>,原码里表示-0,补码中表示-128,所以转成原码会产生溢出<br>习题3:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281608244.png" srcset="/img/loading.gif" lazyload></li></ul>
+            <p>习题1:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281522151.png" srcset="/img/loading.gif" lazyload><br>习题2:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281600221.png" srcset="/img/loading.gif" lazyload></p><ul><li>补码<code>1000 0000</code>的原码是<code>1000 0000</code>,原码里表示-0,补码中表示-128,所以转成原码会产生溢出<br>习题3:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281608244.png" srcset="/img/loading.gif" lazyload></li></ul>
           </div>
 
 <h1 id="第三章-存储系统"><a href="#第三章-存储系统" class="headerlink" title="第三章- 存储系统"></a>第三章- 存储系统</h1><ol>
-<li><p>存储器的层次结构<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252110753.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>存储器的层次结构<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252110753.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>外存中的程序要执行必须先调入主存</li>
 </ul>
@@ -622,7 +622,7 @@
 <li>存储速度<code>数据传输率 = 数据宽度 / 存储周期</code></li>
 </ul>
 </li>
-<li><p>半导体存储芯片（半导体存储器）组成结构：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252146694.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>半导体存储芯片（半导体存储器）组成结构：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252146694.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>图中是一种拓展方式，还有其他方式</li>
 <li><strong>读写控制器</strong>：决定读还是写操作</li>
@@ -641,7 +641,7 @@
 <li>存取速度快（Cache比主存快）、集成度低、功耗大、成本高</li>
 <li>行列地址同时发送（DRAM是先行后列）</li>
 <li>习题：<ol>
-<li>地址线<code>1024 = 2^10，10根</code>，<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109261341490.png" srcset="/img/loading.gif" lazyload></li>
+<li>地址线<code>1024 = 2^10，10根</code>，<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109261341490.png" srcset="/img/loading.gif" lazyload></li>
 </ol>
 </li>
 </ul>
@@ -652,17 +652,17 @@
 <li>存取速度慢（相对SRAM）、集成度高、功耗低、容量大、成本低</li>
 <li>分别送行列地址</li>
 <li>刷新（DRAM特有，单位是行）：<ul>
-<li>集中刷新<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252150447.png" srcset="/img/loading.gif" lazyload><ul>
+<li>集中刷新<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252150447.png" srcset="/img/loading.gif" lazyload><ul>
 <li>固定时间刷新、存在死区（一段时间内无法访问DRAM）</li>
 <li>但读写速度快，读写不会受到刷新影响（指读写的过程中被刷新）</li>
 </ul>
 </li>
-<li>分散刷新<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252153913.png" srcset="/img/loading.gif" lazyload><ul>
+<li>分散刷新<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252153913.png" srcset="/img/loading.gif" lazyload><ul>
 <li>分时刷新&#x2F;读写、没有死区（分时，宏观下没有死区）</li>
 <li>存取周期长、降低整机速度</li>
 </ul>
 </li>
-<li>异步刷新<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252155452.png" srcset="/img/loading.gif" lazyload><ul>
+<li>异步刷新<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252155452.png" srcset="/img/loading.gif" lazyload><ul>
 <li>相当于读写占用时间片更多的分散刷新</li>
 <li>减小了死区</li>
 </ul>
@@ -672,7 +672,7 @@
 </li>
 </ul>
 </li>
-<li>SRAM与DRAM对比<font color=blue>(理解!!!)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108252155045.png" srcset="/img/loading.gif" lazyload></li>
+<li>SRAM与DRAM对比<font color=blue>(理解!!!)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108252155045.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li><p>存储器的读写周期：</p>
@@ -681,7 +681,7 @@
 <li>RAM写周期：存储器启动到数据线上的数据全部可靠地写入存储器的时间</li>
 </ul>
 </li>
-<li><p>闪存（FLASH）和固态（SSD）<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252203460.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>闪存（FLASH）和固态（SSD）<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252203460.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 <li><p>主存与CPU连接（总线、容量扩展&#x2F;集成、片选）<font color=blue>(超重点！！！)</font>：</p>
 <ul>
@@ -690,19 +690,19 @@
 </ul>
 </li>
 <li>主存容量的扩展：<ul>
-<li>位扩展：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252208980.png" srcset="/img/loading.gif" lazyload><ul>
+<li>位扩展：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252208980.png" srcset="/img/loading.gif" lazyload><ul>
 <li>1B中每1b所在的存储芯片都不同</li>
 <li>并联、每次同时读取8个存储芯片的一位</li>
 <li>地址总线不变，数据总线n倍</li>
 </ul>
 </li>
-<li>字扩展：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252210192.png" srcset="/img/loading.gif" lazyload><ul>
+<li>字扩展：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252210192.png" srcset="/img/loading.gif" lazyload><ul>
 <li>8B中每1B所在的存储芯片都不同</li>
 <li>串联、每次读取1个存储芯片的一字节</li>
 <li>数据总线不变，地址总线n倍</li>
 </ul>
 </li>
-<li>字位同时扩展：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252213446.png" srcset="/img/loading.gif" lazyload><ul>
+<li>字位同时扩展：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252213446.png" srcset="/img/loading.gif" lazyload><ul>
 <li>8B中每1B所在的存储芯片都不同，同时1B中每1b所在的存储芯片都不同（图中只分成4位，每4b不同）</li>
 <li>串联+并联、每次从1组存储芯片中同时读取该组所有芯片的1位</li>
 </ul>
@@ -710,7 +710,7 @@
 </ul>
 </li>
 <li>片选：<ul>
-<li>线选法：几个存储器就几根地址线，哪根地址线“亮了”就选择哪个存储器<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252219377.png" srcset="/img/loading.gif" lazyload></li>
+<li>线选法：几个存储器就几根地址线，哪根地址线“亮了”就选择哪个存储器<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252219377.png" srcset="/img/loading.gif" lazyload></li>
 <li>（译码）片选法：加个译码器，如<code>01</code>是1号、<code>10</code>是2号，这样4个存储器只需要2根线而非4根线。</li>
 </ul>
 </li>
@@ -718,16 +718,16 @@
 </li>
 <li><p>双端口RAM和多模块存储器<font color=blue>(理解)</font>：</p>
 <ul>
-<li>双端口RAM：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109252227921.png" srcset="/img/loading.gif" lazyload></li>
+<li>双端口RAM：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109252227921.png" srcset="/img/loading.gif" lazyload></li>
 <li>多模块存储器：<ul>
-<li>普通存储器：每行为一个存储单元<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109260843889.png" srcset="/img/loading.gif" lazyload></li>
-<li>单体多字存储器：每个存储单元存储m个字，总线宽度也为m个字，一次并行读出m个字<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109260844200.png" srcset="/img/loading.gif" lazyload></li>
+<li>普通存储器：每行为一个存储单元<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109260843889.png" srcset="/img/loading.gif" lazyload></li>
+<li>单体多字存储器：每个存储单元存储m个字，总线宽度也为m个字，一次并行读出m个字<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109260844200.png" srcset="/img/loading.gif" lazyload></li>
 <li>多体并行存储器：每个模块都有相同的容量和存取速度，各个模块都有独立的读写控制电路、地址寄存器、数据寄存器<ul>
-<li>高位交叉编制：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109260848303.png" srcset="/img/loading.gif" lazyload><ul>
+<li>高位交叉编制：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109260848303.png" srcset="/img/loading.gif" lazyload><ul>
 <li>本质上仍是顺序存储器</li>
 </ul>
 </li>
-<li>低位交叉编址：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109260849092.png" srcset="/img/loading.gif" lazyload><ul>
+<li>低位交叉编址：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109260849092.png" srcset="/img/loading.gif" lazyload><ul>
 <li>可使用流水线方式</li>
 </ul>
 </li>
@@ -738,7 +738,7 @@
 </li>
 </ul>
 </li>
-<li><p>Cache和主存的映射<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108262155095.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>Cache和主存的映射<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108262155095.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>直接映射：每个主存块只能放在特定Cache块</li>
 <li>全相联映射：每个主存块可以放在任意Cache块</li>
@@ -764,7 +764,7 @@
 </ol>
 </li>
 <li><strong>页式虚拟存储器</strong>：以页（大小相等）为基本单位<ul>
-<li>地址变换过程<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109260922055.png" srcset="/img/loading.gif" lazyload></li>
+<li>地址变换过程<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109260922055.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 <ol>
 <li>根据虚拟地址中的虚页号加上页表基地址，去页表找到对应的物理页号</li>
@@ -772,7 +772,7 @@
 </ol>
 </li>
 <li><strong>段式虚拟存储器</strong>：以段（大小不等）为基本单位，其它基本与页式存储器类似<ul>
-<li>地址变换过程<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109260928375.png" srcset="/img/loading.gif" lazyload></li>
+<li>地址变换过程<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109260928375.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ul>
@@ -782,9 +782,9 @@
 <li>Cache行的完整构成：<code>Tag(标记)、V(有效)、替换信息、行号、组号、脏位、块内数据、块内地址</code></li>
 <li>影响Cache行构成的因素：<code>PA位数、Cache总行数、Cache块大小、Cache-主存映射方式、写策略、替换算法</code><ul>
 <li>Tag标记：受到PA（物理地址）位数、Cache块大小（块内地址位数）、Cache行数(组号&#x2F;行号)、映射方式的影响（4者唯一确定Tag标记位数）：<ul>
-<li>全相联：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109261746185.png" srcset="/img/loading.gif" lazyload></li>
-<li>直接相联（相当于1行就是1组）：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109261747945.png" srcset="/img/loading.gif" lazyload></li>
-<li>组相联：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109261746594.png" srcset="/img/loading.gif" lazyload></li>
+<li>全相联：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109261746185.png" srcset="/img/loading.gif" lazyload></li>
+<li>直接相联（相当于1行就是1组）：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109261747945.png" srcset="/img/loading.gif" lazyload></li>
+<li>组相联：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109261746594.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li>V有效位：一定是1个比特</li>
@@ -805,12 +805,12 @@
 </li>
 </ul>
 </li>
-<li>例题1<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109261803998.png" srcset="/img/loading.gif" lazyload></li>
+<li>例题1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109261803998.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ol>
 <div class="note note-success">
-            <p><strong>注意地址线数与地址位数的区别!!!</strong>,以下可能用”位”但实际是”线”.<br>习题1:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281622671.png" srcset="/img/loading.gif" lazyload></p><ul><li>注意是问的芯片引脚,不是存储器线路<br>习题2:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281653424.png" srcset="/img/loading.gif" lazyload></li><li>4行2列,每行<code>2k × 8位</code>,即每行地址数<code>2^11 = 11位</code>,<code>0B1F = 0000 1011 XXXX XXXX</code>舍弃后11位是<code>0000 1</code>即第二个(第一个是0)芯片,其地址是…<br>习题3:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281710371.png" srcset="/img/loading.gif" lazyload></li><li><code>4K = 12线</code>而不是<code>16K = 14线</code>,想想看增加了4倍的存储单元(存储单元的位数增加了2倍),需要额外2根片选线(相当于地址线,但因为多个芯片不是整体而是组合,实际上是控制线)来定位.<br>习题4:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281728612.png" srcset="/img/loading.gif" lazyload></li><li>注意不是芯片扩展,而是芯片内存储单元阵列!</li><li>DRAM的行列地址线共用,所以行列数尽可能接近,同时DRAM按行刷新,行要少.<br>习题5:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281737900.png" srcset="/img/loading.gif" lazyload></li><li>用流水线做!<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281739711.png" srcset="/img/loading.gif" lazyload><br>习题6:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281852689.png" srcset="/img/loading.gif" lazyload><br>习题7:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281917615.png" srcset="/img/loading.gif" lazyload><br>习题8:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281928083.png" srcset="/img/loading.gif" lazyload></li><li>主存地址32位,即物理地址32位,直接映射(行号10位),块内地址(4bit),所以<code>Tag = 32 - 10 - 4 = 18位</code>;回写(脏位1bit),有效位(1bit),一共20位,Cache索引位一共<code>20位 × 2^10 = 20K</code>,数据位4K*32&#x3D;128K</li></ul>
+            <p><strong>注意地址线数与地址位数的区别!!!</strong>,以下可能用”位”但实际是”线”.<br>习题1:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281622671.png" srcset="/img/loading.gif" lazyload></p><ul><li>注意是问的芯片引脚,不是存储器线路<br>习题2:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281653424.png" srcset="/img/loading.gif" lazyload></li><li>4行2列,每行<code>2k × 8位</code>,即每行地址数<code>2^11 = 11位</code>,<code>0B1F = 0000 1011 XXXX XXXX</code>舍弃后11位是<code>0000 1</code>即第二个(第一个是0)芯片,其地址是…<br>习题3:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281710371.png" srcset="/img/loading.gif" lazyload></li><li><code>4K = 12线</code>而不是<code>16K = 14线</code>,想想看增加了4倍的存储单元(存储单元的位数增加了2倍),需要额外2根片选线(相当于地址线,但因为多个芯片不是整体而是组合,实际上是控制线)来定位.<br>习题4:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281728612.png" srcset="/img/loading.gif" lazyload></li><li>注意不是芯片扩展,而是芯片内存储单元阵列!</li><li>DRAM的行列地址线共用,所以行列数尽可能接近,同时DRAM按行刷新,行要少.<br>习题5:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281737900.png" srcset="/img/loading.gif" lazyload></li><li>用流水线做!<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281739711.png" srcset="/img/loading.gif" lazyload><br>习题6:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281852689.png" srcset="/img/loading.gif" lazyload><br>习题7:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281917615.png" srcset="/img/loading.gif" lazyload><br>习题8:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281928083.png" srcset="/img/loading.gif" lazyload></li><li>主存地址32位,即物理地址32位,直接映射(行号10位),块内地址(4bit),所以<code>Tag = 32 - 10 - 4 = 18位</code>;回写(脏位1bit),有效位(1bit),一共20位,Cache索引位一共<code>20位 × 2^10 = 20K</code>,数据位4K*32&#x3D;128K</li></ul>
           </div>
 
 <h1 id="第四章-指令系统"><a href="#第四章-指令系统" class="headerlink" title="第四章 - 指令系统"></a>第四章 - 指令系统</h1><ol>
@@ -849,7 +849,7 @@
 <li>跳跃寻址：结果是修改当前指令的PC值</li>
 </ul>
 </li>
-<li>数据寻址（在指令中标记操作数的地址、操作码+地址（寻址特征+形式地址A））：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109262044462.png" srcset="/img/loading.gif" lazyload><ul>
+<li>数据寻址（在指令中标记操作数的地址、操作码+地址（寻址特征+形式地址A））：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109262044462.png" srcset="/img/loading.gif" lazyload><ul>
 <li>隐含寻址：不给出操作数地址，而是指令中隐含。<ul>
 <li>比如ALU中加法需要取一个数，另一个数隐含</li>
 <li>不访存</li>
@@ -893,11 +893,11 @@
 </li>
 </ul>
 </li>
-<li><p>CISC和RISC<font color=blue>(理解)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202108312201978.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>CISC和RISC<font color=blue>(理解)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202108312201978.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ol>
 <div class="note note-success">
-            <p>习题1:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109281952221.png" srcset="/img/loading.gif" lazyload></p>
+            <p>习题1:<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109281952221.png" srcset="/img/loading.gif" lazyload></p>
           </div>
 
 <h1 id="第五章-中央处理器"><a href="#第五章-中央处理器" class="headerlink" title="第五章 - 中央处理器"></a>第五章 - 中央处理器</h1><ol>
@@ -962,7 +962,7 @@
 <ul>
 <li>不包含控制部件！！！</li>
 <li>总线结构<ul>
-<li>单总线结构：所有寄存器的输入输出在同一条公共通路上<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109262152377.png" srcset="/img/loading.gif" lazyload></li>
+<li>单总线结构：所有寄存器的输入输出在同一条公共通路上<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109262152377.png" srcset="/img/loading.gif" lazyload></li>
 <li>三总线方式：数据总线、控制总线、数据总线</li>
 <li>专用数据通路：减少共享线路、专线专用</li>
 </ul>
@@ -982,7 +982,7 @@
 <li>CPU控制方式：同步（统一时钟）、异步（无时钟，各自按照自己的速度工作（有前置步骤的可以暂停或”预判“））、联合控制（同步异步结合，大部件同步，小部件异步）</li>
 </ul>
 </li>
-<li>微程序控制器（用软件设计硬件的技术）：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109270924588.png" srcset="/img/loading.gif" lazyload><ul>
+<li>微程序控制器（用软件设计硬件的技术）：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109270924588.png" srcset="/img/loading.gif" lazyload><ul>
 <li>术语：<ul>
 <li>微命令：控制部件向执行部件发出的控制信号，是构成控制序列的最小单位。<ul>
 <li>例如：打开&#x2F;关闭控制门电路的电位信号</li>
@@ -1016,8 +1016,8 @@
 </ul>
 </li>
 <li><strong>微指令的控制&#x2F;编码方式</strong>：如何对微指令的控制字段进行编码，以形成控制信号<ul>
-<li>直接编码法：不需要进行译码。其中每一位都代表一个微操作命令，例如控制字段中的某位为1，则代表着控制信号有效，0代表无效。<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109270936223.png" srcset="/img/loading.gif" lazyload></li>
-<li>字段直接编码法：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109270937176.png" srcset="/img/loading.gif" lazyload><ul>
+<li>直接编码法：不需要进行译码。其中每一位都代表一个微操作命令，例如控制字段中的某位为1，则代表着控制信号有效，0代表无效。<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109270936223.png" srcset="/img/loading.gif" lazyload></li>
+<li>字段直接编码法：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109270937176.png" srcset="/img/loading.gif" lazyload><ul>
 <li>如图微指令被分成三段，互斥的微命令(微操作)可以放在不同的段，相容的微命令则可以放在同一段内</li>
 <li><strong>每个字段都需要留出一个状态表示此字段无效</strong></li>
 </ul>
@@ -1030,13 +1030,13 @@
 <li>直接编码、字段直接编码、字段间接编码都属于这种</li>
 </ul>
 </li>
-<li>垂直型微指令：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109270951299.png" srcset="/img/loading.gif" lazyload><ul>
+<li>垂直型微指令：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109270951299.png" srcset="/img/loading.gif" lazyload><ul>
 <li>设置微操作码字段，其规定了微指令的功能，并不强调并行控制功能</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>硬布线控制与微程序控制对比<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109022143070.png" srcset="/img/loading.gif" lazyload><ul>
+<li>硬布线控制与微程序控制对比<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109022143070.png" srcset="/img/loading.gif" lazyload><ul>
 <li>微程序控制器的时序系统相对简单</li>
 </ul>
 </li>
@@ -1044,10 +1044,10 @@
 </li>
 </ul>
 </li>
-<li><p>指令流水线<font color=blue>(重点！！！)</font>：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109270956773.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>指令流水线<font color=blue>(重点！！！)</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109270956773.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>一条指令的执行一般分为：取指、分析、执行。也可以分成其它步骤，但因保证其并行度</li>
-<li>流水线需要装入时间和排空时间<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109270959379.png" srcset="/img/loading.gif" lazyload></li>
+<li>流水线需要装入时间和排空时间<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109270959379.png" srcset="/img/loading.gif" lazyload></li>
 <li>流水线的分类：<ul>
 <li>流水级别分类：部件功能级流水线（CPU内的各部件流水线）、处理机级流水线（子进程流水线）、处理机间流水线（分布式、每个处理机专门完成一种任务）</li>
 <li>功能分类：单功能流水线，多功能流水线</li>
@@ -1081,16 +1081,16 @@
 </li>
 <li><p>流水线性能指标<font color=blue>(理解)</font>：</p>
 <ul>
-<li>吞吐率：<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109271027567.png" srcset="/img/loading.gif" lazyload></li>
+<li>吞吐率：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109271027567.png" srcset="/img/loading.gif" lazyload></li>
 <li>流水线的加速比：不使用流水线与使用流水线的时间比值</li>
-<li>流水线效率：有效时空面积与总时空面积比值<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109271030344.png" srcset="/img/loading.gif" lazyload></li>
+<li>流水线效率：有效时空面积与总时空面积比值<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109271030344.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 <li><p>流水线多发技术（假定指令周期分为四个阶段：<code>取指FI、译码ID、执行EX、回写WR</code>）<font color=blue>(了解)</font>：</p>
 <ul>
-<li>超标量技术<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109271033390.png" srcset="/img/loading.gif" lazyload></li>
-<li>超流水线技术<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109271033382.png" srcset="/img/loading.gif" lazyload></li>
-<li>超长指令字技术<img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/202109271034924.png" srcset="/img/loading.gif" lazyload></li>
+<li>超标量技术<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109271033390.png" srcset="/img/loading.gif" lazyload></li>
+<li>超流水线技术<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109271033382.png" srcset="/img/loading.gif" lazyload></li>
+<li>超长指令字技术<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202109271034924.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ol>

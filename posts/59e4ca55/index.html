@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="介绍[1]银行家算法（Banker’s Algorithm）是一个避免死锁（Deadlock）的著名算法，是由艾兹格·迪杰斯特拉在1965年为T.H.E系统设计的一种避免死锁产生的算法。它以银行借贷系统的分配策略为基础，判断并保证系统的安全运行。   背景[1]在银行中，客户申请贷款的数量是有限的，每个客户在第一次申请贷款时要声明完成该项目所需的最大资金量，在满足所有贷款要求时，客户应及时归还。银">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213173653.jpg">
+<meta property="og:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20201213173653.jpg">
 <meta property="article:published_time" content="2020-12-13T09:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-25T04:33:49.133Z">
+<meta property="article:modified_time" content="2022-07-23T22:08:54.950Z">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213173653.jpg">
+<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20201213173653.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -237,7 +237,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213173653.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://img.chen0495.top/Chen0495/newpicgo/img/20201213173653.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -328,7 +328,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2020年12月25日 下午
+                    本文最后更新于：2022年7月24日 早上
                   
                 
               </p>
@@ -338,13 +338,13 @@
                 
                 <h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍[1]"></a>介绍<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[WiKi: 银行家算法](https://zh.wikipedia.org/wiki/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95)">[1]</span></a></sup></h2><p>银行家算法（Banker’s Algorithm）是一个避免死锁（Deadlock）的著名算法，是由艾兹格·迪杰斯特拉在1965年为T.H.E系统设计的一种避免死锁产生的算法。<br>它以银行借贷系统的分配策略为基础，判断并保证系统的安全运行。  </p>
 <h2 id="背景-1"><a href="#背景-1" class="headerlink" title="背景[1]"></a>背景<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[WiKi: 银行家算法](https://zh.wikipedia.org/wiki/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95)">[1]</span></a></sup></h2><p>在银行中，客户申请贷款的数量是有限的，每个客户在第一次申请贷款时要声明完成该项目所需的最大资金量，在满足所有贷款要求时，客户应及时归还。<br>银行家在客户申请的贷款数量不超过自己拥有的最大值时，都应尽量满足客户的需要。在这样的描述中，银行家就好比操作系统，资金就是资源，客户就相当于要申请资源的进程。</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>对于如图的资源分配表:<br>Allocation(已经分配出去的资源), MAX(最多需要多少资源), Available(空闲资源)<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213170622.png" srcset="/img/loading.gif" lazyload alt="图">  </p>
-<p>首先计算出Need (Need &#x3D; MAX - Allocation), 即<strong>还需要多少资源</strong>:<br>    <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213171601.png" srcset="/img/loading.gif" lazyload alt="Need">  </p>
-<p>然后加一个全为False的字段(FINISH, 表示当前进程是否满足, <strong>也可以不加,记着就行</strong>):<br>    <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213171815.png" srcset="/img/loading.gif" lazyload alt="False"></p>
-<p>接下来找到 Need 比 Available 小的(即空闲资源可以满足当前进程所需):<br>    <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213172528.png" srcset="/img/loading.gif" lazyload alt="Find">  </p>
-<p>P2进程的需求能够得到满足, 所以现在满足它, P2已经完成了, 然后就要回收他的资源:<br>    <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213172556.png" srcset="/img/loading.gif" lazyload alt="Recycle"><br>    <font color=green><strong>注意加的是Allocation的值,即回收的是已经分配给该进程的那部分资源, 而不是进程所需要的(Need)</strong></font></p>
-<p>P2回收完成, 标记Finish:<br>    <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213172612.png" srcset="/img/loading.gif" lazyload alt="Finish">  </p>
-<p>以此类推直到Finish全为True即为安全状态(进程完成的顺序即为<strong>安全序列</strong>):<br>    <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213172622.png" srcset="/img/loading.gif" lazyload alt="True">  </p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>对于如图的资源分配表:<br>Allocation(已经分配出去的资源), MAX(最多需要多少资源), Available(空闲资源)<br><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213170622.png" srcset="/img/loading.gif" lazyload alt="图">  </p>
+<p>首先计算出Need (Need &#x3D; MAX - Allocation), 即<strong>还需要多少资源</strong>:<br>    <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213171601.png" srcset="/img/loading.gif" lazyload alt="Need">  </p>
+<p>然后加一个全为False的字段(FINISH, 表示当前进程是否满足, <strong>也可以不加,记着就行</strong>):<br>    <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213171815.png" srcset="/img/loading.gif" lazyload alt="False"></p>
+<p>接下来找到 Need 比 Available 小的(即空闲资源可以满足当前进程所需):<br>    <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213172528.png" srcset="/img/loading.gif" lazyload alt="Find">  </p>
+<p>P2进程的需求能够得到满足, 所以现在满足它, P2已经完成了, 然后就要回收他的资源:<br>    <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213172556.png" srcset="/img/loading.gif" lazyload alt="Recycle"><br>    <font color=green><strong>注意加的是Allocation的值,即回收的是已经分配给该进程的那部分资源, 而不是进程所需要的(Need)</strong></font></p>
+<p>P2回收完成, 标记Finish:<br>    <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213172612.png" srcset="/img/loading.gif" lazyload alt="Finish">  </p>
+<p>以此类推直到Finish全为True即为安全状态(进程完成的顺序即为<strong>安全序列</strong>):<br>    <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213172622.png" srcset="/img/loading.gif" lazyload alt="True">  </p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95">WiKi: 银行家算法</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
