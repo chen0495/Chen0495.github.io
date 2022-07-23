@@ -1,0 +1,1462 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Chen0495">
+  <meta name="keywords" content="Python,C/C++,计算机网络">
+  
+    <meta name="description" content="习题ps是私货, 可看可不看… 第一章 - 引论   名词解释 操作系统: 操作系统是管理和控制计算机系统内各种硬件和软件资源,有效地组织多道程序运行的系统软件（或程序集合）,是用户与计算机之间的接口。管控软硬件,组织多道运行,人机接口   管态: 执行操作系统程序时,处理机所处的状态.   目态: 执行普通用户程序时,处理机所处的状态.   多道程序设计: 在该设计技术下, 内存中能够同时存放多">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统复习习题">
+<meta property="og:url" content="https://chen0495.github.io/posts/747adedd/index.html">
+<meta property="og:site_name" content="Chen0495的空间站">
+<meta property="og:description" content="习题ps是私货, 可看可不看… 第一章 - 引论   名词解释 操作系统: 操作系统是管理和控制计算机系统内各种硬件和软件资源,有效地组织多道程序运行的系统软件（或程序集合）,是用户与计算机之间的接口。管控软硬件,组织多道运行,人机接口   管态: 执行操作系统程序时,处理机所处的状态.   目态: 执行普通用户程序时,处理机所处的状态.   多道程序设计: 在该设计技术下, 内存中能够同时存放多">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201206130155.jpg">
+<meta property="article:published_time" content="2020-12-10T10:44:06.000Z">
+<meta property="article:modified_time" content="2020-12-31T08:48:22.827Z">
+<meta property="article:author" content="Chen0495">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201206130155.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>操作系统复习习题 - Chen0495的空间站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chen0495.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"4cfdf1bbbfc14c67b6054b14a9f17c34","google":null,"gtag":"G-RETB4NG5L9","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-RETB4NG5L9', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RETB4NG5L9');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Chen0495</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201206130155.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="操作系统复习习题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-12-10 18:44" pubdate>
+          2020年12月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          24k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          203 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">操作系统复习习题</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2020年12月31日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><p>ps是私货, 可看可不看…</p>
+<h2 id="第一章-引论"><a href="#第一章-引论" class="headerlink" title="第一章 - 引论"></a>第一章 - 引论</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213160322.png" srcset="/img/loading.gif" lazyload><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213160340.png" srcset="/img/loading.gif" lazyload>  </p>
+<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><font color=green>操作系统</font>: 操作系统是管理和控制计算机系统内各种硬件和软件资源,有效地组织多道程序运行的系统软件（或程序集合）,是用户与计算机之间的接口。<br><font color=blue>管控软硬件,组织多道运行,人机接口</font>  </li>
+<li><font color=green>管态</font>: <strong>执行操作系统程序时</strong>,处理机所处的状态.  </li>
+<li><font color=green>目态</font>: <strong>执行普通用户程序时</strong>,处理机所处的状态.  </li>
+<li><font color=green>多道程序设计</font>: 在该设计技术下, <strong>内存</strong>中能够<strong>同时存放多道程序</strong>, 在管理程序的控制下<strong>交替执行</strong>. 这些作业共享CPU和系统其他资源.<br><font color=blue>多道、交替、共享</font>  </li>
+<li><font color=green>并发</font>: 是指两个或多个活动在<strong>同一给定的时间间隔</strong>中进行。它是宏观上的概念。  <ul>
+<li><em>ps: 非同时刻运行.</em></li>
+</ul>
+</li>
+<li><font color=green>并行</font>: 是指两个或多个活动在<strong>同一时刻同时执行</strong>的情况。  </li>
+<li><font color=green>吞吐量</font>: 在一段给定的时间内，计算机所能完成的总工作量。  </li>
+<li><font color=green>分时</font>: 就是对时间的共享。在分时系统中，分时主要是指若干并发程序对CPU时间的共享。  </li>
+<li><font color=green>实时</font>: 表示“及时”或“既时”。  <ul>
+<li><em>ps: 不重要…</em></li>
+</ul>
+</li>
+<li><font color=green>系统调用</font>: 是用户在程序中能以<strong>函数调用</strong>形式调用的、由操作系统提供的子功能的集合。每一个子功能称作一条系统调用命令。它是操作系统对外的接口，是用户级程序取得操作系统服务的唯一途径。  <ul>
+<li><em>ps: 系统提供功能让你间接控制计算机,而不是不通过调用直接控制,因为你可能搞崩系统.</em></li>
+</ul>
+</li>
+<li><font color=green>特权指令</font>: 指令系统中的一些指令，如启动设备指令、设置时钟指令、中断屏蔽指令和清内存指令，这些指令<strong>只能由操作系统使用</strong>。  <ul>
+<li><em>ps: 只能由操作系统使用的指令叫特权指令, 这是操作系统的特权</em></li>
+</ul>
+</li>
+<li><font color=green>命令解释程序</font>: 其主要功能是<strong>接收用户输入的命令</strong>，然后<strong>予以解释</strong>并且执行。<br><font color=blue>接收输入，解释执行</font>  </li>
+<li><font color=green>脱机I&#x2F;O</font>: 是指输入&#x2F;输出工作不受主机直接控制，而由卫星机专门负责完成I&#x2F;O，主机专门完成快速计算任务，从而二者可以并行操作。  <img src='https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201210105314.jpg' style="width:200p;transform:rotate(270deg)"/></li>
+<li><font color=green>联机I&#x2F;O</font>: 是指作业的输入、调入内存及结果输出都在<strong>cpu直接控制</strong>下进行。  </li>
+<li><font color=green>资源共享</font>: 是指计算机系统中的<strong>资源被多个进程所占用</strong>。例如，多个进程同时占用内存，从而对内存共享；它们并发执行时对cpu进行共享；各个进程在执行过程中提出对文件的读写请求，从而对磁盘进行共享等等。</li>
+</ol>
+<h3 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><p><font color=green>Q: 什么是操作系统？它的主要功能是什么？</font><br><font color=red>A: 操作系统是控制和管理计算机系统内各种硬件和软件资源，有效地组织多道程序运行的系统软件（或程序集合），是用户与计算机之间的接口。<br>操作系统的主要功能有5个方面，即<u>存储管理、处理机管理、设备管理、文件管理和用户接口。</u> </font><br> <font color=blue>管控软硬件，组织多道，人机接口，四管理一接口</font>  </p>
+</li>
+<li><p><font color=green>Q: 推动操作系统形成和发展的主要动力是什么？</font><br><font color=red>A: 推动操作系统发展的因素很多，主要可归结为两大方面：硬件技术更新和应用需求扩大伴随计算机器件的更新换代和计算机体系结构的发展，<br>促使操作系统的性能和结构有了显著发展。 应用需求促进了计算机技术的发展，也促进了操作系统的不断更新升级。 </font><br><font color=blue>硬件发展+用户需求</font>  </p>
+</li>
+<li><p><font color=green>Q: 操作系统的基本特征是什么？</font><br><font color=red>A: 操作系统的基本特征是<strong>并发、共享和不确定</strong>。并发性是指两个或多个活动在同一给定的时间间隔中进行；共享是指计算机系统中的资源被多个进程所共用；不确定性是指系统中各种事件发生顺序的不可预测性。 </font>   </p>
+</li>
+<li><p><font color=green>Q: 多道程序和多重处理有何区别？</font><br><font color=red>A: 多道程序是作业之间自动调度执行、共享系统资源，并不是真正的同时执行多个作业；而多重处理系统配置多个cpu，能真正同时执行多道程序。<br>要有效使用多重处理，必须采用多道程序设计技术，而多道程序设计原则上不一定要求多重处理系统的支持。 </font>  </p>
+<ul>
+<li><em>ps:有没有多个cpu的区别,决定了能不能真正同时执行程序</em></li>
+</ul>
+</li>
+<li><p><font color=green>Q: 试说明多道程序设计和多任务系统之间的关系</font><br><font color=red>A: 多道程序设计是利用外设与cpu能够并行处理的特性，在主存同时存放多个程序，使之在系统中交叉地使用cpu，从而提高系统资源的利用率。<br>而多任务系统主要指多进程交叉使用cpu。多道程序隐含了多任务处理，但多任务系统中不一定有多道程序。因为一个程序也可以采用多任务处理机制。 </font>  </p>
+<ul>
+<li><em>ps: 不如说多任务处理包含多道程序设计, 多道程序设计限制更多(主存存放,交叉使用), 而多任务则只着重强调计算机同时运行多个程序的能力. 可将多道看成一类特殊的多任务.</em></li>
+</ul>
+</li>
+<li><p><font color=green>Q: 不同类型的操作系统提供不同的功能。假定有如下的应用环境，请你为它们选择适合的操作系统。<br>（1）飞机的导航，（2）办公自动化系统，（3）航空订票系统，（4）复杂的科学计算，（5）图书检索系统  </font><br> <font color=red>（1）飞机的导航系统，应采用硬实时操作系统<br>（2）办公自动化系统，应采用分时操作系统<br>（3）航空订票系统，应采用软实时操作系统<br>（4）复杂的科学计算，应采用批处理系统<br>（5）图书检索系统，应采用软实时操作系统  </p>
+ </font> 
+</li>
+<li><p><font color=green>Q: 什么是分时系统，它有什么特征？</font><br><font color=red>A: 分时系统：把处理机的运行时间分成很短的时间片，按时间片轮转的方式，把处理机分配给各进程使用。其主要特征是：<u>交互性、多用户同时性、独立性。</u> </font><br><font color=blue>交互性，多用户同时性，独立性</font>  </p>
+</li>
+<li><p><font color=green>Q: 什么是实时系统？它有什么特征？</font><br><font color=red>A: 实时系统：在被控对象允许<strong>时间范围内</strong>做出响应 。其主要特征是：<u>对实时信息分析处理速度要比进入系统快、要求安全可靠、资源利用率低。</u> </font><br><font color=blue>速度快，资源少，安全可靠</font>  </p>
+</li>
+<li><p><font color=green>Q: 什么是批处理系统，它有什么特征？</font><br><font color=red>A: 批处理系统：操作员把用户提交的作业分类，把一批作业编成一个作业执行序列，由专门编制的监督程序自动依次处理。其主要特征是：<u>用户脱机使用计算机、成批处理、多道程序运行。</u></font><br><font color=blue>脱机，批处理，多道运行</font>  </p>
+</li>
+<li><p><font color=green>Q: 什么是处理机的核心态和用户态？为什么要设置这两种不同的状态？</font><br><font color=red>A: 当执行操作系统程序时，处理机处于核心态。它有较高的特权，可以执行所有的指令，包括一般用户程序中不能使用的特权指令，从而能对所有寄存器和内存进行访问，启动i&#x2F;o操作等。<br>用户程序是在用户态下执行，它的权限较低，只能执行指令集中非特权指令。（2分）<br>设置这两种不同状态的目的是为了保护操作系统程序（特别是其内核部分），防止受到用户程序的损害。 </p>
+</font> 
+</li>
+<li><p><font color=green>Q: 系统调用与过程调用在功能及实现上有什么相同点和不同点？</font><br><font color=red>A: 相同点：两者都由程序代码构成，可直接用高级程序设计语言（如C,C++和Perl语言）来编制；使用方式相同——以函数调用的形式出现，调用时传送参数。 </font><br><font color=red>不同点：①代码层次不同，过程调用不属于操作系统的一部分，而系统调用是操作系统的一部分。②运行状态不同。过程调用只能在用户态下运行，不能进入核心态，而系统调用是在核心态下运行的。③进入方式不同。过程调用在用户程序中调用，并直接在用户空间内执行；而系统调用可以在用户程序中调用，但是在用户程序中执行到系统调用时，会产生异常事件。实现处理机状态从用户态到核心态的转变，从而进入操作系统核心空间去执行系统调用的代码。 </font>   </p>
+</li>
+<li><p><font color=green>Q: 试说明特权指令和系统调用之间的区别与联系。</font><br><font color=red>A: 特权指令是一类只能在核心态下执行的机器指令。而系统调用不是机器指令，它往往以函数调用的形式出现，实现操作系统提供的子功能，它是操作系统与用户的编程接口 。在用户程序中可以使用系统调用来获得操作系统服务，在系统调用代码中可以使用特权指令</font></p>
+</li>
+</ol>
+<h2 id="第二章-进程和线程"><a href="#第二章-进程和线程" class="headerlink" title="第二章 - 进程和线程"></a>第二章 - 进程和线程</h2><h3 id="名词解释-1"><a href="#名词解释-1" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><font color=green>顺序性</font> :是指顺序程序所规定的每个动作都在上个动作结束后才开始的特性。</li>
+</ol>
+<ul>
+<li><em>ps: 即一个动作完成后下个动作才能开始</em></li>
+</ul>
+<ol start="2">
+<li><font color=green>封闭性</font> :是指只有程序本身的动作才能改变程序的运行环境. </li>
+<li><font color=green>可再现性</font> :是指程序的执行结果与程序运行的速度无关。</li>
+</ol>
+<ul>
+<li><em>ps: 程序在下次运行时一般不会改变结果</em></li>
+</ul>
+<ol start="4">
+<li><p><font color=green>进程</font> :程序在并发环境中的执行过程。</p>
+</li>
+<li><p><font color=green>互斥</font> :在逻辑上本来<strong>完全独立</strong>的进程，由于<strong>竞争</strong>同一个资源而产生的相互制约的关系。</p>
+</li>
+<li><p><font color=green>同步</font> :是指进程间共同完成一项任务时直接发生相互作用的关系。也就是说，这些具有伙伴关系的进程在执行次序上必须遵循确定的规律。</p>
+<p>​	- <em>ps: 多个可能不同的进程完成同一个任务, 这些进程相互制约, 如要进行B需要先完成A</em></p>
+</li>
+<li><p><font color=green>临界资源</font> :<strong>一次仅允许一个进程使用</strong>的资源。</p>
+</li>
+<li><p><font color=green>临界区</font> :<strong>在每个进程中访问临界资源的那段程序。</strong></p>
+</li>
+<li><p><font color=green>线程</font> :<strong>线程是进程中实施调度和分派的基本单位。</strong></p>
+</li>
+<li><p><font color=green>管程</font> :管程是一种<u>高级同步机制</u>，一个管程定义一个数据结构和能为并发进程在其上执行的一组操作，这组操作能使进程同步和改变管程中的数据。</p>
+</li>
+</ol>
+<ul>
+<li><em>ps: 可视为管理<u>进程同步</u>具体执行步骤的程序</em></li>
+</ul>
+<ol start="11">
+<li><font color=green>进程控制块</font> :进程控制块是进程存在的唯一标识，它保存了系统管理和控制进程所必须的信息，是进程动态特性的集中表现。</li>
+</ol>
+<ul>
+<li><em>ps: 每个进程需要有个控制块来标记其地址、状态等信息</em></li>
+</ul>
+<ol start="12">
+<li><font color=green>原语</font> :指操作系统中实现一些具有特定功能的程序段，这些程序段的执行过程是<strong>不可分割</strong>的，即其执行过程<strong>不可中断</strong>。</li>
+</ol>
+<ul>
+<li><em>ps: 某些语句被系统所定义, 相当于关键词&#x2F;短语, 执行过程不可打断</em></li>
+</ul>
+<ol start="13">
+<li><font color=green>就绪态</font> :<strong>进程已经获得了除cpu之外的全部资源</strong>，等待系统分配cpu，一旦获得cpu，进程就可以变为运行态。</li>
+</ol>
+<ul>
+<li><em>ps: 就差CPU啦!!!</em></li>
+</ul>
+<ol start="14">
+<li><p><font color=green>运行态</font> :<strong>正在cpu上执行的进程所处的状态。</strong>在单cpu系统中，任何时候最多只能有一个进程处于运行状态。</p>
+</li>
+<li><p><font color=green>阻塞态</font> :又称<u>等待态</u>，指<u>正在运行的进程因等待某个条件发生而不能运行时所处的状态。</u>处于阻塞态的进程在逻辑上是不能运行的，即使cpu空闲，它也不能占用cpu。</p>
+<ul>
+<li><em>ps: 某进程A正在运行, 但现在A需要B的结果来继续运行, 而B一时半会还轮不到运行, 为了效率, 此时应该中断A的运行, 直到B运行之后才继续A.</em></li>
+</ul>
+</li>
+<li><p><font color=green>进程通信</font> :是指<strong>进程间的信息交换</strong>。</p>
+</li>
+<li><p><font color=green>同步机制</font> :同步机构是<u>负责处理进程之间制约关系</u>的机制，即操作系统中负责解决进程之间协调工作的同步关系（<strong>直接制约关系</strong>），以及共享临界资源的互斥关系（<strong>间接制约关系</strong>）的执行机构。</p>
+<ul>
+<li><em>ps: 不仅管理同步, 还管理互斥, 管程是一种同步机制的实现</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="简答题-1"><a href="#简答题-1" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><p><font color=red>Q: 在操作系统中为什么要引入进程概念？</font></p>
+<p><font color=green>A: 由于多道程序并发执行时共享系统资源，共同决定这些资源的状态，因此系统中各程序在执行过程中就出现了相互制约的新关系，程序的执行出现“走走停停”的新状态。用程序这个静态的概念已不能如实反映程序并发执行过程中的这些特征。为此，人们引入了“进程（Process）”这一概念来描述程序动态执行过程的性质。 </font></p>
+<p><font color=green>进程和程序是两个完全不同的概念。然而，进程与程序之间存在密切关系，进程的功能是通过程序的运行得以实现的，进程活动的主体是程序。进程不能脱离开具体程序而独立存在。 </font></p>
+</li>
+<li><p><font color=red>Q: 有人说，一个进程是由伪处理机执行的一个程序，这话对吗？为什么？</font></p>
+<p><font color=green>A: 对。 </font></p>
+<p><font color=green>因为伪处理机的概念只有在执行时才存在，它表示多个进程在单处理机上并发执行的一个调度单位。因此，尽管进程是动态概念，是程序的执行过程，但是，在多个进程并行执行时，仍然只有一个进程占据处理机执行，而其他并发进程则处于就绪或等待状态。这些并发进程就相当于由伪处理机执行的程序。</font></p>
+</li>
+<li><p><font color=red>Q: 试比较进程和程序的区别</font></p>
+<p><font color=green>A: 1. 进程是一个动态的概念，而程序是一个静态的概念，程序是指令的有序集合，无执行含义，进程则强调执行的过程。 </font></p>
+<p><font color=green>2. 进程具有并行特征（独立性、异步性），程序则没有。 </font></p>
+<p><font color=green>3. 不同的进程可以包含同一个程序，同一程序在执行中也可以产生多个进程</font></p>
+</li>
+<li><p><font color=red>Q: 进程的基本状态有哪些？试描绘进程状态转换图</font></p>
+<p><font color=green>A: 进程至少有三种基本状态：运行状态、就绪状态和阻塞状态（或等待状态） 。进程状态转换如下图</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201231164747.jpg" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 并发进程间的制约有哪两种？引起制约的原因是什么？</font></p>
+<p><font color=green>A: 并发进程所受的制约有两种：直接制约和间接制约。 </font></p>
+<p><font color=green>直接制约是由并发进程相互共享对方的私有资源所引起的；间接制约是由竞争共有资源而引起的。</font></p>
+</li>
+<li><p><font color=red>Q: 什么是进程间的互斥？什么是进程间同步？</font></p>
+<p><font color=green>A: 进程间的互斥是指：一组并发进程中的一个或多个程序段，因共享某一共有资源而导致它们必须以一个不许交叉执行的单位执行，即不允许两个以上的共享该资源的并发进程同时进入临界区。 </font></p>
+<p><font color=green>进程间的同步是指：异步环境下的一组并发进程因直接制约相互发送消息而进行相互合作、相互等待，是各进程按一定的速度执行的过程。</font></p>
+</li>
+<li><p><font color=red>Q: 什么是临界区和临界资源？进程进入临界区的调度原则是什么？</font></p>
+<p><font color=green>A: 临界资源——一次仅允许一个进程使用的资源</font></p>
+<p><font color=green>临界区——在每个进程中访问临界资源的那段程序</font></p>
+<p><font color=green>一个进程进入临界区的调度原则是：</font></p>
+<p><font color=green>① 如果有若干进程要求进入空闲的临界区，一次仅允许一个进程进入</font></p>
+<p><font color=green>② 任何时候，处于临界区内的进程不可多于一个。如已有进程进入自己的临界区，则其他所有试图进入临界区的进程必须等待</font></p>
+<p><font color=green>③ 进入临界区的进程要在有限的时间内退出，以便让其他进程能及时进入自己的临界区</font></p>
+<p><font color=green>④ 如果进程不能进入自己的临界区，则应让出cpu，避免进程出现“忙等”现象.</font></p>
+</li>
+<li><p><font color=red>Q: 简述信号量的定义和作用。P，V操作原语是如何定义的？</font></p>
+<p><font color=green>A: 信号量一般是由两个成员组成的数据结构，其中一个成员是整型变量，表示该信号量的值，它与相应资源的使用情况有关；另一个是指向PCB的指针。当多个进程都等待同一信号量时，它们就排成一个队列，由信号量的指针项指出该队列的队首。（2分）</font></p>
+<p><font color=green>信号量通常可以简单反映出相应资源的使用情况，它与P、V操作原语一起使用可实现进程的同步和互斥。（1分）</font></p>
+<p>P,V操作原语有如下定义: </p>
+<p>P(S)顺序执行下述两个动作（1分）：</p>
+<p>⑴信号量的值减1，即S&#x3D;S-1;</p>
+<p>⑵如果S&gt;&#x3D;0,则该进程继续执行。</p>
+<p>如果S&lt;0,则把该进程的状态置为阻塞态，把相应的PCB连入该信号量队列的末尾，并放弃处理机，进行等待（直到其他进程在S上执行V操作，把它释放出来为止）。</p>
+<p>V(S)顺序执行下述两个动作（1分）：</p>
+<p>⑴S值加1，即S&#x3D;S+1;</p>
+<p>⑵如果S&gt;0,则该进程继续运行；</p>
+<p>如果S&lt;&#x3D;0,则释放信号量队列上的第一个PCB所对应的进程（把阻塞态改为就绪态）,执行V操作的进程继续运行。</p>
+</li>
+<li><p><font color=red>Q: 什么是线程？它与进程有什么关系？</font></p>
+<p><font color=green>A: 线程是进程中实施调度和分派的基本单位。 </font></p>
+<p><font color=green>线程和进程之间有如下关系： </font></p>
+<p><font color=green>① 一个进程至少有一个线程；而一个线程只能在一个进程的地址空间内活动。</font></p>
+<p><font color=green>② 资源分配给进程，同一进程的所有线程共享该进程的所有资源。</font></p>
+<p><font color=green>③ 处理机分给线程，即真正在处理机上运行的是线程。</font></p>
+<p><font color=green>④ 线程在执行过程中，需要协作同步。不同进程的线程间要利用消息通信的办法实现同步。</font></p>
+</li>
+<li><p><font color=red>Q: 什么是管程？它由哪几部分组成？有什么基本特性?</font></p>
+<p><font color=green>A: 一个管程定义了一个数据结构和能为并发进程在其上执行的一组操作，这组操作能同步进程和改变管程中的数据。 </font></p>
+<p><font color=green>一个管程由四个部分组成，它们是管程名称、局部与管程的共享数据的说明、对数据进行操作的一组过程和对该共享数据赋初值的语句。 </font></p>
+<p><font color=green>管程具有以下特性： </font></p>
+<p><font color=green>① 管程内部的局部数据变量只能被管程内定义的过程所访问，不能被管程外面声明的过程直接访问</font></p>
+<p><font color=green>② 进程要想进入管程，必须调用管程内的某个过程</font></p>
+<p><font color=green>③ 一次只能有一个进程在管程内执行，而其余调用该管程的进程都被挂起，等待该管程成为可用的。就是说，管程自身能有效地实现互斥。</font></p>
+</li>
+</ol>
+<h3 id="综合题"><a href="#综合题" class="headerlink" title="综合题"></a>综合题</h3><p><font color="purple" size="6">伪代码缩进不好控制, 就这样吧…</font></p>
+<ol>
+<li><p><font color=red>Q: 如下图所示的工作模型中，有三个进程p0,p1,p2和三个缓冲区B0,B1,B2. 进程之间借助于相邻缓冲区进行消息传递：每个进程每次从缓冲区中取一条消息，经加工处理后送入另一个缓冲区中，三个缓冲区分别可存放3,2,2个消息。初始时，仅缓冲区0有一个消息。试用P、V操作写出三个进程之间的同步及互斥流程</font><br><font color=green>A: 这是一个生产者&#x2F;消费者问题，而且每个进程既是生产者，也是消费者。(2’) 为此，应设置6个信号量：B0S1,B0S2,B1S1,B1S2,B2S1,B2S2,分别代表B0,B1,B2中是否有空缓冲和有数据。</font><br><font color=green>B0S1,B0S2,B1S1,B1S2,B2S2:semaphore;</font><br><font color=green>B0S1&#x3D;2;B0S2&#x3D;1;B1S1&#x3D;2;B1S2&#x3D;0;B2S1&#x3D;2;B2S2&#x3D;0;  (2’)</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs text">  Cobegin  (`6’=2’*3)  <br>P0						P1						P2  <br>begin					begin					begin  <br>	P(B0S2)					P(B1S2)					P(B2S2)  <br>	从B0取一个数据			从B1取一个数据			从B2取一个数据  <br>	V(B0S2)					V(B1S1)					V(B2S1)   <br>	加工					   加工					 加工  <br>	P(B1S1)					P(B2S1)					P(B0S1)  <br>	将加工结果送B1			将加工结果送B2			将加工结果送B0  <br>	V(B1S2)					V(B2S2)					V(B0S2)  <br>end						end						end  <br>coend  <br></code></pre></td></tr></table></figure>
+<ul>
+<li><em>ps: 缓存区依次为 3,2,2 且第一个(B0)已经有一个消息, 故缓冲区标记依次为 2,2,2 ;而对于数据标记, 只有B0有一个数据, 故为 1,0,0</em></li>
+<li><em>ps: B_i为第i个缓冲区, S_1为缓冲区大小, S_2为数据个数</em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 设用三个队列管理缓冲区池的使用情况，分别为空白缓冲队列em，输入缓冲队列in，以及输出缓冲队列out。过程add_buf(type,numb)和take_buf(type,numb)分别用来把缓冲区numb插入type队列和从type队列中取出缓冲区numb。试描述进程从任一缓冲队列中得到一个缓冲区的过程get_buf(type,numb)和释放一个缓冲区numb进入缓冲队列的过程put_buf(type,numb)。</font><br><font color=green>A: 假定用信号量s代表任一队列的可用缓冲区个数。假定三个队列的初值分别为n1,n2,n3。对任一队列的操作必须互斥。因此再引入一个互斥使用任一队列的信号量mutex，其初值为1。这里type代表队列的类型，它的取值为输入、输出和空白。</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">  get_buf(type,numb)   (`3’)  <br>begin  <br>	p(s)  <br>	p(mutex)  <br>	numb=take_buf(type,numb)  <br>	v(mutex)  <br>end  <br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">  put_buf(type,numb)   (`3’)  <br>begin  <br>	p(mutex)  <br>	add_buf(type,numb)  <br>	v(mutex)  <br>	v(s)  <br>  end<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><font color=red>Q: 设有一个售票厅，可容纳100人购票。如果厅内不足100人则允许进入，进入后购票，购票后退出。如果厅内已有100人，则在厅外等候。试问：购票者之间是同步还是互斥？用P、V操作表达购票者的工作过程。</font><br><font color=green>A: 购票者之间是互斥关系。(2’). 一个售票厅可容纳100人购票，说明最多允许100个购票者共享售票厅；可引入一个信号量empty，其初值为100。由于购票者必须互斥地进行购票，故应再设一个mutex，其初值为1。(4’)</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs text"> empty,mutex:semaphore;  <br> empty:=100; mutex:=1;  <br> begin  <br>p(empty)  <br>p(mutex)  <br>进入厅内购票,购票后退出  <br>v(empty)  <br>v(mutex)  <br> end  <br></code></pre></td></tr></table></figure>
+</li>
+<li><p><font color=red>Q: 某招待所有100个床位，住宿者入住要先登记（在登记表上填写姓名和床位号）．离去时要注销登记（在登记表上删去姓名和床位号）．请给出住宿登记及注销过程的算法描述．</font><br><font color=green>A: 某招待所有100个床位，为了正确管理，引入一个信号量empty代表空床位数，初值为100；住宿者入住要先登记（在登记表上填写姓名和床位号），显然，登记表是一个临界资源，必须互斥访问，引入一个mutex，其初值为1。(4’)<br>住宿登记及注销过程的算法描述如下：(&#96;3’)</font></p>
+ <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs text">   //住宿登记：(`3’)  <br>begin  <br>	p(empty)  //检查有无床位  <br>	p(mutex)  //申请登记   <br>	找出一个空床位将名字登入表中  <br>	v(mutex)  <br>end  <br>//注销过程：(`3’)  <br>begin  <br>	p(mutex)   //申请退房  <br>	找出自己的登记项，并删除该项的登记   <br>	v(mutex)  <br>	v(empty)  <br>  end.   <br></code></pre></td></tr></table></figure>
+</li>
+<li><p><font color=red>Q: 有一个阅览室，共有100个座位。为了很好地利用它，读者进入时必须先在登记表上进行登记。该表表目设有座位号和读者姓名；离开时再将其登记项擦除。<br>试问：为描述读者的动作，应编写几个程序，应设几个进程、它们之间的关系怎样？并请用P、V操作描述进程之间的同步算法。</font><br><font color=green>A: 为了描述阅览室，用一个登记表来记录其使用情况。表中共有100项。每当有读者进入阅览室时，为了正确地登记，各读者应互斥使用(1’)。为此设两个信号量：mutex为互斥信号量，用来制约各读者互斥地进行登记，其初值为1；empty为同步信号量，用来制约各读者能同时进入阅览室的数量，其初值为100  (2’)。<br>下面用两个过程描述对表格应执行的动作：</font></p>
+ <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">   登记过程：(`2’)			擦除过程：(`2’)  <br>begin					begin  <br>	P(empty)			    P(mutex)  <br>	P(mutex)				找到自己的登记项擦除   <br>	找到一个登记项登记		  V(mutex)  <br>	V(mutex)				V(empty)  <br>end						end   <br></code></pre></td></tr></table></figure>
+<p><font color=green>为了正确地描述读者的动作，可以将读者看成进程。若干读者希望进入阅览室时，调用登记过程，退出阅览室时，调用擦除过程(1’)。可见，一个程序可对应多个读者。可设的进程数由读者数决定，其动作如下：(&#96;2’)</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text"> begin  <br>调用登记过程  <br>进入阅览室阅读  <br>准备退出  <br>调用擦除过程  <br> end  <br></code></pre></td></tr></table></figure>
+</li>
+<li><p><font color=red>Q: 一条河上架设了由若干个桥墩组成的一座桥。若一个桥墩只能站一个人，过河的人只能沿着桥向前走而不能向后退。过河时，只要对岸无人过，就可以过；但不允许河对岸的两个人同时过，以防止出现死锁。请给出两个方向的人顺利过河的同步算法。</font><br><font color=green>A: 假设一座桥由N个桥墩，也即最多允许有N个人同向过河，用一个计数器R记录同时过河的人数(2’)。用S1信号量保护计数器，其初值为1，R的初值为0；互斥使用桥的信号量用S表示，其初值为1。(2’)<br>同步算法描述如下：</font></p>
+ <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs text">   procedure goriver()  <br>begin   <br>       L:P(S1);						//为同时过河,申请对计数器计数  <br>          If R&gt;N begin V(S1); goto L; end  //同方向过河的人站满桥墩时,重新申请计数  <br>          R=R+1;						  <br>          If R==1: P(S);					//申请过河  <br>       V(S1);						  //释放计数器的使用权           (3’)  <br>       占有一个桥墩,并顺序过河到对岸;  <br>       P(S1);  <br>          R=R-1;  <br>          If R==0: V(S);					//如果已经无同向的人过河,释放占用权  <br>       V(S1);                                                       (3’)  <br>  end   <br></code></pre></td></tr></table></figure>
+</li>
+<li><p><font color=red>Q: 在一个飞机订票系统中，多个用户共享一个数据库。各用户可以同时查询信息，若有一个用户要订票，须更新数据库时，其余所有用户都不可以访问数据库。请用P,V操作设计一个同步算法，实现用户查询与订票功能。要求：当一个用户订票而需要更新数据库时，不能因不断有查询者到来而使其长时间等待。利用信号量机制保证其正常执行。</font><br><font color=green>A: 这是典型的读者——写者问题，查询信息的用户是读者，订票用户是写者，并且要求写者优先。(2’)</font></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">变量说明：(`2’)<br> 计数变量<br> rc——正在运行的查询者进程数目，初值为0.<br> 信号量<br> Sw——控制订票者进程的活动，初值为1.<br> Src——互斥使用rc变量，初值为1.<br> S——当订票者到达时封锁后续的读进程，初值为1.<br> 读者进程 <br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/william_munch/article/details/84256690">🔗读写者问题🔗</a>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><font color=green>A: </font></p>
+</li>
+<li><p><font color=red>Q: </font><br><font color=green>A: </font></p>
+</li>
+<li><p><font color=red>Q: </font><br><font color=green>A: </font></p>
+</li>
+<li><p><font color=red>Q: </font><br><font color=green>A: </font></p>
+</li>
+<li><p><font color=red>Q: </font><br><font color=green>A: </font></p>
+</li>
+<li><p><font color=red>Q: </font><br><font color=green>A: </font></p>
+</li>
+</ol>
+<h2 id="第三章-死锁"><a href="#第三章-死锁" class="headerlink" title="第三章 - 死锁"></a>第三章 - 死锁</h2><p><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213160202.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="名词解释-2"><a href="#名词解释-2" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><p><font color=green>死锁: </font>是指在一个进程集合中的每个进程都在等待仅由该集合中的另一个进程才能引发的事件而无限期地僵持下去的局面。  </p>
+</li>
+<li><p><font color=green>饥饿: </font>在系统中，每个资源占有者都在有限时间内释放它所占有的资源，但资源中存在某些申请者由于某种原因却永远得不到资源的一种错误现象。  </p>
+</li>
+<li><p><font color=green>死锁防止: </font>要求进程申请资源时遵循某种协议，从而打破产生死锁的四个必要条件中的一个或几个，保证系统不会进入死锁状态。  </p>
+</li>
+<li><p><font color=green>死锁避免: </font>对进程所发出的每一个申请资源命令加以动态地检查，并根据检查结果决定是否进行资源分配。就是说，在资源分配过程中若预测有发生死锁的可能性，则加以避免。这种方法的关键是确定资源分配的安全性.  </p>
+<ul>
+<li><em>ps: 死锁避免和死锁预防(防止)的区别在于,死锁预防是设法至少破坏产生死锁的四个必要条件之一,严格的防止死锁的出现,而死锁避免则不那么严格的限制产生死锁的必要条件的存在,因为即使死锁的必要条件存在,也不一定发生死锁.死锁避免是在系统运行过程中注意避免死锁的最终发生.</em></li>
+</ul>
+</li>
+<li><p><font color=green>安全序列: </font>针对当前分配状态来说，系统至少能够按照某种次序为每个进程分配资源（直至最大需求），并且使他们依次成功地运行完毕，这种进程序列{p1,p2,…,pn}就是安全序列。</p>
+</li>
+</ol>
+<h3 id="简答题-2"><a href="#简答题-2" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><font color=red>Q: 计算机系统中产生死锁的根本原因是什么?死锁发生的四个基本条件是什么？</font><br><font color=green>A: <strong>根本原因</strong>: <u>资源有限且操作不当.</u> <strong>死锁发生的四个基本条件</strong>: <u>互斥条件、请求保持条件（占有且等待条件）、非剥夺条件（不可抢占条件）和环路条件（循环等待条件）</u></font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213160637.png" srcset="/img/loading.gif" lazyload></li>
+<li><font color=red>Q: 简述发生死锁的四个必要条件?</font><br><font color=green>A: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213161629.png" srcset="/img/loading.gif" lazyload>  </li>
+<li><font color=red>Q: 什么是死锁？解决死锁的方法一般有那几种?</font><br><font color=green>A: 死锁是指在一个进程集合中的每个进程都在等待仅由该集合中的另一个进程才能引发的事件而无限期地僵持下去的局面。</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213161940.png" srcset="/img/loading.gif" lazyload>  </li>
+<li><font color=red>Q: 死锁预防和死锁避免的基本思想是什么?</font><br><font color=green>A: <strong>死锁预防</strong>: 要求进程遵循某种协定, 从而打破死锁的四个必要条件中的一个或多个</font><br><font color=green>A: <strong>死锁避免</strong>: 对进程发出的每个资源申请加以动态的检查, 并根据检查结果决定是否分配</font>    </li>
+<li>Q: 什么是死锁的安全序列?何谓系统是安全的？<br>A: 进程的安全序列{P1,P2,…,PN}是这样组成的：若对于每个进程Pi（1&lt;&#x3D;I&lt;&#x3D;n），它需要的附加资源可以被系统中当前可用资源加上所有进程Pj（j&lt;i）当前占有资源之和所满足，则{ P1,P2,…,PN }为一个安全序列。<br>“系统是安全的”是指系统中的所有进程能够按照某种次序分配资源，并且依次运行完毕。即系统中的进程处于安全序列中。</li>
+</ol>
+<ul>
+<li><em>ps: 不重要,感觉不会考这么麻烦的题</em></li>
+</ul>
+<ol>
+<li>Q: 资源按序分配法为什么能够预防死锁？<br>A: 证明：采用反证法来证明。<br> 若存在循环等待，设在环路上的一组进程为{P0,P1,P2,…,Pn}，这里Pi等待进程Pi+1占有资源Ri（下角标取模运算，从而，Pn等待p0占有的资源）。由于Pi+1占有资源Ri,又申请资源Ri+1,从而一定存在F(i)&lt;F(i+1), 该式对所有的i都成立。于是就有：<br>     F(R0)&lt;F(R1)&lt;…&lt;F(Rn)&lt;F(R0)<br> 由传递性得到：<br>     F(R0)&lt;F(R0)<br> 显然，这是不可能的，因而，上述假设不成立，表明不会出现循环等待条件</li>
+</ol>
+<ul>
+<li><em>ps: 不重要,感觉不会考这么麻烦的题,考了也能现编</em></li>
+</ul>
+<ol>
+<li><font color=red>Q: 死锁和“饥饿”之间的主要差别是什么?</font><br><font color=green>A: <strong>死锁</strong>: 多个并发进程相互等待对方占用的资源而产生的错误现象。</font><br><font color=green><strong>饿死</strong>：在系统中，由于系统采用的资源分配算法不当，虽然每个资源占有者都在有限时间内释放它所占的资源，但仍然使一些进程永远得不到资源的一种错误现象。 </font>  <ul>
+<li><em>ps: 死锁涉及的进程往往会相互有影响, 比如某个进程A需要等待进程B完成; 而饥饿涉及的进程则不一定, 其往往是优先级高的进程抢占了资源, 导致优先级低的进程无法获得资源</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="综合题-1"><a href="#综合题-1" class="headerlink" title="综合题"></a>综合题</h3><div class="note note-success">
+            <p><a target="_blank" rel="noopener" href="https://chen0495.top/posts/59e4ca55/">🔗银行家算法🔗</a>  </p>
+          </div>  
+
+<ol>
+<li><p><font color=red>Q: 设系统中有三种类型的资源（A,B,C）和五个进程（P1,P2,P3,P4,P5）,A资源的数量为17，B资源的数量为5，C资源的数量为20。在T0时刻系统状态如表3-9所试。系统采用银行家算法来避免死锁。</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201213165422.png" srcset="/img/loading.gif" lazyload>  </p>
+<font color=red>
+①.T0时刻是否为安全状态？若试，请给出安全序列。  
+②.在T0时刻，若进程P2请求资源（0，3，4），能否实现资源分配？为什么？  
+③.在②的基础上，若进程P4请求资源（2，0，1），能否实现资源分配？为什么?  
+④.在③的基础上，若进程P1请求资源（0，2，0），能否实现资源分配？为什么?
+</font>  
+<font color=green>A:  
+ ①T0时刻是安全状态，因为存在一个安全序列{P4,P5,P1,P2,P3}  (2’)  
+ ②不能实现资源分配，因为所剩余的资源数量不够。  (2’)  
+ ③可以分配。当分配完成后，系统剩余的资源向量为（0，3，2），这时，仍可找到一个安全序列{P4,P5,P1,P2,P3}  (3’)  
+ ④不能分配。如果分配的话，则系统剩余的资源向量为（0，1，2），这时无法找到一个安全序列。(3’)  
+</font>  
+</li>
+<li><p><font color=red>Q: 在银行家算法中，系统有5个进程和3个资源。若出现以下资源分配情况</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214161645.png" srcset="/img/loading.gif" lazyload>  </p>
+<ol>
+<li><font color=red>该状态是否安全(给出详细的检查过程)?</font>  </li>
+<li><font color=red>如果进程依次有如下资源请求</font><br> <font color=red>p1:资源请求Request(1,0,2)?<br> p4:资源请求Request(3,3,0)?<br> p0:资源请求Request(0,1,0)?<br> 则系统如何进行资源分配，才能避免死锁？</font></li>
+</ol>
+<p><font color=green>A:  </font>  </p>
+<ol>
+<li><font color=green>该系统状态是否安全,主要看能否找到一个进程完成序列.若能找到,系统只要按照这个序列为进程分配资源,所有进程就都可顺利完成;若找不到,系统状态就是不安全的.为此,可先求出进程的剩余请求矩阵.  </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214162214.png" srcset="/img/loading.gif" lazyload>  </li>
+<li><font color=green>p1:资源请求Request(1,0,2)时，由1）可知，可以立即满足它，使得A&#x3D;(2,2,0),P1的分配向量为(3,1,2)，其剩余向量变为(0,1,0).  (2’)  </font><br><font color=green>p4:资源请求Request(3,3,0)时，由于系统剩余资源向量A&#x3D;(2,2,0)，显然不能满足它的请求，因为系统剩余资源向量A小于P4的请求  (2’)  </font><br><font color=green>p0:资源请求Request(0,1,0)时，由于系统剩余资源向量A&#x3D;(2,2,0)，若满足它的请求，使得系统剩余资源向量A&#x3D;(2,1,0)。之后，系统仍可以找到一个进程完成序列P1,P4,P0,P4,P2。故可以满足它的请求。  (2’)</font></li>
+</ol>
+</li>
+<li><p><font color=red>Q: 送分题, 简单加减法, 不如不做</font><br><font color=green>A: …</font>  </p>
+</li>
+<li><p><font color=red>Q: 又是加减法</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214164740.png" srcset="/img/loading.gif" lazyload><br><font color=green>A: 贴个答案</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214164808.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 见图</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214170356.png" srcset="/img/loading.gif" lazyload><br><font color=green>A: 说到底银行家算法就不难</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214170623.png" srcset="/img/loading.gif" lazyload><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201214170640.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+<h2 id="第四章-调度"><a href="#第四章-调度" class="headerlink" title="第四章 - 调度"></a>第四章 - 调度</h2><h3 id="名词解释-3"><a href="#名词解释-3" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><p><font color=green>作业</font>: 用户在一次上机过程中要求计算机系统所做工作的集合。  </p>
+</li>
+<li><p><font color=green>周转时间</font>: 是指从作业<strong>进入</strong>系统开始，到作业<strong>退出</strong>系统所经历的时间。</p>
+</li>
+<li><p><font color=green>响应时间</font>: 是分时系统的一个技术指标，指从用户输入命令到系统对命令开始执行和显示所需要的时间。  </p>
+<ul>
+<li><em>ps: 点执行按钮到真正执行有延迟, 该延迟即响应时间</em></li>
+</ul>
+</li>
+<li><p><font color=green>作业调度</font>: 也称<font color=red>高级调度</font>, 作业调度的主要任务是完成作业从后备状态到执行状态和从执行状态到完成状态的转换。  </p>
+<ul>
+<li><em>ps: 简单理解为作业运行状态的转变</em></li>
+<li><strong>ps: 它决定把后备作业调入内存运行(或者调出).</strong></li>
+</ul>
+</li>
+<li><p><font color=green>进程调度</font>: 也称<font color=red>低级调度</font>程序，它完成进程从<strong>就绪状态到运行状态</strong>的转化。实际上，进程调度完成一台物理的cpu转变成多台虚拟（或逻辑）的cpu的工作。  </p>
+<ul>
+<li><em>ps: 相较于作业调度,它实现更加具体的任务</em></li>
+<li><strong>ps: 它决定让就绪队列的某进程获得CPU.</strong></li>
+<li><strong>ps: 只负责进程获得CPU, 不负责剥夺进程的资源(中级调度)</strong></li>
+</ul>
+</li>
+<li><p><font color=green>交换调度</font>: 负责将主存中处于等待状态或就绪状态的某个或某些进程交换到外存交换区中，以便将外存交换区上具备运行条件的进程换入主存，准备执行。  </p>
+<ul>
+<li><em>ps: 顾名思义, 负责进程在主存和辅存上的交换</em></li>
+</ul>
+</li>
+<li><p><font color=green>剥夺式调度</font>: 当一个进程正在执行时，系统基于某种策略强行将处理机从占有者进程剥夺而分配给另一个进程的调度。这种调度方式系统开销大，但系统能及时响应请求。  </p>
+<ul>
+<li><em>ps: 顾名思义, 将一个进程的资源强行剥夺给另一个进程</em></li>
+</ul>
+</li>
+<li><p><font color=green>非剥夺式调度</font>: 系统一旦把处理机分配给某个进程之后，该进程一直运行下去，直到该进程完成或因等待某个事件发生时，才将处理机分配给其他进程。这种调度方式实现简单，系统开销小，但系统性能不够好。  </p>
+<ul>
+<li><em>ps: 与剥夺式相反, 它会等待进程完成, 在这期间, 进程可以一直占用资源</em></li>
+<li><em>ps: 这很不合理, 毕竟会造成严重的饥饿现象, 但确实是一种调度方式</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="简答题-3"><a href="#简答题-3" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><p><font color=red>Q: 作业由哪几部分组成？各有什么功能？</font><br><font color=green>A: <strong>程序、数据和作业说明书</strong>, 程序和数据完成用户所要求的业务处理工作，作业说明书则体现用户的控制意图。 </font>  </p>
+</li>
+<li><p><font color=red>Q: 试比较作业和进程的区别</font><br><font color=green>A: 一个进程是<u>一个程序对某个数据集的执行过程，是分配资源的单位</u>。作业是<u>用户需要计算机完成某项任务，而要求计算机所做工作的集合</u>。</font><br><font color=green>主要区别:</font>  </p>
+<ol>
+<li><font color=green>作业是用户向计算机提交任务的任务实体。在用户向计算机提交作业之后，系统将它放入外存中的作业等待队列中等待执行。而进程则是完成用户任务的执行实体，是向系统申请分配资源的基本单位。任一进程，只要它被创建，总有相应的部分存在内存中。</font>  </li>
+<li><font color=green>一个作业可由多个进程组成。且必须至少由一个进城组成，但反过来不成立。</font>  </li>
+<li><font color=green>作业的概念主要用在批处理系统中。像UNIX这样的分时系统中，则没有作业概念。则进程的概念则用在几乎所有的多道程序系统中。</font></li>
+</ol>
+</li>
+<li><p><font color=red>Q: 高级调度与低级调度的主要功能是什么？为什么要引入中级调度？</font><br><font color=green>A: 高级调度的主要功能是根据一定的算法,从输入的一批作业中选出若干作业,分配必要的资源,如内存、外设等，为它建立相应的用户作业进程和为其服务的系统进程（如输入&#x2F;输出进程），最后把它们的程序和数据调入内存，等待进程调度程序对其执行调度，并在作业完成后做善后处理工作。 低级调度的主要功能是根据一定的算法将cpu分派给就绪队列中的一个进程。</font><br><font color=green>为了使内存中同时存放的进程数目不至于太多，有时需要把某些进程从内存移到外存上，以减少多道程序的数目，为此设立了中级调度.</font>    </p>
+</li>
+<li><p><font color=red>Q: 处理机调度一般分为哪三级？其中哪一级调度必不可少？为什么？</font><br><font color=green>A: 处理机调度一般可分为高级调度（作业调度）、中级调度和低级调度（进程调度） 。其中进程调度必不可少 。</font><br><font color=green>进程只有在得到CPU之后才能真正活动起来，所有就绪进程经由进程调度才能获得CPU的控制权。实际上，进程调度完成一台物理的CPU转变成多台虚拟机（或逻辑）的CPU的工作，进程调度的实现策略往往决定了操作系统的类型，其算法优劣直接影响整个系统的性能。 </font>  </p>
+<ul>
+<li><em>ps: 类比一下, 高级语言(python)和低级语言(C&#x2F;C++)哪个重要? 没了C&#x2F;C++操作系统都不能跑, 没了python照样运行, 而在操作系统底层C&#x2F;C++的执行效果更好</em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 作业调度与进程调度之间有什么差别？二者间如何协调工作？</font><br><font color=green>A: 作业调度与进程调度之间的差别主要是：作业调度是宏观调度，它所选择的作业只是具有获得处理机的资格，但尚未占有处理机，不能立即在其上实际运行；而进程调度是微观调度，动态地把处理机实际地分配给所选择的进程，使之真正活动起来。另外，进程调度相当频繁，而作业调度执行的次数一般很少。<br>作业调度从外存的后背队列中选择一批作业调入内存，为它们创建进程，这些进程被送入就绪队列。进程调度从就绪队列中选出一个进程来，并把它的状态改为运行态，把cpu分配给它。当运行进程要等待某一事件时，就让出cpu，进入相应的阻塞队列，并进行进程调度。运行进程完成后，由作业调度进行善后处理工作。<br>个</font>  </p>
+<ul>
+<li><em>ps: 标准答案, 只要理解了两者各自的工作和联系, 怎么答都行, 毕竟主观题.</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="综合题-2"><a href="#综合题-2" class="headerlink" title="综合题"></a>综合题</h3><ol>
+<li><p><font color=red>Q: 见图</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226162742.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: 见图</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226162814.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 见图</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226164739.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: 见图</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226164759.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 简单,略</font><br> <font color=green>A: 略</font>  </p>
+</li>
+<li><p><font color=red>Q: 见图</font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226165637.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: 见图</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226165652.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+<h2 id="第五章-存储管理"><a href="#第五章-存储管理" class="headerlink" title="第五章 - 存储管理"></a>第五章 - 存储管理</h2><p><font color="red" size="5">真长啊…</font></p>
+<ol>
+<li><p><font color="green">物理地址</font>: 内存中各存储单元的地址由<strong>统一的基地址</strong>顺序编址，这种地址称为物理地址。  </p>
+</li>
+<li><p><font color="green">逻辑地址</font>: 用户程序经编译之后的每个目标模块都以<strong>0为基地址</strong>顺序编址，这种地址称为逻辑地址。  </p>
+<ul>
+<li><em>ps: 类似各个编程语言, 真实地址和数组下标的关系</em></li>
+</ul>
+</li>
+<li><p><font color="green">逻辑地址空间</font>: 由程序中逻辑地址组成的<strong>地址范围</strong>叫做逻辑地址空间。  </p>
+</li>
+<li><p><font color="green">物理地址空间</font>: 由内存中的一系列存储单元所限定的<strong>地址范围</strong>称作内存空间。  </p>
+</li>
+<li><p><font color="green">重定位</font>: 把<u>逻辑地址转变为内存物理地址的过程</u>叫做重定位。  </p>
+<ul>
+<li><em>ps: 那把物理地址转变为逻辑地址叫什么?</em></li>
+<li><strong>ps: 按照重定位的时机划分, 分为动态重定位和静态重定位</strong></li>
+<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201216140619.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+</li>
+<li><p><font color="green">静态重定位</font>: 在目标程序装入内存时所进行的重定位。  </p>
+</li>
+<li><p><font color="green">动态重定位</font>: 在程序执行期间，每次访问内存之前进行的重定位。  </p>
+</li>
+<li><p><font color="green">可重定位地址</font>当含有它的程序被重定位时，将随之被调整的一种地址。  </p>
+<ul>
+<li><em>ps: 重定位中需要改变的那部分地址</em></li>
+</ul>
+</li>
+<li><p><font color="green">碎片</font>在<strong>分区法</strong>中，内存出现许多容量太小、无法被利用的小分区称作“碎片”。  </p>
+<ol>
+<li><em>ps: 分区法将内存分为几个部分, 类似硬盘分区, 不过在内存中分的更细,分区更多.</em></li>
+<li>机械硬盘中的碎片(红色):<br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201216141750.png" srcset="/img/loading.gif" lazyload alt="磁盘碎片">  </li>
+<li>在<strong>内存</strong>中, 这些碎片更小, 进入的程序往往会要求连续空间, 而碎片的大小不足以满足程序的空间大小, 故往往得不到利用.</li>
+</ol>
+</li>
+<li><p><font color="green">内部碎片</font>: 在一个分区内部出现的碎片（即被浪费的空间）称作内部碎片。如固定分区法会产生内部碎片。  </p>
+</li>
+<li><p><font color="green">外部碎片</font>: 在所有分区之外新产生的碎片称作外部碎片，如在动态分区法实施过程中出现的越来越多的小空闲块，由于它们太小，无法装入一个小进程，因而被浪费掉。  </p>
+</li>
+<li><p><font color="green">紧缩</font>: 移动某些已分区的内容，使所有作业的分区紧挨在一起，而把空闲区留在另一端，这种技术称为紧缩。  </p>
+<ul>
+<li><em>ps: 优化手段</em></li>
+</ul>
+</li>
+<li><p><font color="green">固定分区法</font>: 内存中分区的个数固定不变，各个分区的大小也固定不变，但不同分区的大小可以不同，每个分区只可装入一道作业  </p>
+<ul>
+<li><em>ps: 想象一张扇形图</em></li>
+</ul>
+</li>
+<li><p><font color="green">动态分区法</font>各个分区是在相应作业要求进入内存时才建立的，使其大小恰好适应作业的大小。  </p>
+<ul>
+<li><em>ps: 还是扇形图,但会随时间不断变化</em></li>
+</ul>
+</li>
+<li><p><font color="green">可再入代码</font>也称纯代码，是指那些在其执行过程本身不做任何修改的代码，通常由指令和常数组成。  </p>
+<ul>
+<li><em>ps: 没搞懂…</em></li>
+</ul>
+</li>
+<li><p><font color="green">虚拟存储器</font>: 虚拟存储器是用户能作为可编程内存对待的虚拟存储空间，在这种计算机系统中实现了用户逻辑存储器与物理存储器的分离，它是操作系统给用户提供的一个比真实内存空间大得多的地址空间。  </p>
+<ul>
+<li><em>ps: 就是Windows电脑常见的虚拟内存, 物理内存不够时, 在硬盘(辅存)开辟一块空间当内存用, 用来存放暂时用不到的内存资源</em></li>
+</ul>
+</li>
+<li><p><font color="green">抖动</font>: 页面抖动是系统中频繁进行页面置换的现象。即如果一个进程没有一定数量的内存块，它很快就发生缺页。此时，它必须淘汰某页。由于所有这些页面都正在使用，所以刚被淘汰出去的页很快又被访问，因而要把它重新调入。可是调入不久又再被淘汰出去，这样再访问，再调入，如此反复，使得整个系统的页面替换非常频繁，以致大部分机器时间都用在来回进行的页面调度上，只有一小部分时间用于进程的实际运算方面。  </p>
+</li>
+<li><p><font color="green">工作集</font>: 工作集是一个<strong>进程</strong>在某一小段时间内<strong>访问页面</strong>的集合。利用工作集模型可防止抖动，也可以进行页面置换。  </p>
+</li>
+<li><p><font color="green">程序局部性原理</font>: 在相对短的一段时间内，进程集中在一组子程序或循环中之行，<u>导致所有的存储器访问局限于进程地址空间的一个固定子集</u>。这种现象就叫做程序局部性原理。  </p>
+</li>
+<li><p><font color="green">快表</font>: 提高变换速度→用高速缓冲存储器存放常用的页表项.  </p>
+<ul>
+<li><em>ps: 一般页表放在内存当中(慢表), 所以要取数据需要先在页表中找到数据地址, 再根据地址找到数据, 这样就访问了两次内存; 所以将一部分常用的页表放到高速缓存(Cache)当中, 以此加快访问速度.</em></li>
+</ul>
+</li>
+<li><p><font color="green">交换</font>: 交换系统指系统根据需要把主存中暂时不运行的某个（或某些）作业部分或全部移到外存。而把外存中的某个（或某些）作业移到相应的主存区，并使其投入运行。  </p>
+</li>
+<li><p><font color="green">换页</font>: 指系统根据某种策略选择某页出主存，将某页调入主存的过程。  </p>
+<ul>
+<li><em>ps:分页大小固定, 分段由系统动态分配大小</em></li>
+</ul>
+</li>
+<li><p><font color="green">实存</font>实存是指计算机配置的物理存储器，它直接向cpu提供程序和数据。  </p>
+<ul>
+<li><em>ps: 物理内存</em></li>
+</ul>
+</li>
+<li><p><font color="green">虚存</font>虚存是指系统向用户程序提供的编程空间，其大小由cpu的地址长度决定。  </p>
+<ul>
+<li><em>ps: 虚拟内存</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="简答题-4"><a href="#简答题-4" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><p><font color=red>Q: 解释固定分区法和动态分区法的基本原理。</font><br><font color=green>A: 固定分区法——内存中分区的个数固定不变，各个分区的大小也固定不变，但不同分区的大小可以不同。每个分区只可装入一道作业。<br> 动态分区法——各个分区是在相应作业要进入内存时才建立的，使其大小恰好适应作业的大小。 </p>
+ </font>  
+</li>
+<li><p><font color=red>Q: 说明内部碎片和外部碎片的不同之处</font><br><font color=green>A: 内存中出现的其容量太小、无法被利用的小分区称作碎片 。内部碎片和外部碎片出现的位置不同 。内部碎片出现在一个分区的内部（即被浪费的空间），如固定分区法会产生内部碎片 。外部碎片出现在所有分区之外，是新增的小分区，如在动态分区法实施过程中会出现外部碎片 。</font>  </p>
+</li>
+<li><p><font color=red>Q: 动态重定位分区管理方式中如何实现虚-实地址映射？</font><br><font color=green>A: 作业装入内存时，是将该用户的程序和数据原封不动地装入到内存中 。当调度该进程在cpu上执行时，操作系统就自动将该进程在内存的起始地址装入基址寄存器，将进程的大小装入限长寄存器 。当执行指令时，如果地址合法，则将相对地址与基址寄存器中的地址相加，所得结果就是真正要访问的内存地址；如果地址越界，则发出相应中断，进行处理 </font>  </p>
+</li>
+<li><p><font color=red>Q: 什么是虚拟存储器？它有哪些基本特征？</font><br><font color=green>A: 虚拟存储器是用户能作为可编址内存对待的虚拟存储空间,在这种计算机系统中实现了用户逻辑存储器与物理存储器的分离,它是操作系统给用户提供的一个比真实内存空间大得多的地址空间。 </font><br><font color=green>虚拟存储器的基本特征是:</font><br><font color=green>虚拟扩充——不是物理上,而是逻辑上扩充了内存容量;</font><br><font color=green>部分装入——每个作业不是全部一次性地装入内存,而是只装入一部分;</font><br><font color=green>离散分配——不必占用连续的内存空间,而是”见缝插针”;</font><br><font color=green>多次对换——所需的全部程序和数据要分成多次调入内存。</font>  </p>
+<ul>
+<li><em>ps: 就是虚拟内存</em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 引入虚拟存储器后，除了获得主存“扩充”的好处，还有什么好处？</font><br><font color=green>A: 引入虚存后，程序的地址空间都是虚地址的集合，只有在程序运行中通过硬件地址转换机构和操作系统的相应软件，才能将虚地址变换成主存的实地址，这将为主存的分配带来更大的灵活性。另外，虚、实地址分开，用户程序不能干扰实地址的生成，从而实现了存储器的保护 。</font>  </p>
+<ul>
+<li><em>ps: 总结: 灵活、安全</em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 什么是分页？什么是分段？二者有何主要区别？</font><br><font color=green>A: 分页是由系统将一个进程的逻辑地址空间划分成若干大小相等的部分，每一部分称做一个页面。 分段是用户根据作业的逻辑关系进行自然划分，每个分段是作业中相对独立的一部分。 </font>  </p>
+<ul>
+<li><em>ps: 分页大小固定, 分段则按照装入进程的大小动态分配空间</em></li>
+<li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201216154717.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 在分页系统中页面大小由谁决定？页表的作用是什么？如何将逻辑地址转换成物理地址？</font><br><font color=green>A: 在分页系统中页面大小<u>由硬件决定</u>。 页表的作用是:<u>实现从页号到物理块号的地址映射</u>。 </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201221142919.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 什么是belady现象？</font><br><font color=green>A: belady现象是指在使用FIFO算法进行内存页面置换时 ，在未给进程或作业分配足它所要求的全部页面的情况下，有时出现的分配的页面数增多，缺页次数发而增加的奇怪现象。</font>  </p>
+<ul>
+<li><em>ps: 重点</em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 请求分页技术的基本思想是什么？它与简单分页技术之间有何根本区别？</font><br><font color=green>A: 请求分页技术的基本思想是：当一个进程的部分页面在内存时就可调度它运行；在运行过程中若用到的页面尚未在内存，则把它们动态换入内存。这样，就减少了对换时间和所需内存数量，允许增加程序的道数。<br>请求分页技术是在简单分页技术基础上发展起来的，两者根本区别是：请求分页提供虚拟存储器，而简单分页系统并未提供虚拟存储器。</p>
+</font>  
+ - *ps: 某个进程只要有部分在内存中即可运行, 当要运行的部分不在内存中时, 临时将其置换入内存*  
+ - **需要虚拟内存的支持**
+</li>
+<li><p><font color=red>Q: 为什么分段技术比分页技术更容易实现程序或数据的共享和保护？</font><br><font color=green>A: 每一段在逻辑上是相对完整的一组信息，分段技术中的共享是在段一级出现的。这样，任何共享的信息就可以单独成为一段。同样，段中所有内容可以用相同的方式进行使用，从而规定相同的保护权限。 然而，页是信息的物理单位，在一页中可能存在逻辑上互相独立的两组或多组信息，各有不同的使用方式和存取权限，因而，对分页难以进行共享和保护。 </font>  </p>
+<ul>
+<li><em>ps: 总的来说就是分段中某段属于同一个作业&#x2F;进程, 只要整段保护&#x2F;共享就行, 而分页式同一页可能有毫不相关的两个进程</em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 何谓工作集？它有什么作用？</font><br><font color=green>A: 工作集是一个进程在某一小段时间内访问页面的集合。<br>利用工作集模型可防止抖动，也可以进行页面置换</font>  </p>
+<ul>
+<li><em>ps: 就是保存进程最近访问的页面在内存, 这样循环之类的一直调用同一资源的操作<u>不用一直把页面调进调出内存</u></em></li>
+</ul>
+</li>
+<li><p><font color=red>Q: 什么是页面抖动？系统怎样检测是否出现抖动？一旦检测到抖动？系统如何消除它？</font><br><font color=green>A: 页面抖动是系统频繁进行页面置换的现象。整个系统的页面替换非常频繁，以致大部分机器时间都用在来回进行的页面调度上，只有一小部分时间用于进程的实际运算方面。<br> 操作系统监督每个进程的工作集，并给它分配工作集所需的内存块。若有足够多的额外块，就可以装入并启动另外的进程。如果工作集增大了，超出可用块的总数，即系统中全部进程对内存块的总请求量大于可用内存块的总量，将出现抖动，因为某些进程得不到足够的内存块。<br>一旦检测到抖动，操作系统要选择一个进程让它挂起，把它的页面写出去，把它占用的内存块分给别的进程。被挂起的进程将在以后适当时机重新开始执行。</p>
+</font></li>
+</ol>
+<h3 id="综合题-3"><a href="#综合题-3" class="headerlink" title="综合题"></a>综合题</h3><div class="note note-info">
+            <p>有效访问时间计算:<br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227170556.jpg" srcset="/img/loading.gif" lazyload>  </p>
+          </div>
+
+<ol>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226190624.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226190551.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226194005.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226194020.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226194227.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226194238.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226195457.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201226195512.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227132457.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227132514.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227132823.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227132834.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227155028.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: 分页需要访问2次，第一次访问页表，第二次执行访内操作(2’)；分段需要访问2次，第一次访问段表，第二次执行访内操作；段页式需要访问3次，第一次访问段表，第二次访问页表，第三次执行访内操作(2’)。</font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227170549.jpg" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227160252.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227160313.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227160846.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227160910.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227171814.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227171740.jpg" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227171840.png" srcset="/img/loading.gif" lazyload><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201227172145.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+<h2 id="第六章-文件系统"><a href="#第六章-文件系统" class="headerlink" title="第六章 - 文件系统"></a>第六章 - 文件系统</h2><h3 id="名词解释-4"><a href="#名词解释-4" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><p><font color="green">逻辑记录</font>: 用户构造文件时使用的一个信息单位。通常以逻辑记录为单位存取文件。  </p>
+</li>
+<li><p><font color="green">物理记录</font>: 文件存储器上组织信息的一个单位。它是文件存储器识别信息的单位。  </p>
+</li>
+<li><p><font color="green">文件</font>: 是命名的相关信息的集合体，它通常存放在外存（如磁盘、磁带）上，可以作为一个独立单位存放并实施相应的操作（如打开、关闭、读、写等）。  </p>
+</li>
+<li><p><font color="green">文件系统</font>: 操作系统中负责<u>操纵和管理文件</u>的一整套设施，它实现文件的<u>共享和保护</u>，方便用户“按名存取”。  </p>
+</li>
+<li><p><font color="green">目录项</font>: 为了加快对文件的检索，把<strong>文件控制块集中在一起进行管理</strong>。这种文件控制块的有序集合称为文件目录。当然，文件控制块也是其中的目录项。  </p>
+</li>
+<li><p><font color="green">目录文件</font>: <u>全由目录项构成的文件</u>称为目录文件  </p>
+</li>
+<li><p><font color="green">路径</font>: 在树形目录结构中，从根目录出发经由所需子目录到达指定文件的通路。  </p>
+</li>
+<li><p><font color="green">当前目录</font>: 为节省文件检索的时间，每个用户可以指定一个目录作为当前工作目录，以后访问文件时，就从这个目录开始向下顺序检索。这个目录就称作当前目录。  </p>
+</li>
+<li><p><font color="green">文件的逻辑组织</font>: 用户对文件的观察和使用是从自身处理文件数据时所采用的组织方式来看待文件组织形式。这种从用户观点出发所见到的文件组织形式称为文件的逻辑组织。  </p>
+</li>
+<li><p><font color="green">文件的物理组织</font>: 文件在存储设备上的存储组织形式称为文件的物理组织  </p>
+<ul>
+<li><em>ps: 分别从用户和实际角度看待文件的组织来区分</em></li>
+</ul>
+</li>
+<li><p><font color="green">文件控制块</font>: 用于<strong>描述和控制文件</strong>的数据结构，其中包括<u>文件名、文件类型、位置、大小</u>等信息。文件控制块与文件一一对应，即在文件系统内部，给每个文件唯一地设置一个文件控制块，核心利用这种结构对文件实施各种管理。  </p>
+</li>
+<li><p><font color="green">存取权限</font>: 用户或系统为文件规定的谁能访问，以及如何访问的方式</p>
+</li>
+</ol>
+<h3 id="简答题-5"><a href="#简答题-5" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><p><font color=red>Q: 什么是文件、文件系统？文件系统有哪些功能？</font><br><font color=green>A: 在计算机系统中，文件被解释为<u>一组赋名的相关字符流的集合</u>，或者是<strong>相关记录的集合</strong>。<br>文件系统是<u>操作系统中与管理文件有关的软件和数据</u>。<br>文件系统的功能是为用户<u>建立文件，撤销、读写修改和复制文件</u>，以及完成对文件的<u>按名存取和进行存取控制</u>。  </p>
+</font>  
+</li>
+<li><p><font color=red>Q: 文件系统一般按什么分类？可以分为那几类</font><br><font color=green>A: <strong>性质，用途，组织形式，文件中的信息流向或文件的保护级别.</strong><br>按文件的性质与用途可以分为系统文件，库文件和用户文件。按文件的组织形式可以分为普通文件，目录文件和特殊文件。按文件中的信息流向可以分为输入文件，输出文件和输入&#x2F;输出文件。按文件的保护级别可以分为只读文件，读写文件，可执行文件和不保护文件。</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 什么是文件的逻辑结构，什么是记录？</font><br><font color=green>A: <strong>逻辑结构就是用户可见的结构</strong>, 可分为字符流式的无结构文件和记录式的有结构文件两大类.<br><strong>记录是一个具有特定意义的信息单位</strong>, 由该记录在文件中的逻辑地址（相对位置）与记录名所对应的一组关键字，属性及其属性值所组成.</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 什么是文件目录？文件目录中包含那些信息？</font><br><font color=green>A: 文件目录是<u>一个文件的文件名</u>和<u>对该文件实施控制管理的说明信息</u>.<br>其包含: <u>文件名、文件名相对应的文件内部标识以及文件信息在文件存储设备上第一个物理块的地址等信息。另外还可能包含关于文件逻辑结构、物理结构、存取控制和管理等信息。</u> </p>
+</font>  
+</li>
+<li><p><font color=red>Q: 文件系统中目录结构主要有哪几种？分别说明各自的实现思想？</font><br><font color=green>A: 文件系统中的目录结构主要有：<strong>单级</strong>目录结构，<strong>二级</strong>目录结构，<strong>树形</strong>目录结构和<strong>非循环图</strong>目录结构。 </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201228142003.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 什么是文件控制块?它与文件有何关系？</font><br><font color=green>A: 一种用于<strong>描述和控制文件的数据结构</strong>，其中包括<u>文件名、文件类型、位置、大小等信息</u>。<br>文件控制块与文件一一对应，即在文件系统内部，给每个文件唯一地设置一个文件控制块，核心利用这种结构对文件实施各种管理。</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 文件系统中的目录结构有哪几种基本形式？各有何优缺点？</font><br><font color=green>A: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201228143611.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 常用的磁盘空闲区管理技术有哪几种？试简要说明各自的实现思想。</font><br><font color=green>A: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201228144636.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 什么是文件共享？文件链接如何实现文件共享？</font><br><font color=green>A: 文件链接是给文件起别名，即将该文件的目录项登记在链接目录中。这样，访问该文件的路径就不只一条。不同的用户（进程）就可以利用各自的路径来共享同一文件。</font>  </p>
+</li>
+<li><p><font color=red>Q: 什么是文件后备？数据转储方法有哪两种？按时间划分，后备分哪几种？</font><br><font color=green>A: 文件的后备就是把硬盘上的文件转储到其他外部介质上。<br> 将磁盘上的数据转储到磁带上有两种方式：物理转储和逻辑转储。物理转储是从磁盘上第0块开始，把所有的盘块按照顺序写到磁带上，当复制完最后一块时，转储结束。逻辑转储方式是从一个或多个指定的目录开始，递归地转储自某个日期以来被修改过的所有文件和目录。<br> 通常有以下三种备份策略：<strong>完全备份</strong>、<strong>增量备份</strong>和<strong>更新备份</strong>。<br>完全备份也称简单备份，即每隔一定时间就对系统作一次全面的备份；增量备份使每隔一段较短的时间进行一次备份，但仅仅备份在这段时间间隔内修改过的数据；更新备份是备份从上次进行完全备份后至今更改的全部数据文件。</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 文件系统的一般格式是怎样的？其中引导块和超级块的作用各是什么？</font><br><font color=green>A: 文件系统的一般由<u>引导块、超级块、空闲空间管理、I节点、根目录、文件数据区</u>组成.<br>引导块的作用是引导操作系统。它包括一个小程序，用于读入该分区上相应操作系统的引导部分，从而把该分区中的操作系统装入内存。<br>超级块的作用是对整个文件系统进行控制和管理。它包含有关文件系统的全部关键参数。当计算机加电进行引导或第一次遇到该文件系统时，就把超级块中的信息读入内存。超级块中包含标识文件系统类型的幻数、文件系统中的盘块数量、修改标记及其他关键管理方面的信息。 </p>
+</font></li>
+</ol>
+<h2 id="第七章-设备管理"><a href="#第七章-设备管理" class="headerlink" title="第七章 - 设备管理"></a>第七章 - 设备管理</h2><h3 id="名词解释-5"><a href="#名词解释-5" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><p><font color="green">输入井</font>: 是指为使设备与cpu速度相匹配，系统在磁盘上设置的多个缓冲区，以实现设备与cpu之间的数据交换。输入井主要用来存放由输入设备输入的信息。  </p>
+</li>
+<li><p><font color="green">缓冲池</font>: 又叫公共缓冲区，也是系统在磁盘上设置的多个缓冲区。它既可以用于输入，也可以用于输出，较好地克服了专用缓冲区的缺点。一方面提高了缓冲区的利用率，另一方面也提高了设备与cpu的并行操作程度。  </p>
+</li>
+<li><p><font color="green">虚拟设备</font>: 它是利用共享设备上的一部分空间来模拟独占设备的一种I&#x2F;O技术。  </p>
+</li>
+<li><p><font color="green">存储设备</font>: 它们是指计算机用来存储信息的设备，如此盘（硬盘和软盘）、磁带等。  </p>
+</li>
+<li><p><font color="green">输入输出设备</font>: 是计算机用来接收来自外部世界信息的设备，或者将计算机加工处理好的信息送向外部世界的设备。例如键盘、打印机、卡片输入机。  </p>
+</li>
+<li><p><font color="green">设备的无关性</font>: 也称设备独立性，就是说，用户程序应与实际使用的物理设备无关，由操作系统来考虑因实际设备不同而需要使用不同的设备驱动程序等问题。  </p>
+</li>
+<li><p><font color="green">通道</font>: 为使CPU摆脱繁忙的I&#x2F;O事务，现代大、中型计算机都设置了<strong>专门处理I&#x2F;O操作</strong>的机构，这就是通道。  </p>
+</li>
+<li><p><font color="green">RAID</font>: 称作廉价磁盘冗余阵列，即利用一台磁盘阵列控制器来统一管理和控制一组磁盘驱动器（几台到几十台），组成一个高可靠性、快速大容量的磁盘系统。采用该技术可以获取更高的可靠性和更快的数据传输速率，而不是价格上更便宜。</p>
+</li>
+</ol>
+<h3 id="简答题-6"><a href="#简答题-6" class="headerlink" title="简答题"></a>简答题</h3><ol>
+<li><p><font color=red>Q: 为什么要引入缓冲技术？设置缓冲区的原则是什么？</font><br><font color=green>A:</font>  </p>
+<ol>
+<li><font color=green>缓和CPU与I&#x2F;O设备间速度不匹配的矛盾。</font>  </li>
+<li><font color=green>提高它们之间的并行性。</font>  </li>
+<li><font color=green>减少对CPU的中断次数，放宽CPU对中断响应时间的要求。</font></li>
+</ol>
+</li>
+<li><p><font color=red>Q: 操作系统中设备管理的功能是什么？</font><br><font color=green>A:  </font>  </p>
+<ol>
+<li><font color=green>监视设备状态 </font>    </li>
+<li><font color=green>进行设备分配 </font>  </li>
+<li><font color=green>完成I&#x2F;O操作 </font>    </li>
+<li><font color=green>缓冲管理与地址转换 </font></li>
+</ol>
+</li>
+<li><p><font color=red>Q: 什么是缓冲？为什么要引入缓冲？</font><br><font color=green>A: <strong>特指内存中的缓冲</strong>缓冲即是使用专用硬件缓冲器或在内存中划出一个区域用来暂时存放输入输出数据的器件。<br>引入缓冲是为了匹配外设和cpu之间的处理速度，减少中断次数和cpu的中断处理时间，同时解决dma或通道方式时的数据传输瓶颈问题。   </p>
+</font>  
+</li>
+<li><p><font color=red>Q: I&#x2F;O设备通常可分为哪两大类？各自传输的信息单位有什么特点？</font><br><font color=green>A:<br><strong>字符设备</strong>和<strong>块设备</strong><br>字符设备通常以<strong>独占方式</strong>分配，信息的<u>传输单位是字符或字节</u>。块设备通常采用<strong>共享方式</strong>分配，信息的<u>传输是以块为单位</u>进行传输的。  </p>
+</font>  
+</li>
+<li><p><font color=red>Q: 什么是I&#x2F;O控制？,I&#x2F;O操作的四种控制方式是什么？</font><br><font color=green>A: I&#x2F;O 控制是指☞从用户进程的 输入&#x2F;输出 请求开始, 给用户进程分配设备和启动有关设备进行 I&#x2F;O 操作, 并在 I&#x2F;O 操作完成后响应中端, 直到善后处理为止的整个系统控制进程.</font><br><font color=green>四种控制方式:</font><br><font color=blue><strong>其区别主要在于CPU对I&#x2F;O控制的干预程度</strong></font>  </p>
+<ul>
+<li><font color=green><strong>程序直接控制</strong>, CPU必须周期地检查设备直到 I&#x2F;O 完毕.</font>  </li>
+<li><font color=green><strong>中断 I&#x2F;O 控制</strong>, 当设备准备好时, 向CPU发出中断信号.(数据需要经过CPU寄存器)</font>  </li>
+<li><font color=green><strong>DMA 控制</strong>, 将读写操作时, CPU把任务委托给DMA部件, 由DMA完成I&#x2F;O.(直接由DMA写入&#x2F;读取内存, 不经过CPU寄存器)</font>  </li>
+<li><font color=green><strong>I&#x2F;O 通道控制</strong>, 通道与CPU共享内存, CPU将任务派给通道, 由通道在内存中完成I&#x2F;O</font></li>
+</ul>
+</li>
+<li><p><font color=red>Q: I&#x2F;O控制可用那几种方式实现，各有什么优缺点？</font><br><font color=green>A: I&#x2F;O控制过程可用三种方式实现：作为请求I&#x2F;O操作的进程实现；作为当前进程的一部分实现；由专门的系统进程——I&#x2F;O进程完成。<br>第一种方式请求对应I&#x2F;O操作的进程能很快占据处理机，但要求系统和I&#x2F;O操作的进程具有良好的实时性。第二种方式不要求系统具有高的实时性，但I&#x2F;O控制过程要由当前进程负责。第三种方式增加了一个额外的进程开销，但用户不用关心I&#x2F;O控制过程</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 设备分配技术主要有哪些？常用的设备分配算法是什么？</font><br><font color=green>A: 设备分配技术主要有：<strong>独占分配</strong>、<strong>共享分配</strong>和<strong>虚拟分配</strong>。<br>常用的设备分配算法是：<strong>先来先服务</strong>算法和优先级高的<strong>优先服务</strong>算法</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 实现SPOOLing系统的硬件前提是什么？SPOOLing系统的主要功能是什么？</font><br><font color=green>A: 要提供大容量的磁盘，要有中断和通道装置<br>其主要功能即是：提高I&#x2F;O速度, 将独占设备改造为共享设备, 实现虚拟设备 。</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 简述处理I&#x2F;O请求的主要步骤。</font><br><font color=green>A: (主要是中断I&#x2F;O)<br>①用户进程发出I&#x2F;O请求.<br>②系统接受请求, 转去执行其他核心程序.<br>③设备驱动程序具体实现I&#x2F;O操作.<br>④I&#x2F;O完成后, 发出中断信号, 系统进行中断处理, I&#x2F;O完成.  </p>
+</font>  
+</li>
+<li><p><font color=red>Q: 设备驱动程序主要执行什么功能？</font><br><font color=green>A: 设备驱动进程严格执行设备驱动程序中规定的各种功能 ，即接受用户的I&#x2F;O请求 ；取出请求队列中队首的请求，将相应的设备分配给它 ；启动该设备工作，完成指定的I&#x2F;O操作 ；处理来自设备的中断 </font>  </p>
+</li>
+<li><p><font color=red>Q: I&#x2F;O软件的设计目标？它是如何划分层次的？各层的功能是什么？</font><br><font color=green>A: </font><br><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201228200900.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 什么叫寻道？访问磁盘时间由哪几部分组成?其中哪一个是磁盘调度的主要目标？为什么？</font><br><font color=green>A: <strong>把磁头从当前位置移到相应的磁道上或柱面上</strong>，这个操作过程叫做寻道。<br>访问磁盘时间: <strong>寻道时间、旋转延迟时间和传输时间</strong><br>寻道时间是磁盘调度的主要目标。<br>传输时间是硬件设计时就固定的，寻道时间和旋转延迟时间与信息在磁盘上的位置有关。因为磁头臂是机械移动，所以对大多数磁盘来说，寻道时间远大于旋转延迟时间与传输时间之和，它是影响磁盘调度的主要因素。   </p>
+</font>  
+</li>
+<li><p><font color=red>Q: 什么是RAID？采用RAID技术的优点是什么？</font><br><font color=green>A: RAID称作廉价磁盘冗余阵列，即利用一台磁盘阵列控制起来统一管理和控制一组磁盘驱动器（几台到几十台），组成一个高可靠性、快速大容量的磁盘系统。 采用RAID技术可以获取更高的可靠性和更快的数据传输速率，而不是价格上更便宜</font></p>
+</li>
+</ol>
+<h3 id="综合题-4"><a href="#综合题-4" class="headerlink" title="综合题"></a>综合题</h3><div class="note note-info">
+            <p><font color=blue size=4>磁盘调度算法<font><br>磁盘: <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229135452.png" srcset="/img/loading.gif" lazyload><br>一个磁盘访问队列:<code>98,183,37,122,14,124,65,67</code>.  </p><ol><li>FIFO&#x2F;FCFS(先来先服务,First In First OUT&#x2F;First Come First Served): 根据进程请求的时间顺序依次调度.<u>假设当前磁道在某一位置，依次处理服务队列里的每一个磁道</u>，这样做的优点是处理起来比较简单，但缺点是磁头移动的距离和平均移动距离会很大。  <ul><li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229141037.png" srcset="/img/loading.gif" lazyload></li></ul></li><li>SSTF(最短寻道时间,Shortest Seek Time First): 利用贪心算法,假设当前磁道在某一位置，接下来<u>处理的是距离当前磁道最近的磁道号，处理完成之后再处理离这个磁道号最近的磁道号</u>，直到所有的磁道号都服务完了程序结束。这样做的优点是性能会优于FIFO算法，但是会产生距离当前磁道较远的磁道号长期得不到服务，也就是“饥饿”现象，因为要求访问的服务的序列号是动态产生的，即各个应用程序可能不断地提出访问不同的磁道号的请求(插队)。  <ul><li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229141450.png" srcset="/img/loading.gif" lazyload></li></ul></li><li>SCAN(扫描scan,也叫电梯调度算法): 对于扫描算法，磁臂从磁盘的一端开始，向另一端移动；在移过每个柱面时，处理请求。当到达磁盘的另一端时，磁头移动方向反转，并继续处理。磁头连续来回扫描磁盘。SCAN 算法有时称为电梯算法，因为磁头的行为就像大楼里面的电梯，先处理所有向上的请求，然后再处理相反方向的请求。  <ul><li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229141513.png" srcset="/img/loading.gif" lazyload></li></ul></li><li>C-SCAN(循环扫描算法,Circular SCAN): 我们观察电梯算法,假设请求柱面的分布是均匀的，考虑当磁头移到磁盘一端并且反转方向时的请求密度。这时，紧靠磁头前方的请求相对较少，因为最近处理过这些柱面。磁盘另一端的请求密度却是最多。这些请求的等待时间也最长，那么为什么不先去那里？<br>像 SCAN 一样，C-SCAN 移动磁头从磁盘一端到磁盘另一端，并且处理行程上的请求。然而，当磁头到达另一端时，它立即返回到磁盘的开头，而并不处理任何回程上的请求.  <ul><li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229141521.png" srcset="/img/loading.gif" lazyload></li></ul></li><li><em>FS-CAN(分布电梯调度): 在SCAN算法的基础上, 算法思想是，<u>在扫描的过程中所有新产生的序列放在另外的一个队列中，当访问完当前队列之后，再访问新产生的一个队列</u>。这种算法可以有效防止磁壁粘着现象。</em>  </li><li>Look调度: 正如以上所述，SCAN 和 C-SCAN 在磁盘的整个宽度内移动磁臂。实际上，这两种算法通常都不是按这种方式实施的。更常见的是，磁臂只需移到一个方向的最远请求为止。<br>遵循这种模式的 SCAN 算法和 C-SCAN 算法分别称为 LOOK 和 C-LOOK 调度，因为它们在向特定方向移动时查看是否会有请求.  <ul><li><img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229141529.png" srcset="/img/loading.gif" lazyload></li></ul></li></ol>
+          </div>
+
+
+<ol>
+<li><p><font color=red>Q: 假定一个硬盘有100个柱面，每个柱面有10个磁道，每个磁道有15个扇区。当进程要访问磁盘的12345扇区时，计算磁盘的三维物理扇区号</font><br> <font color=green>A: 每个柱面的扇区数为：10*15&#x3D;150  (3’)<br>12345&#x2F;150&#x3D;82余45,故12345扇区所在的柱面为82  (3’)<br>再将45&#x2F;15，其商为3，余数为0，(3’)<br>故求得12345扇区所在的磁盘地址为：82柱面，3磁道，0扇区。(1’)</p>
+</font>  
+</li>
+<li><p><font color=red>Q: 假设移动头磁盘有200个磁道（0-199号）。目前正在处理143号磁道上的请求，而刚刚处理结束的请求是125号，如果下面给出的顺序是按FIFO排成的等待服务队列顺序：86，147，91，177，94，150，102，75，130   那么，下列各种磁盘调度算法来满足这些请求所需的总磁头移动量是多少？<br>1）FCFS,   2)SSTF</font><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229160655.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 假设移动头磁盘有200个磁道（0-199号）。目前正在处理143号磁道上的请求，而刚刚处理结束的请求是125号，如果下面给出的顺序是按FIFO排成的等待服务队列顺序：86，147，91，177，94，150，102，75，130   那么，下列各种磁盘调度算法来满足这些请求所需的总磁头移动量是多少？<br>1)SCAN,   2)C-LOOK</font><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229160745.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 假设一个磁盘由200个磁道，编号从0~199。当前磁头正在143道上服务，并且刚刚完成了125道的请求。如果寻道请求队列的顺序是：86，147，91，177，94，150，102，175，130 问：为完成上述请求，下列算法各自磁头移动的总量是多少？<br> ①FCFS       ②SSTF    </font><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229160851.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 假设一个磁盘由200个磁道，编号从0~199。当前磁头正在143道上服务，并且刚刚完成了125道的请求。如果寻道请求队列的顺序是：86，147，91，177，94，150，102，175，130 问：为完成上述请求，下列算法各自磁头移动的总量是多少？<br>① SCAN       ② C-SCAN</font><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229160905.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 磁盘请求以10，22，20，2，40，6，38柱面的次序到达磁盘驱动器。寻道时每个柱面移动需要6ms，计算以下寻道次序和寻道时间：<br>①先到先服务        ②电梯调度算法（起始移动向上）<br>所有情况下磁臂的起始位置都是柱面20。</font><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229161124.png" srcset="/img/loading.gif" lazyload>  </p>
+</li>
+<li><p><font color=red>Q: 某系统文件存储空间共有80个柱面，20磁道&#x2F;柱面，6块&#x2F;磁道，每块有1K字节。用位示图表示。每张位示图为64个字，其中有4个包含的是控制信息。位示图中的位若为1，表示占用；为0表示空闲。试给出分配和回收一个盘块的计算公式。</font><br> <font color=green>A: </font><br> <img src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20201229161152.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
+      
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>操作系统复习习题</div>
+      <div>https://chen0495.github.io/posts/747adedd/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Chen0495</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年12月10日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                <i class="iconfont icon-nc"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                <i class="iconfont icon-sa"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/59e4ca55/" title="银行家算法 - 操作系统">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">银行家算法 - 操作系统</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/3ecfb80c/" title="主成分分析(PCA)详解">
+                        <span class="hidden-mobile">主成分分析(PCA)详解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline-hh4zulswz-chen0495.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://unpkg.com/@waline/emojis@1.0.1/alus","https://unpkg.com/@waline/emojis@1.0.1/bilibili"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
