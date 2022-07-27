@@ -1,1206 +1,388 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Chen0495">
-  <meta name="keywords" content="Python,C/C++,计算机网络">
-  
-    <meta name="description" content="古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Chen0495的空间站 - 书山有路勤为径，学海无涯苦作舟</title><meta name="keywords" content="Python,C/C++,计算机网络"><meta name="author" content="Chen0495"><meta name="copyright" content="Chen0495"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chen0495的空间站">
 <meta property="og:url" content="https://chen0495.github.io/page/3/index.html">
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen0495.github.io/img/avatar.png">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="Python,C&#x2F;C++,计算机网络">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-    <meta name="referrer" content="no-referrer-when-downgrade">
-  
-  
-  <title>Chen0495的空间站</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen0495.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"4cfdf1bbbfc14c67b6054b14a9f17c34","google":null,"gtag":"G-RETB4NG5L9","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chen0495.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chen0495.github.io/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Chen0495","link":"链接: ","source":"来源: Chen0495的空间站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Chen0495的空间站',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-07-27 22:19:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
-    </script>
+    }
   
-
-  
-
-  
-    <!-- Google gtag.js -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-RETB4NG5L9', function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RETB4NG5L9');
-        });
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
       }
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-<meta name="generator" content="Hexo 6.2.0"></head>
-
-
-<body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Chen0495</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="欢迎来到@Chen0495的空间站"></span>
-          
-        </div>
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/ea6d86f8/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210424204529.jpg" srcset="/img/loading.gif" lazyload alt="深搜与广搜">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/ea6d86f8/" target="_blank">
-          深搜与广搜
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/ea6d86f8/" target="_blank">
-        <div>
-          深搜例: 求1到n这n个数的全排列如图:相当于前序遍历根 -&gt; 左 -&gt; 右的顺序,将一个子树遍历到底再回溯.注意回溯需要保存和还原现场!!!即12_ -&gt; 123操作完成之后从子节点回溯到父节点需要还原现场:123 -&gt; 12_.用栈.代码之后补… 广搜   参考🔗DFS (弱弱 &#x3D;》 深搜 &#x3D;》神搜 &#x3D;》大佬)🔗
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-24 20:46" pubdate>
-              2021-04-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
-            
-              <a href="/tags/%E6%B7%B1%E6%90%9C/">#深搜</a>
-            
-              <a href="/tags/%E5%B9%BF%E6%90%9C/">#广搜</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/300f6cc8/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210424200717.jpg" srcset="/img/loading.gif" lazyload alt="Dijkstra算法浅析">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/300f6cc8/" target="_blank">
-          Dijkstra算法浅析
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/300f6cc8/" target="_blank">
-        <div>
-          正文简单介绍下迪杰斯特拉算法,一般用于寻找最短路.    如图1到6的最短路是: 1 -&gt; 2 -&gt; 3 -&gt; 5 -&gt; 6     注意到在最短路径中,起点到中间节点比如 1 -&gt; 3 的最短路仍然包含在整个最短路径中 1 -&gt; 2 -&gt; 3,这很容易验证,如果起点到中间点有更短的路径,那么起点到终点最短路径就不是上面那一条了,显然矛盾.   基于上述思
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-24 20:09" pubdate>
-              2021-04-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
-            
-              <a href="/tags/Dijkstra/">#Dijkstra</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/521f484e/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20200803175007.jpg" srcset="/img/loading.gif" lazyload alt="[ACM]Python素数打表的方法">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/521f484e/" target="_blank">
-          [ACM]Python素数打表的方法
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/521f484e/" target="_blank">
-        <div>
-          总而言之就是  2筛出4;# ×2 2,3筛出6,9;# ×3 2,3筛出8;# ×4,4%2&#x3D;&#x3D;0,直接跳出,故不计3×4&#x3D;12,又因为2是4的最小素因子,所以4*3&#x3D;(2*2)*3&#x3D;2*(2*3)&#x3D;2*6&#x3D;12,即12会被6筛出,此处不需要多此一举 2,3,5筛出10,15,25;# ×5 2,3,5筛出12,18,30;# ×6,同理,6%2&#x3D;&#x3D;3,后面的3,5不需要算了,因为6*5&#x3D;(2*
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-23 21:46" pubdate>
-              2021-04-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/ACM/" class="category-chain-item">ACM</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/ACM/">#ACM</a>
-            
-              <a href="/tags/%E7%B4%A0%E6%95%B0/">#素数</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/7e85d4a5/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20200713001331.jpg" srcset="/img/loading.gif" lazyload alt="分布式复习">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/7e85d4a5/" target="_blank">
-          分布式复习
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/7e85d4a5/" target="_blank">
-        <div>
-          第一章 - 分布式计算概述 分布式计算、并行计算的概念分布式计算指在☞分布式系统上运行的计算, 它是将一个大型计算任务分成很多部分分别交给其他的计算机处理, 并将所有的计算结果合并为原问题的一种计算方式.并行计算是指同时使用多种计算资源解决计算问题的过程，是提高计算机系统计算速度和处理能力的一种有效手段。它的基本思想是用多个处理器来协同求解同一问题，即将被求解的问题分解成若干个部分，各部分均由一个
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-23 15:04" pubdate>
-              2020-12-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%88%86%E5%B8%83%E5%BC%8F/" class="category-chain-item">分布式</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
-            
-              <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">#分布式</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/59e4ca55/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213173653.jpg" srcset="/img/loading.gif" lazyload alt="银行家算法 - 操作系统">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/59e4ca55/" target="_blank">
-          银行家算法 - 操作系统
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/59e4ca55/" target="_blank">
-        <div>
-          介绍[1]银行家算法（Banker’s Algorithm）是一个避免死锁（Deadlock）的著名算法，是由艾兹格·迪杰斯特拉在1965年为T.H.E系统设计的一种避免死锁产生的算法。它以银行借贷系统的分配策略为基础，判断并保证系统的安全运行。   背景[1]在银行中，客户申请贷款的数量是有限的，每个客户在第一次申请贷款时要声明完成该项目所需的最大资金量，在满足所有贷款要求时，客户应及时归还。银
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-13 17:00" pubdate>
-              2020-12-13
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
-            
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/747adedd/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20201206130155.jpg" srcset="/img/loading.gif" lazyload alt="操作系统复习习题">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/747adedd/" target="_blank">
-          操作系统复习习题
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/747adedd/" target="_blank">
-        <div>
-          习题ps是私货, 可看可不看… 第一章 - 引论   名词解释 操作系统: 操作系统是管理和控制计算机系统内各种硬件和软件资源,有效地组织多道程序运行的系统软件（或程序集合）,是用户与计算机之间的接口。管控软硬件,组织多道运行,人机接口   管态: 执行操作系统程序时,处理机所处的状态.   目态: 执行普通用户程序时,处理机所处的状态.   多道程序设计: 在该设计技术下, 内存中能够同时存放多
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-10 18:46" pubdate>
-              2020-12-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
-            
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/3ecfb80c/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161140.jpg" srcset="/img/loading.gif" lazyload alt="主成分分析(PCA)详解">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/3ecfb80c/" target="_blank">
-          主成分分析(PCA)详解
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/3ecfb80c/" target="_blank">
-        <div>
-          前言学习深度学习,教材是人民邮电出版的《DEEP LEARNING 深度学习》,讲的太细节了,数学符号完全不知道什么意思,非数学系的我看着头痛,只好翻翻博客,最后选择这篇进行学习: 主成分分析（PCA）原理详解记录下学习过程…   PCA简介介绍深度学习的数据往往是多维度的,但不是每个维度都能对最后结果产生影响,试想有下面一组数据:若假设各个科目成绩不会相互影响,我们很容易看出语文列的数据相同,也
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-16 18:46" pubdate>
-              2020-09-16
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PCA/" class="category-chain-item">PCA</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
-            
-              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">#深度学习</a>
-            
-              <a href="/tags/PCA/">#PCA</a>
-            
-              <a href="/tags/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/">#主成分分析</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/2c2eec35/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161157.jpg" srcset="/img/loading.gif" lazyload alt="Hadoop技术教程(未完)">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/2c2eec35/" target="_blank">
-          Hadoop技术教程(未完)
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/2c2eec35/" target="_blank">
-        <div>
-          什么是Hadoop? Hadoop是 apache 旗下的一套开源软件平台.   Hadoop提供的功能:   利用服务器集群,根据用户的自定义业务逻辑,对海量数据进行分布式处理.   Hadoop的核心组件:   HDFS(分布式文件系统) YARN(运算资源调度系统) MAPREDUCE(分布式运算编程框架)   广义上来说,Hadoop通常指一个更广泛的概念 – Hadoop生态圈  Had
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-13 11:10" pubdate>
-              2020-09-13
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/" class="category-chain-item">Hadoop</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">#大数据</a>
-            
-              <a href="/tags/Hadoop/">#Hadoop</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/1e070b08/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161146.jpg" srcset="/img/loading.gif" lazyload alt="zookeeper分布式服务框架">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/1e070b08/" target="_blank">
-          zookeeper分布式服务框架
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/1e070b08/" target="_blank">
-        <div>
-          前言ZooKeeper是Hadoop的正式子项目，它是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、分布式同步、组服务等。ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。   原理:相当于各个主机定期到zookeeper上写入自己的数据并监听其提供的端口,如果某设备离线,zookeeper就删掉该数据并通知所
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-11 17:46" pubdate>
-              2020-09-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/zookeeper/" class="category-chain-item">zookeeper</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">#大数据</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/1129d15c/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161127.jpg" srcset="/img/loading.gif" lazyload alt="[Python]对于yield关键字的理解">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/1129d15c/" target="_blank">
-          [Python]对于yield关键字的理解
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/1129d15c/" target="_blank">
-        <div>
-          前言一直对python中的yield关建字的作用一知半解,很多博客根本是照着官网翻译的… 知道看到这篇文章 🔗python中yield的用法详解🔗 才理解了其涵义,特此记录.   正文yield与return及生成器首先, yield是一个 “return”, 其次带有yield的函数是一个迭代器;如下代码:   123456789def foo():    print(&quot;start
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-08-21 17:19" pubdate>
-              2020-08-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Python/" class="category-chain-item">Python</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Python/">#Python</a>
-            
-              <a href="/tags/yield/">#yield</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-  
-</div>
-
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
+      document.head.appendChild(script)
     })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
       }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.hitokoto.cn/',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'hitokoto'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn/:', error);
-            }
-            typing(text);
-          }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://img.chen0495.top/Chen0495/qiniu/img2022/202207271614694.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chen0495的空间站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Chen0495的空间站</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/chen0495" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenwein612@gmail" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/59e4ca55/" title="银行家算法 - 操作系统"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20201213173653.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="银行家算法 - 操作系统"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/59e4ca55/" title="银行家算法 - 操作系统">银行家算法 - 操作系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-13T09:00:00.000Z" title="发表于 2020-12-13 17:00:00">2020-12-13</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T11:34:51.919Z" title="更新于 2022-07-27 19:34:51">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">介绍[^1]
+银行家算法（Banker’s Algorithm）是一个避免死锁（Deadlock）的著名算法，是由艾兹格·迪杰斯特拉在1965年为T.H.E系统设计的一种避免死锁产生的算法。
+它以银行借贷系统的分配策略为基础，判断并保证系统的安全运行。
+背景[^1]
+在银行中，客户申请贷款的数量是有限的，每个客户在第一次申请贷款时要声明完成该项目所需的最大资金量，在满足所有贷款要求时，客户应及时归还。
+银行家在客户申请的贷款数量不超过自己拥有的最大值时，都应尽量满足客户的需要。在这样的描述中，银行家就好比操作系统，资金就是资源，客户就相当于要申请资源的进程。
+算法
+对于如图的资源分配表:
+Allocation(已经分配出去的资源), MAX(最多需要多少资源), Available(空闲资源)
+
+首先计算出Need (Need = MAX - Allocation), 即还需要多少资源:
+
+然后加一个全为False的字段(FINISH, 表示当前进程是否满足, 也可以不加,记着就行):
+
+接下来找到 Need 比 Available 小的(即空闲资源可以满足当前进程所需):
+
+P2进程 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/747adedd/" title="操作系统期末复习习题"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20201206130155.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统期末复习习题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/747adedd/" title="操作系统期末复习习题">操作系统期末复习习题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-10T10:46:00.000Z" title="发表于 2020-12-10 18:46:00">2020-12-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:20:53.921Z" title="更新于 2022-07-27 18:20:53">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">习题
+老师给的题库，ps是私货, 可看可不看…
+第一章 - 引论
+
+
+名词解释
+
+操作系统: 操作系统是管理和控制计算机系统内各种硬件和软件资源,有效地组织多道程序运行的系统软件（或程序集合）,是用户与计算机之间的接口。
+管控软硬件,组织多道运行,人机接口
+管态: 执行操作系统程序时,处理机所处的状态.
+目态: 执行普通用户程序时,处理机所处的状态.
+多道程序设计: 在该设计技术下, 内存中能够同时存放多道程序, 在管理程序的控制下交替执行. 这些作业共享CPU和系统其他资源.
+多道、交替、共享
+并发: 是指两个或多个活动在同一给定的时间间隔中进行。它是宏观上的概念。
+
+ps: 非同时刻运行.
+
+
+并行: 是指两个或多个活动在同一时刻同时执行的情况。
+吞吐量: 在一段给定的时间内，计算机所能完成的总工作量。
+分时: 就是对时间的共享。在分时系统中，分时主要是指若干并发程序对CPU时间的共享。
+实时: 表示“及时”或“既时”。
+
+ps: 不重要…
+
+
+系统调用: 是用户在程序中能以函数调用形式调用的、由操作系统提供的子功能的集合。每一个子功能称作一条系统调用命令。它是操作系统对外的接口， ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/3ecfb80c/" title="主成分分析(PCA)详解"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161140.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="主成分分析(PCA)详解"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/3ecfb80c/" title="主成分分析(PCA)详解">主成分分析(PCA)详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-16T10:46:00.000Z" title="发表于 2020-09-16 18:46:00">2020-09-16</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:15:15.778Z" title="更新于 2022-07-27 18:15:15">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/PCA/">PCA</a></span></div><div class="content">前言
+学习深度学习,教材是人民邮电出版的《DEEP LEARNING 深度学习》,讲的太细节了,数学符号完全不知道什么意思,非数学系的我看着头痛,只好翻翻博客,最后选择这篇进行学习: 主成分分析（PCA）原理详解
+记录下学习过程…
+PCA简介
+介绍
+深度学习的数据往往是多维度的,但不是每个维度都能对最后结果产生影响,试想有下面一组数据:
+
+若假设各个科目成绩不会相互影响,我们很容易看出语文列的数据相同,也就是说即使我们去掉该列也不会影响最后的结果.那么数学、物理、化学这三门课的成绩构成了这组数据的主成分.
+再看一组数据:
+
+显然不容易找出其主成分.数据太多了，以至于看起来有些凌乱！也就是说，无法直接看出这组数据的主成分，因为在坐标系下这组数据分布的很散乱。究其原因，是因为无法拨开遮住肉眼的迷雾~如果把这些数据在相应的空间中表示出来，也许你就能换一个观察角度找出主成分。
+
+而对于更高维度人脑无法想象的数据应该如何分析?
+数据降维
+假设我们有一个三维的数据,但其数据点均分布在三维立体空间的一个二维平面上,那么这组数据是否能够仅使用二维坐标表示?
+答案是肯定的,而这个过程的本质是: 这个三维 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/1129d15c/" title="[Python]对于yield关键字的理解"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161127.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[Python]对于yield关键字的理解"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1129d15c/" title="[Python]对于yield关键字的理解">[Python]对于yield关键字的理解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-21T09:19:00.000Z" title="发表于 2020-08-21 17:19:00">2020-08-21</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:03:47.033Z" title="更新于 2022-07-27 18:03:47">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/Python/">Python</a></span></div><div class="content">前言
+一直对python中的yield关建字的作用一知半解,很多博客根本是照着官网翻译的… 知道看到这篇文章 🔗python中yield的用法详解🔗 才理解了其涵义,特此记录.
+正文
+yield与return及生成器
+首先, yield是一个 “return”, 其次带有yield的函数是一个迭代器;
+如下代码:
+123456789def foo():    print(&quot;starting...&quot;)    while True:        res = yield 4        print(&quot;res:&quot;,res)g = foo() #因为yield存在,函数并未真正执行,即未输出任何字符串print(next(g))print(&quot;*&quot;*20)print(next(g))
+运行结果:
+12345starting...4********************res: None4
+解释:
+
+程序开始执行后,因为函数中存在yield关键字所以并不会真正执行,而是得到一个生成器g.
+调用next方法,foo函数开始执行.
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/f4634336/" title="[树+dfs]Add and Search Word - Data structure design"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161134.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[树+dfs]Add and Search Word - Data structure design"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f4634336/" title="[树+dfs]Add and Search Word - Data structure design">[树+dfs]Add and Search Word - Data structure design</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-12T08:33:00.000Z" title="发表于 2020-08-12 16:33:00">2020-08-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:03:47.065Z" title="更新于 2022-07-27 18:03:47">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/ACM/">ACM</a></span></div><div class="content">题目
+Design a data structure that supports the following two operations:
+12void addWord(word)  bool search(word)  
+search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.
+Example:
+1234567addWord(&quot;bad&quot;)addWord(&quot;dad&quot;)addWord(&quot;mad&quot;)search(&quot;pad&quot;) -&gt; falsesearch(&quot;bad&quot;) -&gt; truesearch(&quot;.ad&quot;) -&gt; truesearch(&quot;b..&quot;) -&gt; true
+Note:
+You may  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/a1580455/" title="[转载]collections.defaultdict()的使用"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200812161152.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[转载]collections.defaultdict()的使用"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/a1580455/" title="[转载]collections.defaultdict()的使用">[转载]collections.defaultdict()的使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-12T07:49:03.000Z" title="发表于 2020-08-12 15:49:03">2020-08-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:03:47.053Z" title="更新于 2022-07-27 18:03:47">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/Python/">Python</a></span></div><div class="content">正文
+🔗原文链接:@yangsong95🔗
+Python中通过Key访问字典，当Key不存在时，会引发‘KeyError’异常。为了避免这种情况的发生，可以使用collections类中的defaultdict()方法来为字典提供默认值。
+语法格式：
+collections.defaultdict([default_factory[, …]])
+该函数返回一个类似字典的对象。defaultdict是Python内建字典类（dict）的一个子类，它重写了方法_missing_(key)，增加了一个可写的实例变量default_factory,实例变量default_factory被missing()方法使用，如果该变量存在，则用以初始化构造器，如果没有，则为None。其它的功能和dict一样。
+第一个参数为default_factory属性提供初始值，默认为None；其余参数包括关键字参数（keyword arguments）的用法，和dict构造器用法一样。
+1、使用list作第一个参数，可以很容易将键-值对序列转换为列表字典。
+1234567from collections im ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/a1e49d79/" title="JSU19-ACM搜索专题题解"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200803175007.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JSU19-ACM搜索专题题解"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/a1e49d79/" title="JSU19-ACM搜索专题题解">JSU19-ACM搜索专题题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-03T09:46:03.000Z" title="发表于 2020-08-03 17:46:03">2020-08-03</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:12:58.056Z" title="更新于 2022-07-27 18:12:58">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/ACM/">ACM</a></span></div><div class="content">前言
+🔗Vjudge题集链接(组员可进)🔗
+很多讲的不是很清楚或者没理解的建议拿着纸笔🖊照着代码演算一遍,这样对代码思想和算法原理的理解有很大帮助,然后一些
+常用的模板(bfs,素数表)是要背下来的(理解了更好).
+另,C++比C方便很多,而且C有的C++也有,C没有的C++也有,建议使用C++作为算法学习主要语言…
+知识预备
+🔗【中文wiki】深度优先搜索(需要特殊上网手段)🔗
+🔗【算法入门】深度优先搜索(DFS)🔗
+🔗算法图解之广度优先算法BFS🔗
+🔗【算法入门】广度/宽度优先搜索(BFS)🔗
+🔗谷歌访问助手,远离百度,从我做起🔗
+正文
+A：Dungeon Master (poj-2251)
+题意:
+三维迷宫,给定出口和入口,要求输出最短路径长度.
+思路:
+bfs求解,只需要在二维的基础上加一维(上下两个方向)即可.
+知识点:
+🔗 bfs 🔗
+代码：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/e83dc864/" title="android系统https抓包问题分析"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200713000435.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="android系统https抓包问题分析"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/e83dc864/" title="android系统https抓包问题分析">android系统https抓包问题分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-12T04:55:59.000Z" title="发表于 2020-07-12 12:55:59">2020-07-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:07:54.397Z" title="更新于 2022-07-27 18:07:54">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="content">前言
+曾在Android系统抓包Bilibili客户端时遇到HTTPS验证问题，一直很不解，我不是安装了CA证书了吗？直到在52pojie看到@小木曾雪菜 的文章 [原创] 网络逆向（一） 油猴脚本与抓包初步 以显示b站楼层编号为例 
+才恍然大悟,b站客户端通过SSL pinning进行安全通信,原理大概是: 中间人通过伪造假的服务端证书来欺骗客户端，那么客户端就预置一份服务端证书来验证证书的真假.
+之后机缘巧合下刚好在论坛的精华贴看到@psych1 的文章 [Android 原创] android系统https抓包问题分析
+很好的解释了我遇到的问题，特此记录，侵删
+
+HTTPS
+http是超文本传输协议，其存在通信使用明文，内容极易被窃听；不验证通信方的身份，因此有可能遭遇伪装；无法证明报文的完整性，所以有可能遭到篡改的问题
+于是HTTPS应运而生。https中的s是ssl或者tls，就是在原HTTP的基础上加上一层用于数据加密、解密、身份认证的安全层。
+1HTTP + 加密 + 认证 + 完整性保护 = HTTPS
+HTTPS的单双向验证
+  
+
+SSL pinning
+SSL-p ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/f3ce9b23/" title="编译原理课程笔记(弃坑)"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200713000952.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理课程笔记(弃坑)"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f3ce9b23/" title="编译原理课程笔记(弃坑)">编译原理课程笔记(弃坑)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-04-16T03:48:00.000Z" title="发表于 2020-04-16 11:48:00">2020-04-16</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T11:29:52.644Z" title="更新于 2022-07-27 19:29:52">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">词法分析
+前面的课程没有笔记，在这里补一下哈，主要参考国防科技大学的编译原理MOOC
+简单来说就是判断一个字符串是否是合法单词
+正规式的等价性:
+b(ab)*=(ba)*b
+即：
+
+确定的有限自动机(DFA)
+M=(S,Σ,f,S?,F)
+
+S：有穷状态集
+Σ：输入字母表
+f：状态转换函数，后继唯一
+S?：S? ∈ S，是唯一的一个初态
+F：F ∈ S，终态集(可以为空)
+
+tips:
+
+DFA每个顶点射出的弧上的标记符不同
+DFA M所识别的字的全体为L(M)
+
+非确定的有限自动机
+M=(S,Σ,f,S?,F)
+S：有穷状态集
+Σ：输入字母表
+f：状态转换函数，可以是字符，字，正规式
+S?：S? ∈ S，非空初态集
+F：F ∈ S，终态集(可以为空)
+NFA与DFA区别：
+
+
+DFA与NFA识别能力相同：
+
+对于每一个NFA，有一个DFA与该NFA识别能力相同
+
+NFA到DFA的转换(NFA的确定化)
+
+如上图，NFA的确定化就是要消除这三个方面的差异
+
+消除初始状态的差异
+
+
+引进新的初态结点X和终态结点Y，X经过ε到S?(初始状态集)中任意结点，Y经过ε到F(终态集)中的任意结点 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/87a809ba/" title="双线部署你的个人博客"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200713000551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双线部署你的个人博客"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/87a809ba/" title="双线部署你的个人博客">双线部署你的个人博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-04-14T09:32:45.000Z" title="发表于 2020-04-14 17:32:45">2020-04-14</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:28:40.306Z" title="更新于 2022-07-27 18:28:40">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/Blog%E7%9B%B8%E5%85%B3/">Blog相关</a></span></div><div class="content">基于GitHub+Coding双线部署的Hexo静态博客搭建教程
+
+前言
+双线部署是为了实现国内访问走Coding，国外访问走GitHub以保证静态博客的访问速度，且Coding和GitHub服务器并不在国内大陆，避免了备案的麻烦。
+感谢酷安@晴初_back大佬的搭建教程，本文旨在记录本人的博客搭建过程并指出原教程的一些错误以防止新手掉坑，原教程请参考: 外部链接
+
+2022-04-05更新
+
+修正Coding连接问题
+
+
+
+
+
+准备：
+
+GitHub账号
+Git
+Node.js
+Coding账号
+一个域名
+
+
+GitHub仓库创建:
+在GitHub创建仓库，仓库名应该为yourname.github.io，文章中的yourname均表示你的GitHub账号名
+
+
+记得勾选xxx with a README
+
+安装相关软件并连接GitHub：
+安装Git
+Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
+Git下载
+安装可以一路继续。
+ ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chen0495</div><div class="author-info__description">古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chen0495"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chen0495" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenwein612@gmail" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">博客主题已更改为hexo-butterfly - 07/27/2022</div></div><div class="sticky_layout"><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.22em; color: rgb(194, 8, 147)">计算机网络</a><a href="/tags/android/" style="font-size: 1.15em; color: rgb(151, 125, 199)">android</a><a href="/tags/blog/" style="font-size: 1.22em; color: rgb(149, 103, 15)">blog</a><a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 1.22em; color: rgb(96, 129, 4)">建站</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.38em; color: rgb(123, 54, 27)">数据结构</a><a href="/tags/Dijkstra/" style="font-size: 1.15em; color: rgb(91, 46, 177)">Dijkstra</a><a href="/tags/ACM/" style="font-size: 1.3em; color: rgb(9, 177, 110)">ACM</a><a href="/tags/bfs/" style="font-size: 1.15em; color: rgb(62, 77, 120)">bfs</a><a href="/tags/dfs/" style="font-size: 1.22em; color: rgb(193, 191, 127)">dfs</a><a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 1.15em; color: rgb(18, 10, 200)">爬虫</a><a href="/tags/NGA/" style="font-size: 1.15em; color: rgb(182, 162, 150)">NGA</a><a href="/tags/IP/" style="font-size: 1.15em; color: rgb(83, 101, 98)">IP</a><a href="/tags/%E7%B4%A0%E6%95%B0/" style="font-size: 1.15em; color: rgb(59, 22, 110)">素数</a><a href="/tags/Python/" style="font-size: 1.22em; color: rgb(159, 164, 158)">Python</a><a href="/tags/%E6%A0%91/" style="font-size: 1.15em; color: rgb(81, 1, 141)">树</a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.15em; color: rgb(111, 153, 79)">深度学习</a><a href="/tags/PCA/" style="font-size: 1.15em; color: rgb(176, 148, 49)">PCA</a><a href="/tags/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(119, 152, 105)">主成分分析</a><a href="/tags/yield/" style="font-size: 1.15em; color: rgb(52, 80, 113)">yield</a><a href="/tags/%E6%A0%88/" style="font-size: 1.22em; color: rgb(12, 113, 125)">栈</a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 1.15em; color: rgb(58, 125, 46)">分布式</a><a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 1.15em; color: rgb(153, 154, 197)">复习</a><a href="/tags/%E8%80%83%E7%A0%94/" style="font-size: 1.45em; color: rgb(110, 166, 59)">考研</a><a href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 1.15em; color: rgb(139, 8, 9)">平衡二叉树</a><a href="/tags/%E9%AB%98%E6%95%B0/" style="font-size: 1.22em; color: rgb(132, 107, 52)">高数</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.3em; color: rgb(21, 60, 10)">操作系统</a><a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" style="font-size: 1.15em; color: rgb(93, 43, 182)">概率论</a><a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 1.15em; color: rgb(127, 113, 147)">字符串</a><a href="/tags/%E6%B7%B1%E6%90%9C/" style="font-size: 1.15em; color: rgb(136, 86, 131)">深搜</a><a href="/tags/%E5%B9%BF%E6%90%9C/" style="font-size: 1.15em; color: rgb(95, 10, 97)">广搜</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.22em; color: rgb(132, 81, 88)">计算机组成原理</a><a href="/tags/%E7%BA%BF%E4%BB%A3/" style="font-size: 1.15em; color: rgb(109, 146, 52)">线代</a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.15em; color: rgb(147, 114, 35)">编译原理</a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.15em; color: rgb(56, 161, 179)">政治</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">30</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-04-13T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">107.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-07-27T14:19:21.900Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Chen0495</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://chen0495.top/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
         })
-      
-    })(window, document);
-  </script>
+      } else {
+        document.getElementById('subtitle').innerHTML = data.hitokoto
+      }
+    })
+}
 
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://unpkg.com/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://unpkg.com/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://unpkg.com/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

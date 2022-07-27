@@ -1,1211 +1,437 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Chen0495">
-  <meta name="keywords" content="Python,C/C++,计算机网络">
-  
-    <meta name="description" content="古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Chen0495的空间站 - 书山有路勤为径，学海无涯苦作舟</title><meta name="keywords" content="Python,C/C++,计算机网络"><meta name="author" content="Chen0495"><meta name="copyright" content="Chen0495"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chen0495的空间站">
 <meta property="og:url" content="https://chen0495.github.io/page/2/index.html">
 <meta property="og:site_name" content="Chen0495的空间站">
 <meta property="og:description" content="古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen0495.github.io/img/avatar.png">
 <meta property="article:author" content="Chen0495">
 <meta property="article:tag" content="Python,C&#x2F;C++,计算机网络">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-    <meta name="referrer" content="no-referrer-when-downgrade">
-  
-  
-  <title>Chen0495的空间站</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen0495.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"4cfdf1bbbfc14c67b6054b14a9f17c34","google":null,"gtag":"G-RETB4NG5L9","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chen0495.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chen0495.github.io/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Chen0495","link":"链接: ","source":"来源: Chen0495的空间站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Chen0495的空间站',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-07-27 22:19:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
-    </script>
+    }
   
-
-  
-
-  
-    <!-- Google gtag.js -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-RETB4NG5L9', function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RETB4NG5L9');
-        });
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
       }
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-<meta name="generator" content="Hexo 6.2.0"></head>
-
-
-<body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Chen0495</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="欢迎来到@Chen0495的空间站"></span>
-          
-        </div>
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/a01c1709/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210701210022.png" srcset="/img/loading.gif" lazyload alt="计算机网络考研复习">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/a01c1709/" target="_blank">
-          计算机网络考研复习
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/a01c1709/" target="_blank">
-        <div>
-          第一章 - 网络体系结构 计算机网络的概念    是一个将分散的、具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统。 直观理解为“网”：点（终端、路由等）和线（物理线路、无线网络等） 计算机网络的3种不同定义 上图不需要记,只需要知道三者的侧重点即可 广义观点只侧重资源共享；资源共享观点则侧重独立、互联、共享；透明观点只侧重整体性&#x2F;透明性
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-01 21:00" pubdate>
-              2021-07-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%BD%91/" class="category-chain-item">计网</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-              <a href="/tags/%E8%AE%A1%E7%BD%91/">#计网</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/5c8ae43f/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174501.png" srcset="/img/loading.gif" lazyload alt="快速排序算法">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/5c8ae43f/" target="_blank">
-          快速排序算法
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/5c8ae43f/" target="_blank">
-        <div>
-          算法思想如图序列,我们先设置一个基准,假设基准是第一个元素49,每次扫描都将序列变成[比49小的...49...比49大的]这种形式,然后在分别递归地对49左右两边的序列进行相同操作,相当于递归的每次调用都确定了一个元素的相对位置(基准),所有元素的相对位置都确定了下来,则序列就排好了序.   现在假设两根指针(标记,其实不是指针)分别指向头和尾, 设基准元素为low指向元素.  先让high移动
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-21 19:30" pubdate>
-              2021-06-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/f8bc8215/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174556.png" srcset="/img/loading.gif" lazyload alt="概率论笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/f8bc8215/" target="_blank">
-          概率论笔记
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/f8bc8215/" target="_blank">
-        <div>
-          古典概型 逐个检查: 一个一个查完所有.  一维变量及其分布 F(x)能作分布函数的充分必要条件 非降性; 有界性,F(+∞)&#x3D;1,F(-∞)&#x3D;0; 右连续,F(x) &#x3D; F(x+0);   伯努利分布可加性: x1与x2独立,$$x_1 ~ B(i_1,p),x_2 ~ B(i_2,p) \Rightarrow x_1+x_2 ~ B(i_1+i_2,p)$$ 泊松
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-21 16:40" pubdate>
-              2021-06-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A6%82%E7%8E%87%E8%AE%BA/" class="category-chain-item">概率论</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-              <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">#概率论</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/cfa485f3/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174511.png" srcset="/img/loading.gif" lazyload alt="线代笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/cfa485f3/" target="_blank">
-          线代笔记
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/cfa485f3/" target="_blank">
-        <div>
-          前言尚不熟悉考点：              副对角线三角行列式的值                         负对角线元素要留心！（分块、伴随...）                         区分矩阵加乘法（对应元素）与行列式加乘法（对应某一行列）                         分块矩阵的逆                         text
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-18 19:40" pubdate>
-              2021-06-18
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BA%BF%E4%BB%A3/" class="category-chain-item">线代</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-              <a href="/tags/%E7%BA%BF%E4%BB%A3/">#线代</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/865e512f/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174402.png" srcset="/img/loading.gif" lazyload alt="平衡二叉树的插入与调整">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/865e512f/" target="_blank">
-          平衡二叉树的插入与调整
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/865e512f/" target="_blank">
-        <div>
-          平衡二叉树相关概念 平衡二叉树(AVL): 树上任一节点的左子树与右子树高度之差不超过1.   节点的平衡因子: 节点的左子树与与右子树高度之差.   最小不平衡子树: 平衡树中插入一个新节点后出现了不平衡的现象,从该新插入节点所在分支进行回溯,找到第一个不平衡的节点,以该节点为根的子树叫最小不平衡子树.   只要将最小不平衡子树调整到平衡状态,插入节点所影响的所有祖先节点的平衡因子也会恢复正常.
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-28 19:53" pubdate>
-              2021-05-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%AB%98%E6%95%B0/">#高数</a>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-              <a href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">#平衡二叉树</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/2da0528d/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174538.png" srcset="/img/loading.gif" lazyload alt="KMP算法">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/2da0528d/" target="_blank">
-          KMP算法
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/2da0528d/" target="_blank">
-        <div>
-          算法思想暴力优化给定主串S和模式串P:S:BBC ABCDAB ABCDABCDABDEP:ABCDABD   暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配.如图:    暴力算法做了太多无用功,如下图所示: D与空格失配后,失配字符前的ABCDAB字串显然是配对的,换言之我们已经知道失配字符前的所有字符,那我们可以根据这些已知字符来跳过
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-17 20:45" pubdate>
-              2021-05-17
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
-            
-              <a href="/tags/%E4%B8%B2/">#串</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/645157d/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174605.png" srcset="/img/loading.gif" lazyload alt="微分方程求解">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/645157d/" target="_blank">
-          微分方程求解
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/645157d/" target="_blank">
-        <div>
-          可分离变量方程例1:例2:   齐次方程例1:例2:   一阶齐次线性方程&amp;一阶非齐次线性方程例1,例2:例3:例4:
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-17 19:25" pubdate>
-              2021-05-17
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%AB%98%E6%95%B0/" class="category-chain-item">高数</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%AB%98%E6%95%B0/">#高数</a>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/992a10c1/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png" srcset="/img/loading.gif" lazyload alt="高数知识点(持续更新ing...)">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/992a10c1/" target="_blank">
-          高数知识点(持续更新ing...)
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/992a10c1/" target="_blank">
-        <div>
-          前言快速关键词定位ctrl + f.尚不熟悉考点：              变换求偏导                         非齐次微分方程的特解形式                         中值定理证明题                         级数收敛判别方法中的积分法                         交错级数收敛需要a_n递减
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-10 19:25" pubdate>
-              2021-05-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%AB%98%E6%95%B0/" class="category-chain-item">高数</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%AB%98%E6%95%B0/">#高数</a>
-            
-              <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/bcf7b8cf/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174511.png" srcset="/img/loading.gif" lazyload alt="利用栈实现表达式的中后缀转换">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/bcf7b8cf/" target="_blank">
-          利用栈实现表达式的中后缀转换
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/bcf7b8cf/" target="_blank">
-        <div>
-          背景中缀表达式,运算符在操作数的中间,即一般的表达式;后缀表达式,运算符在操作数的后面;前缀表达式,运算符在操作数之前.   下面我们实现由一般的中缀表达式到后缀表达式的转换.   手算举例说明: a+b*c+(d*e+f)*g    将其按照先乘除后加减以及从左到右的原则添加上括号((a + (b * c)) + (((d * e) + f) * g)),熟练了该步可以省去,添加括号反而增加麻烦
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-08 17:48" pubdate>
-              2021-05-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
-            
-              <a href="/tags/%E6%A0%88/">#栈</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/c1af42a4/" target="_blank">
-          <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210424204513.jpeg" srcset="/img/loading.gif" lazyload alt="卡特兰数与出栈顺序数">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/c1af42a4/" target="_blank">
-          卡特兰数与出栈顺序数
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/c1af42a4/" target="_blank">
-        <div>
-          背景卡特兰数是组合数学中一个常在各种计数问题中出现的数列。以比利时的数学家欧仁·查理·卡特兰（1814–1894）命名。历史上，清朝数学家明安图（1692年－1763年）在其《割圜密率捷法》中最先发明这种计数方式，远远早于卡特兰。有中国学者建议将此数命名为“明安图数”或“明安图-卡特兰数”。– by Wikipedia其一般公式为:   问题n个不同元素依次入栈,问有多少种合法的出栈顺序?   思
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-02 11:25" pubdate>
-              2021-05-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
-            
-              <a href="/tags/%E6%A0%88/">#栈</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-  
-</div>
-
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
+      document.head.appendChild(script)
     })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
       }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.hitokoto.cn/',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'hitokoto'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn/:', error);
-            }
-            typing(text);
-          }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://img.chen0495.top/Chen0495/qiniu/img2022/202207271614694.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chen0495的空间站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Chen0495的空间站</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/chen0495" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenwein612@gmail" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/865e512f/" title="平衡二叉树的插入与调整"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174402.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="平衡二叉树的插入与调整"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/865e512f/" title="平衡二叉树的插入与调整">平衡二叉树的插入与调整</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-28T11:53:41.000Z" title="发表于 2021-05-28 19:53:41">2021-05-28</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:26:42.452Z" title="更新于 2022-07-27 18:26:42">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">平衡二叉树相关概念
+
+平衡二叉树(AVL): 树上任一节点的左子树与右子树高度之差不超过1.
+节点的平衡因子: 节点的左子树与与右子树高度之差.
+最小不平衡子树: 平衡树中插入一个新节点后出现了不平衡的现象,从该新插入节点所在分支进行回溯,找到第一个不平衡的节点,以该节点为根的子树叫最小不平衡子树.
+只要将最小不平衡子树调整到平衡状态,插入节点所影响的所有祖先节点的平衡因子也会恢复正常.
+
+
+          
+平衡二叉树的恢复
+平衡二叉树的平衡被破坏的情况可分为以下四种.其恢复操作也不尽相同.
+
+LL平衡旋转(右单旋转)
+即在最小不平衡树的根节点A的左孩子的左树上插入导致的不平衡.此处注意A是结果而非提前知道.
+如下图:
+
+我们在BL上插入新节点,导致A第一个不平衡,这意味着A的原平衡因子是1,B的平衡因子是0,于是我们假设BL、BR、AR的高度相等且都为H.
+之后的情况也与之同理,不再重复.
+于是我们可以得到BL &lt; B &lt; BR &lt; A &lt; AR.插入之后BL高度变为H+1,B和A的平衡因子也加一.
+
+恢复手段是将其拆分并重新组合(不失顺序,且不能用BL ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/2da0528d/" title="KMP算法"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174538.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="KMP算法"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2da0528d/" title="KMP算法">KMP算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-17T12:45:49.000Z" title="发表于 2021-05-17 20:45:49">2021-05-17</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:30:57.735Z" title="更新于 2022-07-27 18:30:57">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">算法思想
+暴力优化
+给定主串S和模式串P:
+S:BBC ABCDAB ABCDABCDABDE
+P:ABCDABD
+暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配.
+如图: 
+暴力算法做了太多无用功,如下图所示: 
+D与空格失配后,失配字符前的ABCDAB字串显然是配对的,换言之我们已经知道失配字符前的所有字符,那我们可以根据这些已知字符来跳过一些不可能的情况.
+
+如上图,失配字符D之前的字串ABCDAB具有相同且最大的前后缀AB,故我们可以直接跳转使得失配字符前的字串的前缀(即模式串的前缀)与后缀(即主串的后缀)相对应.
+也就是说,我们从头到尾假设每个字符失配,得到失配字符前的字串中相同的前缀和后缀,并记录下来,即可省略一大批步骤.那么怎么得到这个相同前后缀呢?
+KMP步骤
+
+寻找前后缀最长公共元素长度
+
+对于字串P = P[0] P[1] P[2] ... P[j-1] P[j],找其最长公共前后缀.
+如果有P[0] P[1] ... P[k] = P[j-k] P[j-k+1] ... P[j]即某条公共前后缀,那么对于一 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/645157d/" title="微分方程求解"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174605.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="微分方程求解"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/645157d/" title="微分方程求解">微分方程求解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-17T11:25:49.000Z" title="发表于 2021-05-17 19:25:49">2021-05-17</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:19:13.137Z" title="更新于 2022-07-27 18:19:13">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E9%AB%98%E6%95%B0/">高数</a></span></div><div class="content">可分离变量方程
+
+例1:
+
+例2:
+
+齐次方程
+
+例1:
+
+例2:
+
+一阶齐次线性方程&amp;一阶非齐次线性方程
+
+例1,例2:
+
+例3:
+
+例4:
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/992a10c1/" title="高数知识点(持续更新ing...)"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高数知识点(持续更新ing...)"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/992a10c1/" title="高数知识点(持续更新ing...)">高数知识点(持续更新ing...)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-10T11:25:49.000Z" title="发表于 2021-05-10 19:25:49">2021-05-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T12:22:30.837Z" title="更新于 2022-07-27 20:22:30">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E9%AB%98%E6%95%B0/">高数</a></span></div><div class="content">前言
+此页面公式渲染器由mathjax更改为katex。katex测试：AA∗=E∣A∣A{A^*} = E|A|AA∗=E∣A∣
+
+快速关键词定位ctrl + f.
+尚不熟悉考点：
+
+变换求偏导
+非齐次微分方程的特解形式
+中值定理证明题
+级数收敛判别方法中的积分法
+交错级数收敛需要a_n递减
+
+曲线面积分及重积分
+
+
+第一类曲线积分:
+
+一投二代三计算
+
+
+
+
+第一类曲面积分
+
+一投二代三计算
+
+对称性: 积分区域关于X/Y/Z对称,若被积函数也关于X/Y/Z对称则双倍,若奇函数则0(看被积函数是否对称或奇函数可以代入(X和-X)或(Y和-Y)…
+
+
+
+三重积分
+
+先一后二(投影法)
+先二后一(旋转体):
+球面坐标系(对应极坐标法)
+积分交换次序
+
+画出积分区域.
+先对谁积分就画一条直线平行与该轴,移动这条直线穿越积分区域.
+交换积分次序.
+
+
+
+
+
+第二类曲线积分
+
+
+
+一投二代三计算(化二重积分)
+格林公式
+斯托克斯公式(二型曲线积分化一型面积分)
+挖孔(针对分母不能为0)
+重积分时,曲线曲面且严格等号,才能代换被积函数
+
+
+
+第二类曲面积分
+
+一投二代三计算
+对称性:与重积分不 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/bcf7b8cf/" title="利用栈实现表达式的中后缀转换"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174511.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="利用栈实现表达式的中后缀转换"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/bcf7b8cf/" title="利用栈实现表达式的中后缀转换">利用栈实现表达式的中后缀转换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-08T09:48:50.000Z" title="发表于 2021-05-08 17:48:50">2021-05-08</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:17:09.630Z" title="更新于 2022-07-27 18:17:09">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">背景
+中缀表达式,运算符在操作数的中间,即一般的表达式;
+后缀表达式,运算符在操作数的后面;
+前缀表达式,运算符在操作数之前.
+
+下面我们实现由一般的中缀表达式到后缀表达式的转换.
+手算
+举例说明: a+b*c+(d*e+f)*g
+
+将其按照先乘除后加减以及从左到右的原则添加上括号((a + (b * c)) + (((d * e) + f) * g)),熟练了该步可以省去,添加括号反而增加麻烦.
+根据括号由内向外将表达式转换为后缀形式a bc* + de* f+ g* +.
+
+得到最终结果,但此法不适用于计算机.
+但我们可以从中看出一些规律,这对设计计算机算法有所裨益.
+例如:
+
+操作数之间的相对顺序并未改变.
+内层的运算符总是比外层的运算符先输出.
+a+b*c中*要先运算;而a*b+c...中也是*先运算,但到+时意味着前面的运算已经影响不到后面的运算了(除非有括号),也就是说在没有括号参与的情况下,低运算级(+,-)前面的高运算级(+,-,*,/)可以输出了.
+接上条,在括号内部的运算总是优先的,于是我们可以将右括号)视为一个括号运算的结束,那么怎么找到与之对应的左括号呢?我们很 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/c1af42a4/" title="卡特兰数与出栈顺序数"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210424204513.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="卡特兰数与出栈顺序数"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c1af42a4/" title="卡特兰数与出栈顺序数">卡特兰数与出栈顺序数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-02T03:25:49.000Z" title="发表于 2021-05-02 11:25:49">2021-05-02</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:17:34.895Z" title="更新于 2022-07-27 18:17:34">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">背景
+卡特兰数是组合数学中一个常在各种计数问题中出现的数列。以比利时的数学家欧仁·查理·卡特兰（1814–1894）命名。历史上，清朝数学家明安图（1692年－1763年）在其《割圜密率捷法》中最先发明这种计数方式，远远早于卡特兰。有中国学者建议将此数命名为“明安图数”
+或“明安图-卡特兰数”。-- by Wikipedia
+其一般公式为:
+
+问题
+n个不同元素依次入栈,问有多少种合法的出栈顺序?
+思路
+有A、B两个元素,入栈顺序AB,则出栈情况有两种:
+
+入A, 出A, 入B, 出B.
+入A, 入B, 出B, 出A.
+
+现在假设f(n)为 &quot; n 个不同元素依次入栈, 出栈顺序的种类数&quot;. 显然f(1)=1,f(2)=2.
+现在按照第一个入栈元素,在出栈序列中的位置进行分类讨论, 假设入栈序列ABCD:
+
+A第一个出栈时,A先进,然后马上出栈.这种情况下,共有“BCD出栈顺序的种类数”种方案.也就是f(n-1)种.
+A第二个出栈时,A先进,B再进,之后B需要马上出来(这样才能确保A排第二),此时共有f(n-2)种方案.
+A第三个出栈时,A先进,之后只要确保排在A后 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/ea6d86f8/" title="深搜与广搜"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210424204529.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深搜与广搜"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/ea6d86f8/" title="深搜与广搜">深搜与广搜</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-24T12:46:00.000Z" title="发表于 2021-04-24 20:46:00">2021-04-24</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T12:28:13.016Z" title="更新于 2022-07-27 20:28:13">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">深搜
+例: 求1到n这n个数的全排列
+如图:
+
+相当于前序遍历根 -&gt; 左 -&gt; 右的顺序,将一个子树遍历到底再回溯.
+注意回溯需要保存和还原现场!!!
+即12_ -&gt; 123操作完成之后从子节点回溯到父节点需要还原现场:123 -&gt; 12_.
+用栈.
+
+代码之后补…
+广搜
+
+参考
+🔗DFS (弱弱 =》 深搜 =》神搜 =》大佬)🔗
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/300f6cc8/" title="Dijkstra算法浅析"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210424200717.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dijkstra算法浅析"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/300f6cc8/" title="Dijkstra算法浅析">Dijkstra算法浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-24T12:09:03.000Z" title="发表于 2021-04-24 20:09:03">2021-04-24</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:09:10.388Z" title="更新于 2022-07-27 18:09:10">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">正文
+简单介绍下迪杰斯特拉算法,一般用于寻找最短路.
+
+如图1到6的最短路是: 1 -&gt; 2 -&gt; 3 -&gt; 5 -&gt; 6
+
+注意到在最短路径中,起点到中间节点比如 1 -&gt; 3 的最短路仍然包含在整个最短路径中 1 -&gt; 2 -&gt; 3,这很容易验证,如果起点到中间点有
+更短的路径,那么起点到终点最短路径就不是上面那一条了,显然矛盾.
+基于上述思想,我们可以找到一条从起点到终点的路径(最短路径),其起点到每一个中间节点的距离依然是这两者的最短距
+离,于是我们只需要找到离当前节点最近的节点作为当前路径的下一个目的地,直到到达终点或者遍历完所有可到达点为止.
+
+基本流程:
+
+建立存储矩阵,存放点到点的距离,初值默认无穷大:
+
+创建最短距离数组,存放起始点到各个点的距离,初值默认无穷大:
+
+创建标记数组,标记该点是否已访问,初值默认False.
+
+
+标记起点.
+从起点开始,访问离起点最近的值(此处为2)并标记,更改最短距离数组中节点2的值.
+找离 2 最近的点(此处为4),访问并标记,更改最短距离数组中节点4的值.
+…
+到达终点或遍历完所有可到达节点 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/521f484e/" title="[ACM]Python素数打表的方法"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200803175007.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[ACM]Python素数打表的方法"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/521f484e/" title="[ACM]Python素数打表的方法">[ACM]Python素数打表的方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-23T13:46:03.000Z" title="发表于 2021-04-23 21:46:03">2021-04-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:03:46.997Z" title="更新于 2022-07-27 18:03:46">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/ACM/">ACM</a></span></div><div class="content">总而言之就是
+
+2筛出4;# ×2
+2,3筛出6,9;# ×3
+2,3筛出8;# ×4,4%2==0,直接跳出,故不计3×4=12,又因为2是4的最小素因子,所以4*3=(2*2)*3=2*(2*3)=2*6=12,即12会被6筛出,此处不需要多此一举
+2,3,5筛出10,15,25;# ×5
+2,3,5筛出12,18,30;# ×6,同理,6%2==3,后面的3,5不需要算了,因为6*5=(2*3)*5=2*(3*5)=2*15=30被15筛出,此处若计算3,5将多出大量无用计算
+是否跳过多余计算比较:
+
+
+
+Code:
+1234567891011121314151617181920212223242526# -*-coding:utf-8-*-maxl = 1000000  # 筛选范围count = 0       ss = []    # 素数check = [] # 0代表素数，1代表合数。全部初始化为素数。for x in range(0, maxl+1):	check.append(0)# 筛选出 2~10^6 所有素数for i in range(2, maxl):	# ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/7e85d4a5/" title="分布式期末复习"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20200713001331.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分布式期末复习"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/7e85d4a5/" title="分布式期末复习">分布式期末复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-23T07:04:49.000Z" title="发表于 2020-12-23 15:04:49">2020-12-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T10:25:47.912Z" title="更新于 2022-07-27 18:25:47">2022-07-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></span></div><div class="content">第一章 - 分布式计算概述
+
+
+分布式计算、并行计算的概念
+分布式计算指在☞分布式系统上运行的计算, 它是将一个大型计算任务分成很多部分分别交给其他的计算机处理, 并将所有的计算结果合并为原问题的一种计算方式.
+并行计算是指同时使用多种计算资源解决计算问题的过程，是提高计算机系统计算速度和处理能力的一种有效手段。它的基本思想是用多个处理器来协同求解同一问题，即将被求解的问题分解成若干个部分，各部分均由一个独立的处理机来并行计算.
+
+
+一个典型的分布式系统构成
+
+
+
+分布式系统的特征
+
+
+
+CAP理论
+
+
+
+          
+
+
+分布式计算的核心技术
+进程间通信: (interprocess communication，IPC)，即在互相独立的进程（进程是程序的运行时表示）间通信及共同协作以完成某项任务的能力。
+
+
+分布式存储系统分为哪两个层次
+文件级和数据库系统
+
+ps: 存储还能咋存, 只有文件和数据库了
+
+
+
+分布式计算系统
+批处理分布式计算、流处理分布式计算、混合计算
+🔗流式计算与批量计算有什么区别？🔗
+
+
+第二章 - web框架实现
+
+
+流行的web框架采用mvc 模式 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chen0495</div><div class="author-info__description">古之立大事者，不惟有超世之才，亦必有坚韧不拔之志。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chen0495"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chen0495" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenwein612@gmail" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">博客主题已更改为hexo-butterfly - 07/27/2022</div></div><div class="sticky_layout"><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.22em; color: rgb(194, 8, 147)">计算机网络</a><a href="/tags/android/" style="font-size: 1.15em; color: rgb(151, 125, 199)">android</a><a href="/tags/blog/" style="font-size: 1.22em; color: rgb(149, 103, 15)">blog</a><a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 1.22em; color: rgb(96, 129, 4)">建站</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.38em; color: rgb(123, 54, 27)">数据结构</a><a href="/tags/Dijkstra/" style="font-size: 1.15em; color: rgb(91, 46, 177)">Dijkstra</a><a href="/tags/ACM/" style="font-size: 1.3em; color: rgb(9, 177, 110)">ACM</a><a href="/tags/bfs/" style="font-size: 1.15em; color: rgb(62, 77, 120)">bfs</a><a href="/tags/dfs/" style="font-size: 1.22em; color: rgb(193, 191, 127)">dfs</a><a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 1.15em; color: rgb(18, 10, 200)">爬虫</a><a href="/tags/NGA/" style="font-size: 1.15em; color: rgb(182, 162, 150)">NGA</a><a href="/tags/IP/" style="font-size: 1.15em; color: rgb(83, 101, 98)">IP</a><a href="/tags/%E7%B4%A0%E6%95%B0/" style="font-size: 1.15em; color: rgb(59, 22, 110)">素数</a><a href="/tags/Python/" style="font-size: 1.22em; color: rgb(159, 164, 158)">Python</a><a href="/tags/%E6%A0%91/" style="font-size: 1.15em; color: rgb(81, 1, 141)">树</a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.15em; color: rgb(111, 153, 79)">深度学习</a><a href="/tags/PCA/" style="font-size: 1.15em; color: rgb(176, 148, 49)">PCA</a><a href="/tags/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(119, 152, 105)">主成分分析</a><a href="/tags/yield/" style="font-size: 1.15em; color: rgb(52, 80, 113)">yield</a><a href="/tags/%E6%A0%88/" style="font-size: 1.22em; color: rgb(12, 113, 125)">栈</a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 1.15em; color: rgb(58, 125, 46)">分布式</a><a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 1.15em; color: rgb(153, 154, 197)">复习</a><a href="/tags/%E8%80%83%E7%A0%94/" style="font-size: 1.45em; color: rgb(110, 166, 59)">考研</a><a href="/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 1.15em; color: rgb(139, 8, 9)">平衡二叉树</a><a href="/tags/%E9%AB%98%E6%95%B0/" style="font-size: 1.22em; color: rgb(132, 107, 52)">高数</a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.3em; color: rgb(21, 60, 10)">操作系统</a><a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" style="font-size: 1.15em; color: rgb(93, 43, 182)">概率论</a><a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 1.15em; color: rgb(127, 113, 147)">字符串</a><a href="/tags/%E6%B7%B1%E6%90%9C/" style="font-size: 1.15em; color: rgb(136, 86, 131)">深搜</a><a href="/tags/%E5%B9%BF%E6%90%9C/" style="font-size: 1.15em; color: rgb(95, 10, 97)">广搜</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.22em; color: rgb(132, 81, 88)">计算机组成原理</a><a href="/tags/%E7%BA%BF%E4%BB%A3/" style="font-size: 1.15em; color: rgb(109, 146, 52)">线代</a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.15em; color: rgb(147, 114, 35)">编译原理</a><a href="/tags/%E6%94%BF%E6%B2%BB/" style="font-size: 1.15em; color: rgb(56, 161, 179)">政治</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">30</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-04-13T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">107.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-07-27T14:19:21.900Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Chen0495</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://chen0495.top/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
         })
-      
-    })(window, document);
-  </script>
+      } else {
+        document.getElementById('subtitle').innerHTML = data.hitokoto
+      }
+    })
+}
 
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://unpkg.com/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://unpkg.com/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://unpkg.com/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

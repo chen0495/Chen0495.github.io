@@ -1,378 +1,192 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Chen0495">
-  <meta name="keywords" content="Python,C/C++,计算机网络">
-  
-    <meta name="description" content="前言快速关键词定位ctrl + f.尚不熟悉考点：              变换求偏导                         非齐次微分方程的特解形式                         中值定理证明题                         级数收敛判别方法中的积分法                         交错级数收敛需要a_n递减">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>高数知识点(持续更新ing...) | Chen0495的空间站</title><meta name="keywords" content="考研,高数"><meta name="author" content="Chen0495"><meta name="copyright" content="Chen0495"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 此页面公式渲染器由mathjax更改为katex。katex测试：AA∗&#x3D;E∣A∣A{A^*} &#x3D; E|A|AA∗&#x3D;E∣A∣  快速关键词定位ctrl + f. 尚不熟悉考点：  变换求偏导 非齐次微分方程的特解形式 中值定理证明题 级数收敛判别方法中的积分法 交错级数收敛需要a_n递减  曲线面积分及重积分   第一类曲线积分:  一投二代三计算     第一类曲面积分  一投二代三计算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高数知识点(持续更新ing...)">
 <meta property="og:url" content="https://chen0495.github.io/posts/992a10c1/index.html">
 <meta property="og:site_name" content="Chen0495的空间站">
-<meta property="og:description" content="前言快速关键词定位ctrl + f.尚不熟悉考点：              变换求偏导                         非齐次微分方程的特解形式                         中值定理证明题                         级数收敛判别方法中的积分法                         交错级数收敛需要a_n递减">
+<meta property="og:description" content="前言 此页面公式渲染器由mathjax更改为katex。katex测试：AA∗&#x3D;E∣A∣A{A^*} &#x3D; E|A|AA∗&#x3D;E∣A∣  快速关键词定位ctrl + f. 尚不熟悉考点：  变换求偏导 非齐次微分方程的特解形式 中值定理证明题 级数收敛判别方法中的积分法 交错级数收敛需要a_n递减  曲线面积分及重积分   第一类曲线积分:  一投二代三计算     第一类曲面积分  一投二代三计算">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png">
 <meta property="article:published_time" content="2021-05-10T11:25:49.000Z">
-<meta property="article:modified_time" content="2022-07-23T22:08:55.035Z">
+<meta property="article:modified_time" content="2022-07-27T12:22:30.837Z">
 <meta property="article:author" content="Chen0495">
-<meta property="article:tag" content="高数">
 <meta property="article:tag" content="考研">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png">
-  
-  
-    <meta name="referrer" content="no-referrer-when-downgrade">
-  
-  
-  <title>高数知识点(持续更新ing...) - Chen0495的空间站</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen0495.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"4cfdf1bbbfc14c67b6054b14a9f17c34","google":null,"gtag":"G-RETB4NG5L9","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta property="article:tag" content="高数">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chen0495.github.io/posts/992a10c1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Chen0495","link":"链接: ","source":"来源: Chen0495的空间站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '高数知识点(持续更新ing...)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-27 20:22:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
-    </script>
+    }
   
-
-  
-
-  
-    <!-- Google gtag.js -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-RETB4NG5L9', function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RETB4NG5L9');
-        });
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
       }
-    </script>
+      document.head.appendChild(script)
+    })
   
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-<meta name="generator" content="Hexo 6.2.0"></head>
-
-
-<body>
-  
-
-  <header>
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Chen0495</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="高数知识点(持续更新ing...)"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2021-05-10 19:25" pubdate>
-          2021年5月10日 晚上
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          5.5k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          46 分钟
-        
-      </span>
-    
-
-    
-    
-      
-        <span id="busuanzi_container_page_pv" style="display: none">
-          <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> 次
-        </span>
-        
-      
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chen0495的空间站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">高数知识点(持续更新ing...)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-10T11:25:49.000Z" title="发表于 2021-05-10 19:25:49">2021-05-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-27T12:22:30.837Z" title="更新于 2022-07-27 20:22:30">2022-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E9%AB%98%E6%95%B0/">高数</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="高数知识点(持续更新ing...)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>前言</h1>
+<div class="note success flat"><p>此页面公式渲染器由mathjax更改为katex。katex测试：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><msup><mi>A</mi><mo>∗</mo></msup><mo>=</mo><mi>E</mi><mi mathvariant="normal">∣</mi><mi>A</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">A{A^*} = E|A|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6887em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord">∣</span><span class="mord mathnormal">A</span><span class="mord">∣</span></span></span></span></p>
 </div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">高数知识点(持续更新ing...)</h1>
-            
-              <p class="note note-info">
-                
-                  
-                    本文最后更新于：2022年7月24日 早上
-                  
-                
-              </p>
-            
-            
-              <div class="markdown-body">
-                
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>快速关键词定位<code>ctrl + f</code>.<br><strong>尚不熟悉考点</strong>：</p>
-
-            <input type="checkbox" disabled >变换求偏导
-          
-
-            <input type="checkbox" disabled >非齐次微分方程的特解形式
-          
-
-            <input type="checkbox" disabled >中值定理证明题
-          
-
-            <input type="checkbox" disabled >级数收敛判别方法中的积分法
-          
-
-            <input type="checkbox" disabled >交错级数收敛需要a_n递减
-          
-
-<h1 id="曲线面积分及重积分"><a href="#曲线面积分及重积分" class="headerlink" title="曲线面积分及重积分"></a>曲线面积分及重积分</h1><ol>
-<li><p>第一类曲线积分:</p>
+<p>快速关键词定位<code>ctrl + f</code>.<br>
+<strong>尚不熟悉考点</strong>：</p>
 <ul>
-<li>一投二代三计算<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110040914832.png" srcset="/img/loading.gif" lazyload alt="第一类曲线积分1"></li>
-<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051423415.png" srcset="/img/loading.gif" lazyload alt="第一类曲线积分2"></li>
+<li>变换求偏导</li>
+<li>非齐次微分方程的特解形式</li>
+<li>中值定理证明题</li>
+<li>级数收敛判别方法中的积分法</li>
+<li>交错级数收敛需要a_n递减</li>
+</ul>
+<h1>曲线面积分及重积分</h1>
+<ol>
+<li>
+<p>第一类曲线积分:</p>
+<ul>
+<li>一投二代三计算<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110040914832.png" alt="第一类曲线积分1"></li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051423415.png" alt="第一类曲线积分2"></li>
 </ul>
 </li>
-<li><p>第一类曲面积分</p>
+<li>
+<p>第一类曲面积分</p>
 <ul>
-<li>一投二代三计算<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051427189.png" srcset="/img/loading.gif" lazyload alt="第一类曲面积分1"></li>
-<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051428614.png" srcset="/img/loading.gif" lazyload alt="第一类曲面积分2"></li>
-<li>对称性: 积分区域关于X&#x2F;Y&#x2F;Z对称,若被积函数也关于X&#x2F;Y&#x2F;Z对称则双倍,若奇函数则0(看被积函数是否对称或奇函数可以代入(X和-X)或(Y和-Y)…</li>
+<li>一投二代三计算<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051427189.png" alt="第一类曲面积分1"></li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051428614.png" alt="第一类曲面积分2"></li>
+<li>对称性: 积分区域关于X/Y/Z对称,若被积函数也关于X/Y/Z对称则双倍,若奇函数则0(看被积函数是否对称或奇函数可以代入(X和-X)或(Y和-Y)…</li>
 </ul>
 </li>
-<li><p>三重积分</p>
+<li>
+<p>三重积分</p>
 <ul>
 <li>先一后二(投影法)</li>
-<li>先二后一(旋转体):<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051416983.png" srcset="/img/loading.gif" lazyload alt="三重积分"></li>
+<li>先二后一(旋转体):<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051416983.png" alt="三重积分"></li>
 <li>球面坐标系(对应极坐标法)</li>
-<li>积分交换次序<ol>
+<li>积分交换次序
+<ol>
 <li>画出积分区域.</li>
 <li>先对谁积分就画一条直线平行与该轴,移动这条直线穿越积分区域.</li>
 <li>交换积分次序.</li>
@@ -380,853 +194,569 @@
 </li>
 </ul>
 </li>
-<li><p>第二类曲线积分</p>
+<li>
+<p>第二类曲线积分</p>
 </li>
 </ol>
 <ul>
-<li>一投二代三计算(化二重积分)<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051502112.png" srcset="/img/loading.gif" lazyload alt="第二类曲线积分"></li>
+<li>一投二代三计算(化二重积分)<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051502112.png" alt="第二类曲线积分"></li>
 <li>格林公式</li>
-<li>斯托克斯公式(二型曲线积分化一型面积分)<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202111100948751.png" srcset="/img/loading.gif" lazyload></li>
+<li>斯托克斯公式(二型曲线积分化一型面积分)<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202111100948751.png" alt=""></li>
 <li>挖孔(针对分母不能为0)</li>
 <li>重积分时,曲线曲面且严格等号,才能代换被积函数</li>
 </ul>
 <ol start="5">
-<li><p>第二类曲面积分</p>
+<li>
+<p>第二类曲面积分</p>
 <ul>
-<li>一投二代三计算<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051555932.png" srcset="/img/loading.gif" lazyload alt="第二类曲面积分"></li>
+<li>一投二代三计算<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051555932.png" alt="第二类曲面积分"></li>
 <li>对称性:与重积分不同,关于Y轴对称即<code>Q(X,Y,Z) = Q(X,-Y,Z)</code>,反而是0;</li>
-<li>高斯公式<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051557515.png" srcset="/img/loading.gif" lazyload alt="高斯公式"></li>
+<li>高斯公式<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110051557515.png" alt="高斯公式"></li>
 </ul>
 </li>
-<li><p>摆线:<img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210516150600.gif" srcset="/img/loading.gif" lazyload alt="摆线"></p>
+<li>
+<p>摆线:<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210516150600.gif" alt="摆线"></p>
 </li>
 </ol>
-<h1 id="极限计算"><a href="#极限计算" class="headerlink" title="极限计算"></a>极限计算</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>有理函数的极限</li><li>无理函数的极限及推广（0&#x2F;0、∞&#x2F;∞、∞-∞、0×∞）</li><li>等价无穷小、洛比达、泰勒求极限</li><li>单侧极限问题</li><li>含参变量极限（分段、注意参变量取值）</li><li>数列极限（连续化、夹逼、单调有界、定积分化）</li></ol>
-          </div>
-
-
+<h1>极限计算</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
+<ol>
+<li>有理函数的极限</li>
+<li>无理函数的极限及推广（0/0、∞/∞、∞-∞、0×∞）</li>
+<li>等价无穷小、洛比达、泰勒求极限</li>
+<li>单侧极限问题</li>
+<li>含参变量极限（分段、注意参变量取值）</li>
+<li>数列极限（连续化、夹逼、单调有界、定积分化）</li>
+</ol>
+</div>
 <ol>
 <li>泰勒公式与等价无穷小<font color=blue>（背！）</font>：sinx、cosx、arcsinx、tanx、arctanx、ln(1+x)、e^x、(1+x)^α</li>
-<li>复合函数的无穷小比阶<font color=blue>（秒杀！）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110180938319.png" srcset="/img/loading.gif" lazyload alt="无穷小比阶"><br> $$<br> \begin{aligned}<br> f(x) \sim ax^m, g(x) \sim bx^n \Rightarrow f[g(x)] \sim ab^mx^{mn} \<br> f(x) \sim g(x) \Rightarrow \int_{0}^{x} f(t), {\rm d}t \sim \int_{0}^{x} g(t), {\rm d}t<br> \end{aligned}<br> $$</li>
-<li>常见单侧极限<font color=blue>（看到要注意，要会画图！）</font>：$$a^x,a^{\frac{1}{x}},arctanx$$根据a和x的取值极限不同<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181003263.png" srcset="/img/loading.gif" lazyload></li>
-<li>常见不等式<font color=blue>（常识！）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110180947910.png" srcset="/img/loading.gif" lazyload alt="常见不等式"></li>
-<li>极限运算技巧<ol>
-<li>泰勒yyds！！！</li>
-<li>洛比达：分母无穷（推广）、分子分母同时趋于无穷或同时趋于0</li>
-<li>∞&#x2F;∞型（含根号）：分子分母同除最高次幂，例：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110180956252.png" srcset="/img/loading.gif" lazyload alt="∞/∞型"></li>
-<li>含$$\frac{1}{x^k}$$,用t替换</li>
+<li>复合函数的无穷小比阶<font color=blue>（秒杀！）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110180938319.png" alt="无穷小比阶"><br>
+$\matrix{<br>
+{\matrix{<br>
+{f(x) \sim a{x^m},g(x) \sim b{x^n} \Rightarrow f[g(x)] \sim a{b^m}{x^{mn}}&gt;}  \cr<br>
+{f(x) \sim g(x) \Rightarrow \smallint _0^xf(t),{\rm{d}}t \sim \smallint _0^xg(t),{\rm{d}}t}  \cr</li>
 </ol>
-</li>
-<li>等价无穷小的替换：<ul>
-<li>乘除随便替换</li>
-<li>只要出现加减就不能随便替换，应该考虑泰勒展开到合适项！</li>
-</ul>
-</li>
-<li>洛比达求不出（消不去、求出无穷、死循环）的情况，极限不一定不存在，应该考虑其它办法</li>
-<li><strong>极限函数</strong><font color=blue>（一般是分段函数，特别注意！）</font>：找$$a^n,x^n,n^x,a^{g(n,x)}$$,判断分段点！例：<ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181012992.png" srcset="/img/loading.gif" lazyload alt="例1"><ul>
-<li>x&lt;1,x&#x3D;1,x&gt;1的极限不同！！！</li>
-</ul>
-</li>
-<li>例2<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181014681.png" srcset="/img/loading.gif" lazyload alt="例2"><ul>
-<li>x^2和e的大小决定了谁占了主导地位！</li>
-</ul>
-</li>
-<li>例3<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181016313.png" srcset="/img/loading.gif" lazyload alt="例3"></li>
-</ul>
-</li>
-<li>数列极限问题：连续化、夹逼定理、单调有界准则、定积分化（提1&#x2F;n,凑i&#x2F;n）<ul>
-<li><strong>夹逼定理技巧</strong><font color=blue>（重要！）</font>：<ul>
-<li>老大说了算<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181025370.png" srcset="/img/loading.gif" lazyload alt="老大说了算"></li>
-<li>人多力量大<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181026568.png" srcset="/img/loading.gif" lazyload alt="人多力量大"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>0^0 &#x3D; 1  </li>
-<li>lnx趋于0和趋于∞的速度都远远不如x</li>
-<li>区间再现<img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210626164210.png" srcset="/img/loading.gif" lazyload alt="区间再现!"></li>
-</ol>
-<h1 id="求导计算"><a href="#求导计算" class="headerlink" title="求导计算"></a>求导计算</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>显函数求导</li><li>隐函数求导（常规、对数求导法、参方程）</li><li>变限积分求导</li><li>分段函数求导（注意断点）</li><li>高阶导数求导（归纳法、分解法、莱布尼兹公式、幂函数&#x2F;泰勒展开）</li></ol>
-          </div>
-
-
+<p>} }  \cr<br>
+} <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.</mn><mtext>常见单侧极限（看到要注意，要会画图！）</mtext><mo separator="true">,</mo><mtext>根据</mtext><mi>a</mi><mtext>和</mtext><mi>x</mi><mtext>的取值极限不同</mtext><mo stretchy="false">!</mo><mo stretchy="false">[</mo><mo stretchy="false">]</mo><mo stretchy="false">(</mo><mi>h</mi><mi>t</mi><mi>t</mi><mi>p</mi><mi>s</mi><mo>:</mo><mi mathvariant="normal">/</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>m</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>h</mi><mi>e</mi><mi>n</mi><mn>0495.</mn><mi>t</mi><mi>o</mi><mi>p</mi><mi mathvariant="normal">/</mi><mi>C</mi><mi>h</mi><mi>e</mi><mi>n</mi><mn>0495</mn><mi mathvariant="normal">/</mi><mi>n</mi><mi>e</mi><mi>w</mi><mi>p</mi><mi>i</mi><mi>c</mi><mi>g</mi><mi>o</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>m</mi><mi>g</mi><mi mathvariant="normal">/</mi><mn>202110181003263.</mn><mi>p</mi><mi>n</mi><mi>g</mi><mo stretchy="false">)</mo><mn>4.</mn><mtext>常见不等式</mtext><mo>&lt;</mo><mi>f</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>r</mi><mo>=</mo><mi>b</mi><mi>l</mi><mi>u</mi><mi>e</mi><mo>&gt;</mo><mtext>（常识！）</mtext><mo>&lt;</mo><mi mathvariant="normal">/</mi><mi>f</mi><mi>o</mi><mi>n</mi><mi>t</mi><mo>&gt;</mo><mtext>：</mtext><mo stretchy="false">!</mo><mo stretchy="false">[</mo><mtext>常见不等式</mtext><mo stretchy="false">]</mo><mo stretchy="false">(</mo><mi>h</mi><mi>t</mi><mi>t</mi><mi>p</mi><mi>s</mi><mo>:</mo><mi mathvariant="normal">/</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>m</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>h</mi><mi>e</mi><mi>n</mi><mn>0495.</mn><mi>t</mi><mi>o</mi><mi>p</mi><mi mathvariant="normal">/</mi><mi>C</mi><mi>h</mi><mi>e</mi><mi>n</mi><mn>0495</mn><mi mathvariant="normal">/</mi><mi>n</mi><mi>e</mi><mi>w</mi><mi>p</mi><mi>i</mi><mi>c</mi><mi>g</mi><mi>o</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>m</mi><mi>g</mi><mi mathvariant="normal">/</mi><mn>202110180947910.</mn><mi>p</mi><mi>n</mi><mi>g</mi><mo stretchy="false">)</mo><mn>5.</mn><mtext>极限运算技巧</mtext><mn>1.</mn><mtext>泰勒</mtext><mi>y</mi><mi>y</mi><mi>d</mi><mi>s</mi><mtext>！！！</mtext><mn>2.</mn><mtext>洛比达：分母无穷（推广）、分子分母同时趋于无穷或同时趋于</mtext><mn>03.</mn><mi mathvariant="normal">∞</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">∞</mi><mtext>型（含根号）：分子分母同除最高次幂，例：</mtext><mo stretchy="false">!</mo><mo stretchy="false">[</mo><mi mathvariant="normal">∞</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">∞</mi><mtext>型</mtext><mo stretchy="false">]</mo><mo stretchy="false">(</mo><mi>h</mi><mi>t</mi><mi>t</mi><mi>p</mi><mi>s</mi><mo>:</mo><mi mathvariant="normal">/</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>m</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>h</mi><mi>e</mi><mi>n</mi><mn>0495.</mn><mi>t</mi><mi>o</mi><mi>p</mi><mi mathvariant="normal">/</mi><mi>C</mi><mi>h</mi><mi>e</mi><mi>n</mi><mn>0495</mn><mi mathvariant="normal">/</mi><mi>n</mi><mi>e</mi><mi>w</mi><mi>p</mi><mi>i</mi><mi>c</mi><mi>g</mi><mi>o</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>m</mi><mi>g</mi><mi mathvariant="normal">/</mi><mn>202110180956252.</mn><mi>p</mi><mi>n</mi><mi>g</mi><mo stretchy="false">)</mo><mn>4.</mn><mtext>含</mtext></mrow><annotation encoding="application/x-tex">
+3. 常见单侧极限（看到要注意，要会画图！）,根据a和x的取值极限不同![](https://img.chen0495.top/Chen0495/newpicgo/img/202110181003263.png)
+4. 常见不等式&lt;font color=blue&gt;（常识！）&lt;/font&gt;：![常见不等式](https://img.chen0495.top/Chen0495/newpicgo/img/202110180947910.png)
+5. 极限运算技巧
+    1. 泰勒yyds！！！
+    2. 洛比达：分母无穷（推广）、分子分母同时趋于无穷或同时趋于0
+    3. ∞/∞型（含根号）：分子分母同除最高次幂，例：![∞/∞型](https://img.chen0495.top/Chen0495/newpicgo/img/202110180956252.png)
+    4. 含</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3.</span><span class="mord cjk_fallback">常见单侧极限（看到要注意，要会画图！）</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">根据</span><span class="mord mathnormal">a</span><span class="mord cjk_fallback">和</span><span class="mord mathnormal">x</span><span class="mord cjk_fallback">的取值极限不同</span><span class="mclose">!</span><span class="mopen">[</span><span class="mclose">]</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mord mathnormal">ttp</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">//</span><span class="mord mathnormal">im</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">0495.</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">0495/</span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">wp</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">o</span><span class="mord">/</span><span class="mord mathnormal">im</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/202110181003263.</span><span class="mord mathnormal">p</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mord">4.</span><span class="mord cjk_fallback">常见不等式</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">co</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.02778em;">or</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord cjk_fallback">（常识！）</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">：</span><span class="mclose">!</span><span class="mopen">[</span><span class="mord cjk_fallback">常见不等式</span><span class="mclose">]</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mord mathnormal">ttp</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">//</span><span class="mord mathnormal">im</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">0495.</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">0495/</span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">wp</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">o</span><span class="mord">/</span><span class="mord mathnormal">im</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/202110180947910.</span><span class="mord mathnormal">p</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mord">5.</span><span class="mord cjk_fallback">极限运算技巧</span><span class="mord">1.</span><span class="mord cjk_fallback">泰勒</span><span class="mord mathnormal" style="margin-right:0.03588em;">yy</span><span class="mord mathnormal">d</span><span class="mord mathnormal">s</span><span class="mord cjk_fallback">！！！</span><span class="mord">2.</span><span class="mord cjk_fallback">洛比达：分母无穷（推广）、分子分母同时趋于无穷或同时趋于</span><span class="mord">03.∞/∞</span><span class="mord cjk_fallback">型（含根号）：分子分母同除最高次幂，例：</span><span class="mclose">!</span><span class="mopen">[</span><span class="mord">∞/∞</span><span class="mord cjk_fallback">型</span><span class="mclose">]</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mord mathnormal">ttp</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">//</span><span class="mord mathnormal">im</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">0495.</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord">0495/</span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">wp</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">o</span><span class="mord">/</span><span class="mord mathnormal">im</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/202110180956252.</span><span class="mord mathnormal">p</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mord">4.</span><span class="mord cjk_fallback">含</span></span></span></span>{1 \over }<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo separator="true">,</mo><mtext>用</mtext><mi>t</mi><mtext>替换</mtext><mn>6.</mn><mtext>等价无穷小的替换：</mtext><mo>−</mo><mtext>乘除随便替换</mtext><mo>−</mo><mtext>只要出现加减就不能随便替换，应该考虑泰勒展开到合适项！</mtext><mn>7.</mn><mtext>洛比达求不出（消不去、求出无穷、死循环）的情况，极限不一定不存在，应该考虑其它办法</mtext><mn>8.</mn><mo>∗</mo><mo>∗</mo><mtext>极限函数</mtext><mo>∗</mo><mo>∗</mo><mo>&lt;</mo><mi>f</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>r</mi><mo>=</mo><mi>b</mi><mi>l</mi><mi>u</mi><mi>e</mi><mo>&gt;</mo><mtext>（一般是分段函数，特别注意！）</mtext><mo>&lt;</mo><mi mathvariant="normal">/</mi><mi>f</mi><mi>o</mi><mi>n</mi><mi>t</mi><mo>&gt;</mo><mtext>：找</mtext></mrow><annotation encoding="application/x-tex">,用t替换
+6. 等价无穷小的替换：
+    - 乘除随便替换
+    - 只要出现加减就不能随便替换，应该考虑泰勒展开到合适项！
+7. 洛比达求不出（消不去、求出无穷、死循环）的情况，极限不一定不存在，应该考虑其它办法
+8. **极限函数**&lt;font color=blue&gt;（一般是分段函数，特别注意！）&lt;/font&gt;：找</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">用</span><span class="mord mathnormal">t</span><span class="mord cjk_fallback">替换</span><span class="mord">6.</span><span class="mord cjk_fallback">等价无穷小的替换：</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">乘除随便替换</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">只要出现加减就不能随便替换，应该考虑泰勒展开到合适项！</span><span class="mord">7.</span><span class="mord cjk_fallback">洛比达求不出（消不去、求出无穷、死循环）的情况，极限不一定不存在，应该考虑其它办法</span><span class="mord">8.</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">∗</span><span class="mord cjk_fallback">极限函数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord">∗</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">co</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.02778em;">or</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord cjk_fallback">（一般是分段函数，特别注意！）</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">：找</span></span></span></span>{a^n},{x^n},{n^x},{a^{g(n,x)}}$,判断分段点！例：<br>
+- 例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181012992.png" alt="例1"><br>
+- x&lt;1,x=1,x&gt;1的极限不同！！！<br>
+- 例2<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181014681.png" alt="例2"><br>
+- x^2和e的大小决定了谁占了主导地位！<br>
+- 例3<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181016313.png" alt="例3"><br>
+9. 数列极限问题：连续化、夹逼定理、单调有界准则、定积分化（提1/n,凑i/n）<br>
+- <strong>夹逼定理技巧</strong><font color=blue>（重要！）</font>：<br>
+- 老大说了算<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181025370.png" alt="老大说了算"><br>
+- 人多力量大<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181026568.png" alt="人多力量大"><br>
+3. 0^0 = 1<br>
+4. lnx趋于0和趋于∞的速度都远远不如x<br>
+5. 区间再现<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210626164210.png" alt="区间再现!"></p>
+<h1>求导计算</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
 <ol>
-<li>根据给定极限式判断导数是否存在<font color=blue>（“凑”导数定义式）</font>，例：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181034780.png" srcset="/img/loading.gif" lazyload alt="“凑”导数定义式"></li>
-<li>求导工具<font color=blue>（部分）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181038379.png" srcset="/img/loading.gif" lazyload alt="求导工具"></li>
-<li>反函数求导<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181051707.png" srcset="/img/loading.gif" lazyload alt="反函数求导"></li>
+<li>显函数求导</li>
+<li>隐函数求导（常规、对数求导法、参方程）</li>
+<li>变限积分求导</li>
+<li>分段函数求导（注意断点）</li>
+<li>高阶导数求导（归纳法、分解法、莱布尼兹公式、幂函数/泰勒展开）</li>
+</ol>
+</div>
+<ol>
+<li>根据给定极限式判断导数是否存在<font color=blue>（“凑”导数定义式）</font>，例：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181034780.png" alt="“凑”导数定义式"></li>
+<li>求导工具<font color=blue>（部分）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181038379.png" alt="求导工具"></li>
+<li>反函数求导<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181051707.png" alt="反函数求导"></li>
 <li>显函数、隐函数求导、参方程求导（简单）</li>
 <li>变限积分求导：注意通过代换把被积函数化成只含t的函数即可（dt，对t积分）</li>
-<li>高阶导数求导：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181057651.png" srcset="/img/loading.gif" lazyload alt="高阶导数求导"><ol>
+<li>高阶导数求导：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181057651.png" alt="高阶导数求导">
+<ol>
 <li>归纳法：上述公式均可归纳得出</li>
-<li>分解法：例<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181104747.png" srcset="/img/loading.gif" lazyload alt="分解法"></li>
-<li>莱布尼兹公式：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181105452.png" srcset="/img/loading.gif" lazyload alt="莱布尼兹公式"></li>
-<li>幂函数&#x2F;泰勒展开<font color=blue>（重要！）</font>：$$f^{(n)}(x_0) &#x3D; a_n*n!$$</li>
+<li>分解法：例<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181104747.png" alt="分解法"></li>
+<li>莱布尼兹公式：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181105452.png" alt="莱布尼兹公式"></li>
+<li>幂函数/泰勒展开<font color=blue>（重要！）</font>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub><mo>∗</mo><mi>n</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">{f^{(n)}}({x_0}) = {a_n}*n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6153em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span></span></span></span></li>
 </ol>
 </li>
-<li>分段函数求导<font color=blue>（重要！）</font>：:<ol>
+<li>分段函数求导<font color=blue>（重要！）</font>：:
+<ol>
 <li>必须先判断断点的连续性！</li>
 <li>连续部分直接求导</li>
 <li>断点单独按定义求导</li>
 </ol>
 </li>
 </ol>
-<h1 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>第一类换元法</li><li>第二类换元法</li><li>分部积分法</li><li>有理函数积分：分项积分</li></ol>
-          </div>
-
-
+<h1>不定积分</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
 <ol>
-<li>积分工具<font color=blue>（部分）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181115178.png" srcset="/img/loading.gif" lazyload alt="积分工具"></li>
-<li>第一类换元法<font color=blue>（多练自然熟）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181141731.png" srcset="/img/loading.gif" lazyload alt="第一类换元法"></li>
-<li>第二类换元法<font color=blue>（重要！）</font>：<ul>
-<li>根式替换：无理➡有理<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181143646.png" srcset="/img/loading.gif" lazyload alt="根式替换"></li>
-<li>三角函数替换：化简<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181144662.png" srcset="/img/loading.gif" lazyload alt="三角函数替换"></li>
-<li>倒代换：分母次数高<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181144045.png" srcset="/img/loading.gif" lazyload alt="倒代换"></li>
+<li>第一类换元法</li>
+<li>第二类换元法</li>
+<li>分部积分法</li>
+<li>有理函数积分：分项积分</li>
+</ol>
+</div>
+<ol>
+<li>积分工具<font color=blue>（部分）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181115178.png" alt="积分工具"></li>
+<li>第一类换元法<font color=blue>（多练自然熟）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181141731.png" alt="第一类换元法"></li>
+<li>第二类换元法<font color=blue>（重要！）</font>：
+<ul>
+<li>根式替换：无理➡有理<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181143646.png" alt="根式替换"></li>
+<li>三角函数替换：化简<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181144662.png" alt="三角函数替换"></li>
+<li>倒代换：分母次数高<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181144045.png" alt="倒代换"></li>
 </ul>
 </li>
-<li>分部积分法：<ul>
+<li>分部积分法：
+<ul>
 <li>一积一导</li>
 <li>（x^a）* {e^x, lnx, 三角, 反三角}必然可用分部积分</li>
 <li>e^(ax) * {cos(bx), sin(bx)}必然可用分部积分</li>
-<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181150725.png" srcset="/img/loading.gif" lazyload alt="分部积分法"></li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181150725.png" alt="分部积分法"></li>
 </ul>
 </li>
-<li>华罗庚分项法：分子分母只有(sin_x,cosx)型<ul>
-<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210510203458.png" srcset="/img/loading.gif" lazyload alt="华罗庚分项法1">  </li>
-<li><img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210510205629.png" srcset="/img/loading.gif" lazyload alt="华罗庚分项法2"></li>
+<li>华罗庚分项法：分子分母只有(sin_x,cosx)型
+<ul>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210510203458.png" alt="华罗庚分项法1"></li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210510205629.png" alt="华罗庚分项法2"></li>
 </ul>
 </li>
-<li>有理函数的积分：<ul>
+<li>有理函数的积分：
+<ul>
 <li>假分式（分子阶数比分母高）：分解为“多项式+真分式”</li>
-<li>真分式（分母阶数比分子高），因式分解<font color=blue>（重要！）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181156525.png" srcset="/img/loading.gif" lazyload alt="真分式"><ul>
-<li>例：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181157748.png" srcset="/img/loading.gif" lazyload alt="例"></li>
+<li>真分式（分母阶数比分子高），因式分解<font color=blue>（重要！）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181156525.png" alt="真分式">
+<ul>
+<li>例：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181157748.png" alt="例"></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>分段函数不定积分</strong><font color=blue>（重要！）</font>，例：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181201333.png" srcset="/img/loading.gif" lazyload alt="分段函数不定积分"></li>
+<li><strong>分段函数不定积分</strong><font color=blue>（重要！）</font>，例：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181201333.png" alt="分段函数不定积分"></li>
 </ol>
-<h1 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>特殊定积分重要公式</li><li>广义积分及其判敛</li><li>借助定积分特殊公式计算定积分</li></ol>
-          </div>
-
-
+<h1>定积分</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
 <ol>
-<li>特殊积分工具<font color=blue>（必背！）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181206746.png" srcset="/img/loading.gif" lazyload alt="特殊积分工具"></li>
-<li>华里士公式<font color=blue>（必考！）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181306575.png" srcset="/img/loading.gif" lazyload alt="华里士公式"></li>
-<li>周期函数<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181307406.png" srcset="/img/loading.gif" lazyload alt="周期函数"></li>
-<li>广义积分及其判敛<ul>
+<li>特殊定积分重要公式</li>
+<li>广义积分及其判敛</li>
+<li>借助定积分特殊公式计算定积分</li>
+</ol>
+</div>
+<ol>
+<li>特殊积分工具<font color=blue>（必背！）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181206746.png" alt="特殊积分工具"></li>
+<li>华里士公式<font color=blue>（必考！）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181306575.png" alt="华里士公式"></li>
+<li>周期函数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181307406.png" alt="周期函数"></li>
+<li>广义积分及其判敛
+<ul>
 <li>正常积分(积分区间有限、被积函数f(x)连续或只有有限间断点)</li>
-<li>反常积分判敛<font color=blue>（重要！）</font>: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181317953.png" srcset="/img/loading.gif" lazyload alt="反常积分判敛"></li>
+<li>反常积分判敛<font color=blue>（重要！）</font>: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181317953.png" alt="反常积分判敛"></li>
 </ul>
 </li>
-<li>欧拉函数<font color=blue>（重要！！！）</font>: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181319043.png" srcset="/img/loading.gif" lazyload alt="欧拉函数"></li>
-<li>瑕积分（区间有限、无穷间断点(不是无穷个间断点)）：<ul>
-<li>从有定义的那一端接近，例如(a,b]，a点趋于无穷：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181328159.png" srcset="/img/loading.gif" lazyload alt="瑕积分"></li>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181331063.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
-<li>例2<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181341724.png" srcset="/img/loading.gif" lazyload alt="例2"></li>
+<li>欧拉函数<font color=blue>（重要！！！）</font>: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181319043.png" alt="欧拉函数"></li>
+<li>瑕积分（区间有限、无穷间断点(不是无穷个间断点)）：
+<ul>
+<li>从有定义的那一端接近，例如(a,b]，a点趋于无穷：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181328159.png" alt="瑕积分"></li>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181331063.png" alt="例1"></li>
+<li>例2<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181341724.png" alt="例2"></li>
 </ul>
 </li>
-<li>变限积分计算（区分$$\int_{x}^{0} f(x), {\rm d}x\ \And \ \int_{x}^{0} xf(t-x), {\rm d}t$$，一般用分部积分计算）<font color=blue>（重要！）</font><ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181347118.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
+<li>变限积分计算（区分<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mi>x</mi><mn>0</mn></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext> </mtext><mi mathvariant="normal">d</mi><mi>x</mi><mtext>  </mtext><mi mathvariant="normal">&amp;</mi><mtext>  </mtext><msubsup><mo>∫</mo><mi>x</mi><mn>0</mn></msubsup><mi>x</mi><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo><mtext> </mtext><mi mathvariant="normal">d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\int_x^0 f (x){\mkern 1mu} {\rm{d}}x\;\&amp; \;\int_x^0 x f(t - x){\mkern 1mu} {\rm{d}}t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3648em;vertical-align:-0.3558em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.009em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span><span style="top:-3.2579em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord"><span class="mspace" style="margin-right:0.0556em;"></span></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathrm">d</span></span></span></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">&amp;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.009em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span><span style="top:-3.2579em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord"><span class="mspace" style="margin-right:0.0556em;"></span></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathrm">d</span></span></span></span><span class="mord mathnormal">t</span></span></span></span>，一般用分部积分计算）<font color=blue>（重要！）</font>
+<ul>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181347118.png" alt="例1"></li>
 </ul>
 </li>
 </ol>
-<h1 id="二重积分"><a href="#二重积分" class="headerlink" title="二重积分"></a>二重积分</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>定义</li><li>性质<ul><li>一个中值定理</li><li>对称性(必考):关于x、y、x&#x3D;y、原点、轮换对称性</li><li>积分换序</li></ul></li><li>积分法<ul><li>直面坐标系</li><li>极坐标</li></ul></li></ol>
-          </div>
-
+<h1>二重积分</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
 <ol>
-<li>二重积分本质上是个三维问题<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181408584.png" srcset="/img/loading.gif" lazyload alt="二重积分"><ul>
+<li>定义</li>
+<li>性质
+<ul>
+<li>一个中值定理</li>
+<li>对称性(必考):关于x、y、x=y、原点、轮换对称性</li>
+<li>积分换序</li>
+</ul>
+</li>
+<li>积分法
+<ul>
+<li>直面坐标系</li>
+<li>极坐标</li>
+</ul>
+</li>
+</ol>
+</div>
+<ol>
+<li>二重积分本质上是个三维问题<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181408584.png" alt="二重积分">
+<ul>
 <li>f(x,y)是D正上方定义的三维曲面，求柱体的面积</li>
 <li>f(x,y)dσ就是一小块长条的体积</li>
 </ul>
 </li>
-<li>二重积分中值定理<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181713961.png" srcset="/img/loading.gif" lazyload alt="二重积分中值定理"><ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181713170.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
+<li>二重积分中值定理<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181713961.png" alt="二重积分中值定理">
+<ul>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181713170.png" alt="例1"></li>
 </ul>
 </li>
-<li>对称性<font color=blue>（必考！！！）</font>:<ul>
-<li>关于y&#x3D;x对称：$$\iint_{D} f(x,y), \mathrm{d}σ &#x3D; \iint_{D} f(y,x), \mathrm{d}σ$$</li>
-<li>关于y轴对称：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181720989.png" srcset="/img/loading.gif" lazyload alt="关于y轴"></li>
-<li>关于x轴对称：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181721238.png" srcset="/img/loading.gif" lazyload alt="关于x轴"></li>
-<li>关于原点对称：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181726538.png" srcset="/img/loading.gif" lazyload alt="关于原点对称"></li>
-<li>轮换对称性：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181726046.png" srcset="/img/loading.gif" lazyload alt="轮换对称性"><ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181735579.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
-<li>例2<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181737476.png" srcset="/img/loading.gif" lazyload alt="例2"></li>
+<li>对称性<font color=blue>（必考！！！）</font>:
+<ul>
+<li>关于y=x对称：$\mathop \int!!!\int \nolimits_D f(x,y){\mkern 1mu} {\rm{d}}\sigma  = \mathop \int!!!\int \nolimits_D f(y,x){\mkern 1mu} {\rm{d}}\sigma $</li>
+<li>关于y轴对称：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181720989.png" alt="关于y轴"></li>
+<li>关于x轴对称：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181721238.png" alt="关于x轴"></li>
+<li>关于原点对称：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181726538.png" alt="关于原点对称"></li>
+<li>轮换对称性：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181726046.png" alt="轮换对称性">
+<ul>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181735579.png" alt="例1"></li>
+<li>例2<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110181737476.png" alt="例2"></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>积分法<font color=blue>（重点！）</font><ul>
-<li>直角坐标法：<strong>后积先定限，限内画条线；先交写下限，后交写上限。</strong><ul>
+<li>积分法<font color=blue>（重点！）</font>
+<ul>
+<li>直角坐标法：<strong>后积先定限，限内画条线；先交写下限，后交写上限。</strong>
+<ul>
 <li>内部、右部先积，外部、左部后积</li>
 </ul>
 </li>
-<li>极坐标法：<ul>
-<li>原点坐标系：<br>  $$\left{<br>  \begin{aligned}<br>  x &#x3D; r\cosθ \\<br>  y &#x3D; r\sinθ<br>  \end{aligned}<br>  \right.<br>  $$</li>
-<li>相对&#x2F;平移坐标系：<br>  $$\left{<br>  \begin{aligned}<br>  x-a &#x3D; r\cosθ \\<br>  y-b &#x3D; r\sinθ<br>  \end{aligned}<br>  \right.<br>  $$</li>
+<li>极坐标法：
+<ul>
+<li>原点坐标系：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/qiniu/img2022/202207271949714.png" alt=""></li>
+<li>相对/平移坐标系：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/qiniu/img2022/202207271949742.png" alt=""></li>
 <li>口诀依然适用</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>积分换序<font color=blue>（注意dxdy必须大于0）</font><ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182112734.png" srcset="/img/loading.gif" lazyload alt="例"></li>
-<li>例2<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182118102.png" srcset="/img/loading.gif" lazyload alt="例"> <img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182119640.png" srcset="/img/loading.gif" lazyload alt="例"></li>
+<li>积分换序<font color=blue>（注意dxdy必须大于0）</font>
+<ul>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182112734.png" alt="例"></li>
+<li>例2<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182118102.png" alt="例"> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182119640.png" alt="例"></li>
 </ul>
 </li>
-<li>积分换序的场景<font color=blue>（重要！）</font>：<ul>
-<li>积不出：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182120826.png" srcset="/img/loading.gif" lazyload alt="积不出">  <ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182121215.png" srcset="/img/loading.gif" lazyload alt="例"></li>
+<li>积分换序的场景<font color=blue>（重要！）</font>：
+<ul>
+<li>积不出：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182120826.png" alt="积不出">
+<ul>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182121215.png" alt="例"></li>
 </ul>
 </li>
-<li>变限积分求导问题：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182123672.png" srcset="/img/loading.gif" lazyload alt="变限积分求导">  <ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182122385.png" srcset="/img/loading.gif" lazyload alt="例"></li>
+<li>变限积分求导问题：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182123672.png" alt="变限积分求导">
+<ul>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182122385.png" alt="例"></li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<h1 id="多元函数微分学"><a href="#多元函数微分学" class="headerlink" title="多元函数微分学"></a>多元函数微分学</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>定义（极限、可偏导、可微、连续可偏导）</li><li>重要关系图</li><li>计算求偏导<ul><li>显函数</li><li><strong>复合函数求偏导</strong></li><li><strong>隐函数求偏导</strong></li><li>变换求偏导</li></ul></li><li>代数应用（无条件极值、条件极值）</li></ol>
-          </div>
-
-
+<h1>多元函数微分学</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
 <ol>
-<li>极限的存在性：从<strong>各个方向</strong>接近，其极限相等<ul>
+<li>定义（极限、可偏导、可微、连续可偏导）</li>
+<li>重要关系图</li>
+<li>计算求偏导
+<ul>
+<li>显函数</li>
+<li><strong>复合函数求偏导</strong></li>
+<li><strong>隐函数求偏导</strong></li>
+<li>变换求偏导</li>
+</ul>
+</li>
+<li>代数应用（无条件极值、条件极值）</li>
+</ol>
+</div>
+<ol>
+<li>极限的存在性：从<strong>各个方向</strong>接近，其极限相等
+<ul>
 <li>否定极限存在：找到两个方向的极限不一致即可</li>
 </ul>
 </li>
-<li>区分二重极限与累次极限：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182132482.png" srcset="/img/loading.gif" lazyload alt="区分"></li>
-<li>极限的连续性<font color=blue>（简单了解）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182136199.png" srcset="/img/loading.gif" lazyload alt="极限的连续性"></li>
+<li>区分二重极限与累次极限：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182132482.png" alt="区分"></li>
+<li>极限的连续性<font color=blue>（简单了解）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182136199.png" alt="极限的连续性"></li>
 <li>偏导数<font color=blue>（必考！）</font></li>
-<li>可(全)微分性<font color=blue>（重要！！！）</font>：<br>$$<br>\begin{aligned}<br>&amp; f(x_0+Δx,y_0+Δy) - f(x_0,y_0) \<br>\&amp; &#x3D; AΔx + BΔy + o(\sqrt{(Δx)^2+(Δy)^2}) \<br>\&amp; f(x,y) - f(x_0,y_0) \<br>\&amp; &#x3D; A(x-x_0)+B(y-y_0) + o(\sqrt{(x-x_0)^2+(y-y_0)^2})<br>\end{aligned}<br>$$<ul>
+<li>可(全)微分性（重要！！！）：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/qiniu/img2022/202207272020455.png" alt=""></li>
+</ol>
+<ul>
 <li>只要能写出这种形式必然可微！</li>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182146143.png" srcset="/img/loading.gif" lazyload alt="例"></li>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182146143.png" alt="例"></li>
 </ul>
-</li>
-<li>判断连续可偏导<font color=blue>（重要！！！）</font>：<ol>
+<ol start="6">
+<li>判断连续可偏导<font color=blue>（重要！！！）</font>：
+<ol>
 <li>定义法求偏导</li>
 <li>公式法求偏导</li>
 <li>若定义法与公式法所求一致，则f(x,y)连续可偏导</li>
 </ol>
 <ul>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182154740.png" srcset="/img/loading.gif" lazyload alt="例"></li>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182154740.png" alt="例"></li>
 </ul>
 </li>
-<li><strong>复合函数求导</strong><font color=blue>（重要！！！）</font>：链式法则（画图）<ul>
+<li><strong>复合函数求导</strong><font color=blue>（重要！！！）</font>：链式法则（画图）
+<ul>
 <li>复合函数无论对谁求导，都具有相同的复合结构（链式法则的图相同）</li>
-<li>识别“几元”、“几个”方程：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182206613.png" srcset="/img/loading.gif" lazyload alt="识别"><ul>
+<li>识别“几元”、“几个”方程：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182206613.png" alt="识别">
+<ul>
 <li>每有一个约束方程，少一个自由变量</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>隐函数求导</strong><font color=blue>（重要！！！）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182219157.png" srcset="/img/loading.gif" lazyload alt="隐函数求导"></li>
-<li><strong>变换求偏导</strong><font color=blue>（重要！！！注意复合函数求偏导后依然有相同复合结构!）</font>：<ul>
-<li>型一：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110190957670.png" srcset="/img/loading.gif" lazyload alt="型一"></li>
-<li>型二：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110190958339.png" srcset="/img/loading.gif" lazyload alt="型二"></li>
-<li><strong>解答</strong>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191000156.png" srcset="/img/loading.gif" lazyload alt="解答"></li>
-<li>例1：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191001895.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
-<li>例2：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191002308.png" srcset="/img/loading.gif" lazyload alt="例2"></li>
+<li><strong>隐函数求导</strong><font color=blue>（重要！！！）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110182219157.png" alt="隐函数求导"></li>
+<li><strong>变换求偏导</strong><font color=blue>（重要！！！注意复合函数求偏导后依然有相同复合结构!）</font>：
+<ul>
+<li>型一：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110190957670.png" alt="型一"></li>
+<li>型二：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110190958339.png" alt="型二"></li>
+<li><strong>解答</strong>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191000156.png" alt="解答"></li>
+<li>例1：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191001895.png" alt="例1"></li>
+<li>例2：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191002308.png" alt="例2"></li>
 </ul>
 </li>
-<li>多元函数代数应用<font color=blue>（非条件极值和条件极值，重要！！！）</font>：<ul>
-<li>非条件极值（区域，不算边界）<ol>
+<li>多元函数代数应用<font color=blue>（非条件极值和条件极值，重要！！！）</font>：
+<ul>
+<li>非条件极值（区域，不算边界）
+<ol>
 <li>找偏导为0的点（驻点）</li>
 <li>若所求为最值，全部带入求最值即可</li>
-<li>若所求为极值，求二次偏导验证极值：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191058345.png" srcset="/img/loading.gif" lazyload alt="极值"></li>
+<li>若所求为极值，求二次偏导验证极值：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191058345.png" alt="极值"></li>
 </ol>
 </li>
-<li>条件极值（边界）<ul>
-<li>拉格朗日法<ol>
-<li>化f(x,y)+λg(x,y)&#x3D;0</li>
-<li>分别对x，y，λ求偏导并令其为0求出值<ul>
+<li>条件极值（边界）
+<ul>
+<li>拉格朗日法
+<ol>
+<li>化f(x,y)+λg(x,y)=0</li>
+<li>分别对x，y，λ求偏导并令其为0求出值
+<ul>
 <li>实在求不出结果就随便写几个数…</li>
 </ul>
 </li>
 </ol>
 </li>
-<li>参数方程法：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191104015.png" srcset="/img/loading.gif" lazyload></li>
+<li>参数方程法：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191104015.png" alt=""></li>
 </ul>
 </li>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191119494.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
-<li>例2<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191126582.png" srcset="/img/loading.gif" lazyload alt="例2"></li>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191119494.png" alt="例1"></li>
+<li>例2<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191126582.png" alt="例2"></li>
 </ul>
 </li>
 </ol>
-<h1 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型！！！</center></font></p><ol><li>概念（微分方程、阶数、通解、解的结构）</li><li>一阶微分方程求解<ul><li>可分离变量型</li><li>齐次型</li><li>一阶线性型</li><li>可降阶的二阶微分方程</li></ul></li><li>高阶微分方程求解（齐次、非齐次）</li></ol>
-          </div>
-
+<h1>微分方程</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型！！！</center></font></p>
 <ol>
-<li>解的性质<ul>
-<li>齐次解的线性组合还是齐次解</li>
-<li>非齐次解系数加和为0的解是齐次解，系数加和为1的是非齐次解<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191341443.png" srcset="/img/loading.gif" lazyload alt="解的性质"></li>
-<li>齐次解+非齐次解&#x3D;非齐次解</li>
+<li>概念（微分方程、阶数、通解、解的结构）</li>
+<li>一阶微分方程求解
+<ul>
+<li>可分离变量型</li>
+<li>齐次型</li>
+<li>一阶线性型</li>
+<li>可降阶的二阶微分方程</li>
 </ul>
 </li>
-<li>一阶微分方程求解<ol>
-<li>变量可分离型：所有x和dx一边、y和dy一边，分别积分。例：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191344319.png" srcset="/img/loading.gif" lazyload alt="例"></li>
-<li>齐次型：凑成<code>dy/dx,y/x</code>，例：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191346321.png" srcset="/img/loading.gif" lazyload alt="例"></li>
-<li>一阶线性微分方程：用公式<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191349669.png" srcset="/img/loading.gif" lazyload></li>
+<li>高阶微分方程求解（齐次、非齐次）</li>
+</ol>
+</div>
+<ol>
+<li>解的性质
+<ul>
+<li>齐次解的线性组合还是齐次解</li>
+<li>非齐次解系数加和为0的解是齐次解，系数加和为1的是非齐次解<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191341443.png" alt="解的性质"></li>
+<li>齐次解+非齐次解=非齐次解</li>
+</ul>
+</li>
+<li>一阶微分方程求解
+<ol>
+<li>变量可分离型：所有x和dx一边、y和dy一边，分别积分。例：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191344319.png" alt="例"></li>
+<li>齐次型：凑成<code>dy/dx,y/x</code>，例：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191346321.png" alt="例"></li>
+<li>一阶线性微分方程：用公式<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191349669.png" alt=""></li>
 <li>可降阶的高阶微分方程</li>
 </ol>
 </li>
-<li>高阶微分方程<font color=blue>（重要！！！）</font>：<ol>
-<li>求齐次通解<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191415737.png" srcset="/img/loading.gif" lazyload alt="齐次通解"></li>
-<li>求非齐次特解<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191416630.png" srcset="/img/loading.gif" lazyload alt="非齐次特解"></li>
-</ol>
-</li>
-</ol>
-<h1 id="中值定理"><a href="#中值定理" class="headerlink" title="中值定理"></a>中值定理</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会!!!</center></font></p><ol><li>罗尔、拉格朗日、柯西中值定理</li><li>泰勒公式(拉格朗日余项一般用于证明、皮亚诺余项用于计算)<ol><li>拉格朗日余项的n阶泰勒公式：<br> $$<br> \begin{aligned}<br> f(x) &amp; &#x3D; f(x_0) + f’(x_0)(x-x_0) + \frac{1}{2!}f’’(x_0)(x-x_0)^2 + … \<br> \&amp; + \frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n  + \frac{1}{(n+1)!}f^{(n+1)}(ξ)(x-x_0)^{n+1} \\<br> \&amp; ξ \in (x_0,x)<br> \end{aligned}<br> $$</li><li>皮亚诺余项的n阶泰勒公式：<br> $$<br> \begin{aligned}<br> f(x) &amp; &#x3D; f(x_0) + f’(x_0)(x-x_0) + \frac{1}{2!}f’’(x_0)(x-x_0)^2 + … \<br> \&amp; + \frac{1}{n!}f^{(n)}(x_0)(x-x_0)^n + 0(x-x_0)^n<br> \end{aligned}<br> $$</li></ol></li><li>积分中值定理$$\int_{a}^{b} f(x), {\rm d}t &#x3D; f(ξ)(b-a) , ξ \in [a,b]$$</li><li>积分中值定理推广(需要证明)$$\int_{a}^{b} f(x), {\rm d}t &#x3D; f(ξ)(b-a) , ξ \in (a,b)$$<ul><li>证明<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191434617.png" srcset="/img/loading.gif" lazyload></li></ul></li><li>柯西不等式<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192131379.png" srcset="/img/loading.gif" lazyload alt="柯西不等式"></li></ol>
-          </div>
+<li>高阶微分方程<font color=blue>（重要！！！）</font>：
 <ol>
-<li>“找原函数” + “折腾区间”（阶数不同、有不是f(ξ)、f&#39;(ξ)或f&#39;&#39;(ξ)的）</li>
-<li><strong>例1</strong>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191500217.png" srcset="/img/loading.gif" lazyload alt="例1"><ul>
-<li>分析<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191458493.png" srcset="/img/loading.gif" lazyload alt="分析"></li>
+<li>求齐次通解<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191415737.png" alt="齐次通解"></li>
+<li>求非齐次特解<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191416630.png" alt="非齐次特解"></li>
+</ol>
+</li>
+</ol>
+<h1>中值定理</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会!!!</center></font></p>
+<ol>
+<li>罗尔、拉格朗日、柯西中值定理</li>
+<li>泰勒公式(拉格朗日余项一般用于证明、皮亚诺余项用于计算)
+<ol>
+<li>拉格朗日余项的n阶泰勒公式：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/qiniu/img2022/202207272021284.png" alt=""></li>
+<li>皮亚诺余项的n阶泰勒公式：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/qiniu/img2022/202207272022960.png" alt=""></li>
+</ol>
+</li>
+<li>积分中值定理\mathop \smallint \nolimits_a^b f(x){\mkern 1mu} {\rm{d}}t = f(\xi )(b - a){\mkern 1mu} \xi  \in [a,b]</li>
+<li>积分中值定理推广(需要证明)\mathop \smallint \nolimits_a^b f(x){\mkern 1mu} {\rm{d}}t = f(\xi )(b - a){\mkern 1mu} \xi  \in (a,b)
+<ul>
+<li>证明<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191434617.png" alt=""></li>
 </ul>
 </li>
-<li><strong>例2</strong>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191511225.png" srcset="/img/loading.gif" lazyload alt="例2"><ul>
-<li>分析<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191516327.png" srcset="/img/loading.gif" lazyload alt="分析"></li>
+<li>柯西不等式<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192131379.png" alt="柯西不等式"></li>
+</ol>
+</div>
+<ol>
+<li>“找原函数” + “折腾区间”（阶数不同、有不是f(ξ)、f’(ξ)或f’'(ξ)的）</li>
+<li><strong>例1</strong>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191500217.png" alt="例1">
+<ul>
+<li>分析<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191458493.png" alt="分析"></li>
 </ul>
 </li>
-<li>辅助函数分析法<font color=blue>（重要！！！）</font>：<ul>
-<li>型一<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191531613.png" srcset="/img/loading.gif" lazyload alt="型一"></li>
-<li>型二<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191531398.png" srcset="/img/loading.gif" lazyload alt="型二"></li>
-<li>型三<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191532090.png" srcset="/img/loading.gif" lazyload alt="型三"></li>
-<li>型四<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191538621.png" srcset="/img/loading.gif" lazyload alt="型四"></li>
+<li><strong>例2</strong>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191511225.png" alt="例2">
+<ul>
+<li>分析<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191516327.png" alt="分析"></li>
+</ul>
+</li>
+<li>辅助函数分析法<font color=blue>（重要！！！）</font>：
+<ul>
+<li>型一<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191531613.png" alt="型一"></li>
+<li>型二<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191531398.png" alt="型二"></li>
+<li>型三<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191532090.png" alt="型三"></li>
+<li>型四<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191538621.png" alt="型四"></li>
 </ul>
 </li>
 </ol>
-<h1 id="级数"><a href="#级数" class="headerlink" title="级数"></a>级数</h1><div class="note note-success">
-            <p><font color=blue size=4><center>必会题型!!!</center></font></p><ol><li>数项级数的判敛</li><li>幂级数的收敛域</li><li>幂级数的展开和求和</li></ol>
-          </div>
-
-
+<h1>级数</h1>
+<div class="note success flat"><p><font color=blue size=4><center>必会题型!!!</center></font></p>
 <ol>
-<li>p级数和几何级数<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191547381.png" srcset="/img/loading.gif" lazyload></li>
+<li>数项级数的判敛</li>
+<li>幂级数的收敛域</li>
+<li>幂级数的展开和求和</li>
+</ol>
+</div>
+<ol>
+<li>p级数和几何级数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110191547381.png" alt=""></li>
 <li>正项级数：只能通过和函数有无上界判敛</li>
 <li>交错级数：a_n<strong>递减</strong>并趋于0就收敛</li>
-<li>判别法：<ol>
+<li>判别法：
+<ol>
 <li>比较判别法及其极限形式（用另一个简单级数比较判别）</li>
 <li>幂函数：比值和根值判别法（等于1失效），此处要带x计算（一般是个具体值）</li>
 <li>积分法：连续化后直接积分（数列收敛，其子数列也收敛）</li>
 </ol>
 </li>
-<li>任意项级数的绝对收敛和条件收敛：<ul>
+<li>任意项级数的绝对收敛和条件收敛：
+<ul>
 <li>绝对值、括号增加发散性，交错增加收敛性</li>
-<li>绝对收敛 × 收敛 &#x3D; 绝对收敛.</li>
+<li>绝对收敛 × 收敛 = 绝对收敛.</li>
 </ul>
 </li>
-<li>幂级数的收敛域：<ol>
-<li>用比值法或根值法（此处不带具体值）<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192022852.png" srcset="/img/loading.gif" lazyload alt="收敛域"></li>
+<li>幂级数的收敛域：
+<ol>
+<li>用比值法或根值法（此处不带具体值）<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192022852.png" alt="收敛域"></li>
 <li>然后单独对收敛区间的边界进行判定</li>
 </ol>
 <ul>
-<li>性质：<ul>
-<li>幂级数逐项 求导&#x2F;积分 后的级数,其收敛半径仍是R,但收敛域可能不同</li>
+<li>性质：
+<ul>
+<li>幂级数逐项 求导/积分 后的级数,其收敛半径仍是R,但收敛域可能不同</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>幂函数的展开和求和<font color=blue>（重要！！！）</font>：<ul>
-<li>工具<font color=blue>（必背）</font>：<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192024823.png" srcset="/img/loading.gif" lazyload alt="工具"></li>
-<li>逐项可导性和逐项可积性，例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192035241.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
-<li>求和函数:<ol>
+<li>幂函数的展开和求和<font color=blue>（重要！！！）</font>：
+<ul>
+<li>工具<font color=blue>（必背）</font>：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192024823.png" alt="工具"></li>
+<li>逐项可导性和逐项可积性，例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192035241.png" alt="例1"></li>
+<li>求和函数:
+<ol>
 <li>先写✍收敛域</li>
 <li>先导后积|先积后导</li>
 </ol>
 </li>
 </ul>
 </li>
-<li>例题<ol>
-<li>例1<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192039389.png" srcset="/img/loading.gif" lazyload alt="例1"></li>
-<li>例2<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192112091.png" srcset="/img/loading.gif" lazyload alt="例2"></li>
-<li>例3<img src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192118625.png" srcset="/img/loading.gif" lazyload alt="例3"></li>
+<li>例题
+<ol>
+<li>例1<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192039389.png" alt="例1"></li>
+<li>例2<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192112091.png" alt="例2"></li>
+<li>例3<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/202110192118625.png" alt="例3"></li>
 </ol>
 </li>
 </ol>
-<h1 id="拾遗"><a href="#拾遗" class="headerlink" title="拾遗"></a>拾遗</h1><ol>
-<li>充分和必要<ul>
+<h1>拾遗</h1>
+<ol>
+<li>充分和必要
+<ul>
 <li>充分和必要条件: B包含A,A包含于B,那么发生A一定发生B,称B是A的必要条件,A是B的充分条件.</li>
-<li>小范围是充分条件(相对于大范围), 大范围是必要条件(相对于小范围).  </li>
+<li>小范围是充分条件(相对于大范围), 大范围是必要条件(相对于小范围).</li>
 <li>小范围是大范围的充分条件, 大范围是小范围的必要条件.</li>
 </ul>
 </li>
-<li>三角函数<ul>
-<li>三角函数的反函数嵌套: arcsin(sin_x)&#x3D;x, arctan(tan_x)&#x3D;x, arccos(cos_x)&#x3D;x.  </li>
-<li>三角函数的倒数: 1/sin_x &#x3D; csc_x, 1/cos_x &#x3D; sec_x, 1/tanx &#x3D; cot_x.  </li>
-<li>特殊三角函数导数记忆: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210510193541.png" srcset="/img/loading.gif" lazyload>  </li>
-<li>反三角函数关系: <img src="https://img.chen0495.top/Chen0495/newpicgo/img/20210517104153.png" srcset="/img/loading.gif" lazyload></li>
+<li>三角函数
+<ul>
+<li>三角函数的反函数嵌套: arcsin(sin_x)=x, arctan(tan_x)=x, arccos(cos_x)=x.</li>
+<li>三角函数的倒数: 1/sin_x = csc_x, 1/cos_x = sec_x, 1/tanx = cot_x.</li>
+<li>特殊三角函数导数记忆: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210510193541.png" alt=""></li>
+<li>反三角函数关系: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210517104153.png" alt=""></li>
 </ul>
 </li>
-<li>周期函数：<ul>
-<li><strong>周期函数的原函数是周期函数的充要条件是其在周期上的积分为0</strong>.  </li>
+<li>周期函数：
+<ul>
+<li><strong>周期函数的原函数是周期函数的充要条件是其在周期上的积分为0</strong>.</li>
 <li><strong>奇函数求导必是偶函数,偶函数求导必是奇函数;奇函数积分必是偶函数,偶函数积分不一定是奇函数(除非积分在0处是0)</strong>.</li>
 </ul>
 </li>
 <li>极值点不能在端点</li>
 <li>取绝对值不破坏连续性,但会破坏可导性.</li>
 </ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>《Kira 高数葵花宝典 2017（修订版）》、《李永乐高数复习全书-数一》</p>
-<h1 id="tool"><a href="#tool" class="headerlink" title="tool"></a>tool</h1><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs text">四号绿: &lt;font color=green size=4&gt;&lt;/font&gt;<br>四号红: &lt;font color=red size=4&gt;&lt;/font&gt;<br>红:    &lt;font color=red&gt;&lt;/font&gt;<br>绿:    &lt;font color=green&gt;&lt;/font&gt;<br>蓝:    &lt;font color=blue&gt;&lt;/font&gt;<br><br>分割线:  <br><br>----------------------------<br><br><br>拼图<br>&#123;% gi 2 2 %&#125;<br><br>&#123;% endgi %&#125;<br><br>便签：  <br>&#123;% note success %&#125;  <br><br>&#123;% endnote %&#125;<br><br></code></pre></td></tr></table></figure>
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">学习笔记</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%AB%98%E6%95%B0/" class="category-chain-item">高数</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E9%AB%98%E6%95%B0/">#高数</a>
-      
-        <a href="/tags/%E8%80%83%E7%A0%94/">#考研</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>高数知识点(持续更新ing...)</div>
-      <div>https://chen0495.github.io/posts/992a10c1/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>Chen0495</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2021年5月10日</div>
-        </div>
-      
-      
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
-            
-            
-              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-              <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
-                <i class="iconfont icon-nc"></i>
-              </span>
-              </a>
-            
-              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-              <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
-                <i class="iconfont icon-sa"></i>
-              </span>
-              </a>
-            
-          
-        </div>
-      </div>
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/posts/645157d/" title="微分方程求解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微分方程求解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/posts/bcf7b8cf/" title="利用栈实现表达式的中后缀转换">
-                        <span class="hidden-mobile">利用栈实现表达式的中后缀转换</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-  <article id="comments" lazyload>
-    
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
-      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"waline-cb3yck4r1-chen0495.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://unpkg.com/@waline/emojis@1.0.1/alus","https://unpkg.com/@waline/emojis@1.0.1/bilibili"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":200,"pageSize":10,"placeholder":"说些什么吧QAQ","comment_count":true,"avatar":"mm","search":false},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-  </article>
-
-
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-  
-</div>
-
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
-      scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
-
-  <script  src="/js/local-search.js" ></script>
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+<h1>参考</h1>
+<p>《Kira 高数葵花宝典 2017（修订版）》、《李永乐高数复习全书-数一》</p>
+<h1>tool</h1>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">四号绿: &lt;font color=green size=4&gt;&lt;/font&gt;</span><br><span class="line">四号红: &lt;font color=red size=4&gt;&lt;/font&gt;</span><br><span class="line">红:    &lt;font color=red&gt;&lt;/font&gt;</span><br><span class="line">绿:    &lt;font color=green&gt;&lt;/font&gt;</span><br><span class="line">蓝:    &lt;font color=blue&gt;&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">分割线:  </span><br><span class="line"></span><br><span class="line">----------------------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">拼图</span><br><span class="line">&#123;% gi 2 2 %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endgi %&#125;</span><br><span class="line"></span><br><span class="line">便签：  </span><br><span class="line">&#123;% note success %&#125;  </span><br><span class="line"></span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://Chen0495.github.io">Chen0495</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chen0495.github.io/posts/992a10c1/">https://chen0495.github.io/posts/992a10c1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Chen0495.github.io" target="_blank">Chen0495的空间站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%80%83%E7%A0%94/">考研</a><a class="post-meta__tags" href="/tags/%E9%AB%98%E6%95%B0/">高数</a></div><div class="post_share"><div class="social-share" data-image="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174550.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/645157d/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174605.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">微分方程求解</div></div></a></div><div class="next-post pull-right"><a href="/posts/bcf7b8cf/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174511.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">利用栈实现表达式的中后缀转换</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/645157d/" title="微分方程求解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174605.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-17</div><div class="title">微分方程求解</div></div></a></div><div><a href="/posts/865e512f/" title="平衡二叉树的插入与调整"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210508174402.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-28</div><div class="title">平衡二叉树的插入与调整</div></div></a></div><div><a href="/posts/4c949373/" title="操作系统考研复习"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.chen0495.top/Chen0495/newpicgo/img/20210701210018.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-27</div><div class="title">操作系统考研复习</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">曲线面积分及重积分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">极限计算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">求导计算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">不定积分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">定积分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">二重积分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">多元函数微分学</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">微分方程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">中值定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">级数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">拾遗</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">tool</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Chen0495</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://chen0495.top/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://unpkg.com/katex/dist/katex.min.css"><script src="https://unpkg.com/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://unpkg.com/@waline/client/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'waline-cb3yck4r1-chen0495.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"placeholder":"说些什么吧QAQ","meta":["nick","mail","link"],"emoji":["https://unpkg.com/@waline/emojis@1.0.1/alus","https://unpkg.com/@waline/emojis@1.0.1/bilibili"],"search":false,"wordLimit":200,"pageSize":10}))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://unpkg.com/@waline/client/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://unpkg.com/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://unpkg.com/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
