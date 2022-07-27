@@ -29,6 +29,31 @@
   
   
   <entry>
+    <title>【公告】</title>
+    <link href="/posts/26c1dbaf/"/>
+    <url>/posts/26c1dbaf/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-danger">            <h1 id="最新公告-7-x2F-27-x2F-2022"><a href="#最新公告-7-x2F-27-x2F-2022" class="headerlink" title="最新公告 - 7&#x2F;27&#x2F;2022"></a>最新公告 - 7&#x2F;27&#x2F;2022</h1><p>jsDelivr被墙，所有样式源替换为360前端静态资源库lib.baomitu.com。</p>          </div><hr><div class="note note-secondary">            <h1 id="以往公告"><a href="#以往公告" class="headerlink" title="以往公告"></a>以往公告</h1><h2 id="7-x2F-26-x2F-2022"><a href="#7-x2F-26-x2F-2022" class="headerlink" title="7&#x2F;26&#x2F;2022"></a>7&#x2F;26&#x2F;2022</h2><p>评论区系统默认头像更新、添加IP显示功能。</p><h2 id="7-x2F-25-x2F-2022"><a href="#7-x2F-25-x2F-2022" class="headerlink" title="7&#x2F;25&#x2F;2022"></a>7&#x2F;25&#x2F;2022</h2><p>支持评论区系统。</p>          </div>]]></content>
+    
+    
+    <categories>
+      
+      <category>公告</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>公告</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>显微镜图像欣赏</title>
     <link href="/posts/5aff05f8/"/>
     <url>/posts/5aff05f8/</url>
@@ -85,7 +110,7 @@
     <link href="/posts/be85850c/"/>
     <url>/posts/be85850c/</url>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>每日沉迷打牌<del>指炉石传说</del>，不能继续下去了！！！<br>从今天开始要每周更新周报，总结学习收获。</p><h2 id="6月"><a href="#6月" class="headerlink" title="6月"></a>6月</h2><h3 id="第4周（6-24-6-30）"><a href="#第4周（6-24-6-30）" class="headerlink" title="第4周（6.24 - 6.30）"></a>第4周（6.24 - 6.30）</h3><ul><li>腾讯云函数收费政策更新：<img src="https://img.chen0495.top/Chen0495/newpicgo/img2022/202206241243748.png" alt="函数收费">  故改用校园套餐(随便更新云函数cookies)：<img src="https://img.chen0495.top/Chen0495/newpicgo/img2022/202206241241806.png" alt="校园云函数"></li><li>配置BiliExp云函数功能，净化B站关注列表</li><li>帮人填志愿（~ - 7.2）</li></ul><h2 id="7月"><a href="#7月" class="headerlink" title="7月"></a>7月</h2><h3 id="第1周（7-1-7-9）"><a href="#第1周（7-1-7-9）" class="headerlink" title="第1周（7.1 - 7.9）"></a>第1周（7.1 - 7.9）</h3><ul><li>腾讯云函数BiliExp Cookies更新</li><li>近期信息泄露事件(学习通、腾讯)频发，采用Bitwarden密码管理方案。</li><li>Github Copilot测试</li><li>上海警务系统疑似泄露10亿公民数据，国内数据安全任重道远。</li></ul><h3 id="第2周（7-10-7-16）"><a href="#第2周（7-10-7-16）" class="headerlink" title="第2周（7.10 - 7.16）"></a>第2周（7.10 - 7.16）</h3><h3 id="第3周（7-17-7-23）"><a href="#第3周（7-17-7-23）" class="headerlink" title="第3周（7.17 - 7.23）"></a>第3周（7.17 - 7.23）</h3><ul><li>NGA_IP数据爬虫及分析</li></ul><h3 id="第4周（7-24-7-31）"><a href="#第4周（7-24-7-31）" class="headerlink" title="第4周（7.24 - 7.31）"></a>第4周（7.24 - 7.31）</h3><ul><li>博客系统更新<ul><li>✅<a href="https://github.com/walinejs/waline">waline评论系统</a><ul><li>✅表情包支持</li></ul></li><li>✅不蒜子统计系统</li><li>✅许可协议更新</li><li>❌jsDelivr被墙，所有图片全寄，预计转移至七牛云存储。<ul><li>✅转移成功，目前无bug</li></ul></li><li>修复博客.md文件中的一些格式错误</li></ul></li></ul><h2 id="8月"><a href="#8月" class="headerlink" title="8月"></a>8月</h2><h2 id="9月"><a href="#9月" class="headerlink" title="9月"></a>9月</h2><h2 id="10月"><a href="#10月" class="headerlink" title="10月"></a>10月</h2><h2 id="11月"><a href="#11月" class="headerlink" title="11月"></a>11月</h2><h2 id="12月"><a href="#12月" class="headerlink" title="12月"></a>12月</h2><h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><pre><code class="text">四号红: &lt;font color=red size=4&gt;&lt;/font&gt;四号绿: &lt;font color=green size=4&gt;&lt;/font&gt;四号蓝: &lt;font color=blue size=4&gt;&lt;/font&gt;红:    &lt;font color=red&gt;&lt;/font&gt; 绿:    &lt;font color=green&gt;&lt;/font&gt;蓝:    &lt;font color=blue&gt;&lt;/font&gt;分割线:  ----------------------------表格:  |        |      |       || ----- | --:  | :----: ||       |       |       ||       |       |       ||       |       |       |拼图&#123;% gi 2 2 %&#125;&#123;% endgi %&#125;便签：  &#123;% note success %&#125;  &#123;% endnote %&#125;链接:  🔗</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="6月"><a href="#6月" class="headerlink" title="6月"></a>6月</h2><h3 id="第4周（6-24-6-30）"><a href="#第4周（6-24-6-30）" class="headerlink" title="第4周（6.24 - 6.30）"></a>第4周（6.24 - 6.30）</h3><ul><li>腾讯云函数收费政策更新：<img src="https://img.chen0495.top/Chen0495/newpicgo/img2022/202206241243748.png" alt="函数收费">  故改用校园套餐(随便更新云函数cookies)：<img src="https://img.chen0495.top/Chen0495/newpicgo/img2022/202206241241806.png" alt="校园云函数"></li><li>配置BiliExp云函数功能，净化B站关注列表</li><li>帮人填志愿（~ - 7.2）</li></ul><h2 id="7月"><a href="#7月" class="headerlink" title="7月"></a>7月</h2><h3 id="第1周（7-1-7-9）"><a href="#第1周（7-1-7-9）" class="headerlink" title="第1周（7.1 - 7.9）"></a>第1周（7.1 - 7.9）</h3><ul><li>腾讯云函数BiliExp Cookies更新</li><li>近期信息泄露事件(学习通、腾讯)频发，采用Bitwarden密码管理方案。</li><li>Github Copilot测试</li><li>上海警务系统疑似泄露10亿公民数据，国内数据安全任重道远。</li></ul><h3 id="第2周（7-10-7-16）"><a href="#第2周（7-10-7-16）" class="headerlink" title="第2周（7.10 - 7.16）"></a>第2周（7.10 - 7.16）</h3><h3 id="第3周（7-17-7-23）"><a href="#第3周（7-17-7-23）" class="headerlink" title="第3周（7.17 - 7.23）"></a>第3周（7.17 - 7.23）</h3><ul><li>NGA_IP数据爬虫及分析</li></ul><h3 id="第4周（7-24-7-31）"><a href="#第4周（7-24-7-31）" class="headerlink" title="第4周（7.24 - 7.31）"></a>第4周（7.24 - 7.31）</h3><ul><li>博客系统更新<ul><li>✅<a href="https://github.com/walinejs/waline">waline评论系统</a><ul><li>✅表情包支持</li><li>✅IP显示</li></ul></li><li>✅不蒜子统计系统</li><li>✅许可协议更新</li><li>❌jsDelivr被墙，所有图片全寄，预计转移至七牛云存储。<ul><li>✅转移成功，目前无bug</li></ul></li><li>✅修复博客.md文件中的一些格式错误，美化样式</li></ul></li></ul><h2 id="8月"><a href="#8月" class="headerlink" title="8月"></a>8月</h2><h2 id="9月"><a href="#9月" class="headerlink" title="9月"></a>9月</h2><h2 id="10月"><a href="#10月" class="headerlink" title="10月"></a>10月</h2><h2 id="11月"><a href="#11月" class="headerlink" title="11月"></a>11月</h2><h2 id="12月"><a href="#12月" class="headerlink" title="12月"></a>12月</h2><h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><pre><code class="text">四号红: &lt;font color=red size=4&gt;&lt;/font&gt;四号绿: &lt;font color=green size=4&gt;&lt;/font&gt;四号蓝: &lt;font color=blue size=4&gt;&lt;/font&gt;红:    &lt;font color=red&gt;&lt;/font&gt; 绿:    &lt;font color=green&gt;&lt;/font&gt;蓝:    &lt;font color=blue&gt;&lt;/font&gt;分割线:  ----------------------------表格:  |        |      |       || ----- | --:  | :----: ||       |       |       ||       |       |       ||       |       |       |拼图&#123;% gi 2 2 %&#125;&#123;% endgi %&#125;便签：  &#123;% note success %&#125;  &#123;% endnote %&#125;链接:  🔗</code></pre>]]></content>
     
     
     <categories>
