@@ -35,6 +35,35 @@
     
     
     <entry>
+      <title>【公告】</title>
+      <link href="/posts/26c1dbaf/"/>
+      <url>/posts/26c1dbaf/</url>
+      
+        <content type="html"><![CDATA[<div class="note danger flat"><h1>最新公告 - 7/27/2022</h1><p>原主题实现一些功能过于麻烦，故更换博客主题为<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></p></div><hr><div class="note secondary flat"><h1>以往公告</h1><h2 id="7-27-2022">7/27/2022</h2><p>jsDelivr被墙，<a href="http://xn--360lib-vy7ih2z7x2aj9ah2e78j03d87qie64rl47aia5821d0v8dti0b.baomitu.com">所有样式源替换为360前端静态资源库lib.baomitu.com</a>。</p><h2 id="7-26-2022">7/26/2022</h2><p>评论区系统默认头像更新、添加IP显示功能。</p><h2 id="7-25-2022">7/25/2022</h2><p>支持评论区系统。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日志 </category>
+          
+          <category> 公告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 公告 </tag>
+            
+            <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git连接Coding坑点</title>
       <link href="/posts/29f2c3fc/"/>
       <url>/posts/29f2c3fc/</url>
