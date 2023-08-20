@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>KMP算法 | Chen0495的空间站</title><meta name="author" content="Chen0495"><meta name="copyright" content="Chen0495"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="¶算法思想 ¶暴力优化 给定主串S和模式串P: S:BBC ABCDAB ABCDABCDABDE P:ABCDABD 暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配. 如图:  暴力算法做了太多无用功,如下图所示:  D与空格失配后,失配字"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chen0495.github.io/posts/2da0528d/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4cfdf1bbbfc14c67b6054b14a9f17c34";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Chen0495","link":"链接: ","source":"来源: Chen0495的空间站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'KMP算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-24 17:11:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">22</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174538.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Chen0495的空间站"><span class="site-name">Chen0495的空间站</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-heart"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">KMP算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-17T12:45:49.000Z" title="发表于 2021-05-17 20:45:49">2021-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-24T09:11:30.064Z" title="更新于 2022-09-24 17:11:30">2022-09-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="KMP算法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="算法思想"><a class="header-anchor" href="#算法思想">¶</a>算法思想</h2>
+<h3 id="暴力优化"><a class="header-anchor" href="#暴力优化">¶</a>暴力优化</h3>
+<p>给定主串S和模式串P:<br>
+S:<code>BBC ABCDAB ABCDABCDABDE</code><br>
+P:<code>ABCDABD</code></p>
+<p>暴力算法就是一个一个地匹配,失配了就模式串P整体后移一位,从头开始与主串S的失配字符的下一个字符开始匹配.<br>
+如图: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519201204.png" alt=""></p>
+<p>暴力算法做了太多无用功,如下图所示: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519201250.png" alt=""><br>
+<code>D</code>与空格失配后,失配字符前的<code>ABCDAB</code>字串显然是配对的,换言之我们已经知道失配字符前的所有字符,那我们可以根据这些已知字符来跳过一些不可能的情况.<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519201732.png" alt=""><br>
+如上图,<font color="#c678dd" size="4">失配字符<code>D</code></font>之前的字串<code>ABCDAB</code>具有相同且最大的前后缀<code>AB</code>,故我们可以直接跳转使得<strong>失配字符前的字串</strong>的前缀(即模式串的前缀)与后缀(即主串的后缀)相对应.</p>
+<p>也就是说,我们从头到尾假设每个字符失配,得到失配字符前的字串中相同的前缀和后缀,并记录下来,即可省略一大批步骤.那么怎么得到这个相同前后缀呢?</p>
+<h3 id="KMP步骤"><a class="header-anchor" href="#KMP步骤">¶</a>KMP步骤</h3>
+<ol>
+<li>寻找前后缀最长公共元素长度
+<ul>
+<li>对于字串<code>P = P[0] P[1] P[2] ... P[j-1] P[j]</code>,找其最长公共前后缀.</li>
+<li>如果有<code>P[0] P[1] ... P[k] = P[j-k] P[j-k+1] ... P[j]</code>即某条公共前后缀,那么对于一条包含这个公共前后缀的字串T来说,其<strong>最大</strong>公共前后缀长度是<strong>k+1</strong>,当然也可能是0…</li>
+<li>举例说明: <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519203848.png" alt=""></li>
+</ul>
+</li>
+<li>求next数组
+<ul>
+<li>为了更好进行计算机计算,引入next数组,即失配发生后模式串P需要移动到哪个位置.</li>
+<li>其值是将第一步中的最大公共元素长度整体右移一位,并令初值为-1.</li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519204311.png" alt=""></li>
+</ul>
+</li>
+<li>根据next数组进行匹配
+<ul>
+<li>匹配失败,<strong>令j = next[j]</strong>.<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519204733.png" alt=""></li>
+<li>即当模式串字串<code>P[0] P[1] ... P[j-1]</code>与主串字串<code>... S[i-1]</code>匹配失败,i与j匹配失败时, next[j] = k, 故将k移动到j位置, 让P[\k]与S[i]继续匹配.</li>
+</ul>
+</li>
+</ol>
+<h3 id="机算next数组"><a class="header-anchor" href="#机算next数组">¶</a>机算next数组</h3>
+<ol>
+<li>对于值k,已经有<code>P[0] P[1] ... P[k-1]</code>与<code>P[j-k] P[j-k+1] ... P[j-1]</code>,即next[j] = k.</li>
+<li>怎么求next[j+1]?
+<ul>
+<li>若P[k] == P[j], 那么公共长度可以加一, 即 next[j+1] = k + 1.</li>
+<li>若P[k] ≠ P[j]:
+<ul>
+<li>若P[next[k]] == P[j], 则next[j+1] = next[k] + 1.</li>
+<li>若P[next[k]] ≠ P[j], 继续递归前缀索引k = next[k], 重复此过程知道条件成立. <strong>这个过程相当于</strong>: 在字符P[j+1]前不存在长度k+1的前后缀相同, 那么是否有某个长度更小的前后缀相同呢?<br>
+如果存在, 那么为什么是next[k]呢?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>递归解释
+<ul>
+<li>如下图所示,已知next[k] = 2(直接看出),那么因为P[k] == P[j], 故next[k+1] = 2 + 1 = 3.<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519211730.png" alt=""></li>
+<li>再如下图,P[k] ≠ P[j], 显然因为C不同于D, 所以ABC 跟 ABD不相同, 即字符E前的模式串没有长度为k+1的相同前缀后缀, 也就不能再简单的令：next[j + 1] = next[j] + 1 .所以,咱们只能去寻找长度更短一点的相同前缀后缀.<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519212111.png" alt=""></li>
+<li>那么为何要递归呢? 其实就是C与D不同, 但其前面相同(AB == AB, 这里假设是 ABAB = ABAB, 即 <strong>ABABC</strong> 与 <strong>ABABD</strong> 进行匹配), 那么只能是前缀AB(A)与后缀AB(D)匹配, 故要递归向前找长度更小的前缀.<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519212402.png" alt=""></li>
+</ul>
+</li>
+<li>代码:</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">(<span class="type">char</span> *P,<span class="type">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> length = <span class="built_in">strlen</span>(P);</span><br><span class="line"></span><br><span class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="type">int</span> k = <span class="number">-1</span>;     <span class="comment">//模式串类指针</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>;      <span class="comment">//主串类指针</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 模式串与主串相同 </span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; length<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k == <span class="number">-1</span> || P[k] == P[j]) <span class="comment">//匹配成功,双双后移并记录当前模式串(即前缀)位置</span></span><br><span class="line">        &#123;</span><br><span class="line">            ++k;     <span class="comment">// 模式串后移</span></span><br><span class="line">            ++j;     <span class="comment">// 主串后移</span></span><br><span class="line">            next[j] = k;   <span class="comment">// 记录当前模式串(即前缀)位置,即失配时需要移动到的位置.</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            k = next[k];  <span class="comment">// 回溯长度更小的前缀.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">up</span>(length)cout&lt;&lt;next[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="next数组优化-nextval"><a class="header-anchor" href="#next数组优化-nextval">¶</a>next数组优化(nextval)</h3>
+<p>如下图,b和c失配后,模式串右移2,b和c又失配,这显然是算法缺陷.<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519213641.png" alt=""><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519213725.png" alt=""><br>
+问题出在不该出现P[j] = P[next[j]]<br>
+代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNextVal</span><span class="params">(<span class="type">char</span> *P,<span class="type">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> length = <span class="built_in">strlen</span>(P);</span><br><span class="line"></span><br><span class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="type">int</span> k = <span class="number">-1</span>;     <span class="comment">//模式串类指针</span></span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>;      <span class="comment">//主串类指针</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 模式串与主串相同 </span></span><br><span class="line">    <span class="keyword">while</span>(j &lt; length<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k == <span class="number">-1</span> || P[k] == P[j]) <span class="comment">//匹配成功,双双后移并记录当前模式串(即前缀)位置</span></span><br><span class="line">        &#123;</span><br><span class="line">            ++k;     <span class="comment">// 模式串后移</span></span><br><span class="line">            ++j;     <span class="comment">// 主串后移</span></span><br><span class="line">            <span class="keyword">if</span>(P[j] != P[k]) next[j] = k;</span><br><span class="line">            <span class="keyword">else</span> next[j] = next[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            k = next[k];  <span class="comment">// 回溯长度更小的前缀.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">up</span>(length)cout&lt;&lt;next[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="手算next数组"><a class="header-anchor" href="#手算next数组">¶</a>手算next数组</h3>
+<p>考研不需要机算,故使用如下方法,在失配字符前画一条线,然后一步一步后退直到匹配或者过线.<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519205540.png" alt=""><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210519213310.png" alt=""><br>
+串的下标从1开始.<br>
+下标0的位置是留给-1的,只要在下标0的位置加上0就是以-1开头,串下标从0开始计算的next数组.<br>
+计算nextval数组:  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210523201045.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> j <span class="keyword">from</span> <span class="number">2</span> to end:</span><br><span class="line">    <span class="keyword">while</span> p[j] == P[<span class="built_in">next</span>[j]]:</span><br><span class="line">        <span class="built_in">next</span>[j] = <span class="built_in">next</span>[<span class="built_in">next</span>[j]] </span><br></pre></td></tr></table></figure>
+<p>因为我们只利用了失配元素之前的元素, 但其实失配元素也能利用起来, 也就是说失配元素失配后, 再下次跳转匹配时若还是相同元素就不可能匹配成功.<br>
+即当前元素若失配, 跳转到next对应元素, 若还是相同元素, 就应该继续跳到更短的公共前后缀对应位置.</p>
+<p>通俗说就是在当前元素(从2到最后), 如果其next值对应的元素与当前元素相等, 就令当前next值等于对应元素的next值, 重复直到不相等(如当前坐标11,对应next=5,坐标5还是a,继续跳到坐标3依然是a,直到跳到坐标0不相等,所以next[11]=0).</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://Chen0495.github.io">Chen0495</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chen0495.github.io/posts/2da0528d/">https://chen0495.github.io/posts/2da0528d/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Chen0495.github.io" target="_blank">Chen0495的空间站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><a class="post-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174538.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/865e512f/" title="平衡二叉树的插入与调整"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174402.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">平衡二叉树的插入与调整</div></div></a></div><div class="next-post pull-right"><a href="/posts/645157d/" title="微分方程求解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174605.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">微分方程求解</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/300f6cc8/" title="Dijkstra算法浅析"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210424200717.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-24</div><div class="title">Dijkstra算法浅析</div></div></a></div><div><a href="/posts/bcf7b8cf/" title="利用栈实现表达式的中后缀转换"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210508174511.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-08</div><div class="title">利用栈实现表达式的中后缀转换</div></div></a></div><div><a href="/posts/c1af42a4/" title="卡特兰数与出栈顺序数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img/20210424204513.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-02</div><div class="title">卡特兰数与出栈顺序数</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="toc-number">1.</span> <span class="toc-text">算法思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E4%BC%98%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">暴力优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KMP%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">KMP步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E7%AE%97next%E6%95%B0%E7%BB%84"><span class="toc-number">1.3.</span> <span class="toc-text">机算next数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#next%E6%95%B0%E7%BB%84%E4%BC%98%E5%8C%96-nextval"><span class="toc-number">1.4.</span> <span class="toc-text">next数组优化(nextval)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E7%AE%97next%E6%95%B0%E7%BB%84"><span class="toc-number">1.5.</span> <span class="toc-text">手算next数组</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/chen0495/newpicgo/img2022/202207290206838.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Chen0495</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://chen0495.top/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'waline-cb3yck4r1-chen0495.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, {"placeholder":"说些什么吧QAQ","meta":["nick","mail","link"],"emoji":["https://unpkg.com/@waline/emojis@1.0.1/alus","https://unpkg.com/@waline/emojis@1.0.1/bilibili"],"search":false,"wordLimit":200,"pageSize":10}))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://unpkg.com/@waline/client/dist/waline.css').then(() => {
+      getScript('https://unpkg.com/@waline/client/dist/waline.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="click-show-text" src="https://unpkg.com/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
